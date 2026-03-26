@@ -1,0 +1,46 @@
+# DDEV
+.ddev/
+
+# Composer
+/vendor/
+
+# Drupal core (if using composer)
+web/core/
+
+# Drupal contributed modules/themes (installed via composer)
+web/modules/contrib/
+web/themes/contrib/
+
+# Files directory (user uploads)
+web/sites/default/files/
+
+# Settings (environment-specific)
+web/sites/default/settings.php
+web/sites/default/settings.local.php
+
+# Private files
+web/sites/default/private/
+
+# Temporary files
+tmp/
+temp/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/editor
+.vscode/
+.idea/
+
+# Node (if used later)
+node_modules/
+
+# Environment files
+.env
+
+# Composer cache (optional)
+composer.phar
