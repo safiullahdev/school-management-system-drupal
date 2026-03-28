@@ -1,0 +1,12 @@
+uuid: 6da821b7-9c8a-4751-8a36-a0cced854609
+langcode: en
+status: true
+dependencies:
+  module:
+    - webform
+id: parent
+label: Parent
+weight: 4
+is_admin: null
+permissions:
+  - 'view own webform submission'

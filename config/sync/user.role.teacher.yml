@@ -1,0 +1,15 @@
+uuid: d7372209-ad3f-469d-b5ee-08d6eedac2b0
+langcode: en
+status: true
+dependencies:
+  module:
+    - toolbar
+    - webform
+id: teacher
+label: Teacher
+weight: 6
+is_admin: null
+permissions:
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'view own webform submission'

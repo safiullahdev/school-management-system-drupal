@@ -1,0 +1,14 @@
+uuid: bcae83df-5712-4d40-ad30-34aa6e1e1eec
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.parent
+  module:
+    - user
+id: user_remove_role_action.parent
+label: 'Remove the Parent role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: parent

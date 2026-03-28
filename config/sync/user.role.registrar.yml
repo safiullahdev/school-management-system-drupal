@@ -1,0 +1,21 @@
+uuid: f8431afe-7330-4c45-b10a-70588f19cf7b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+    - toolbar
+    - webform
+id: registrar
+label: Registrar
+weight: 5
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'access webform overview'
+  - 'view any webform submission'
+  - 'view user email addresses'

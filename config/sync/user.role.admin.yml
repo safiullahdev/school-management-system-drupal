@@ -1,0 +1,21 @@
+uuid: 3ea122f3-a4b8-4be9-a612-e07bded7484b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+    - toolbar
+    - webform
+id: admin
+label: 'School Admin'
+weight: 7
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'access webform overview'
+  - 'view any webform submission'
+  - 'view user email addresses'
