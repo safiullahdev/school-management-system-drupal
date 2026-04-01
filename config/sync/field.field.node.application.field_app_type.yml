@@ -1,0 +1,21 @@
+uuid: e87e4946-c5e1-44ec-bf94-f8e6de7422be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_app_type
+    - node.type.application
+  module:
+    - options
+id: node.application.field_app_type
+field_name: field_app_type
+entity_type: node
+bundle: application
+label: 'Application Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

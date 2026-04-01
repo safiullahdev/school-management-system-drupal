@@ -1,0 +1,23 @@
+uuid: 011c5c7f-5854-46df-992e-3b21430bb7e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_app_status
+    - node.type.application
+  module:
+    - options
+id: node.application.field_app_status
+field_name: field_app_status
+entity_type: node
+bundle: application
+label: Status
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: gsagds
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,21 @@
+uuid: cdfe14e9-7d07-468f-bea7-76ce2e8c19aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_app_priority
+    - node.type.application
+  module:
+    - options
+id: node.application.field_app_priority
+field_name: field_app_priority
+entity_type: node
+bundle: application
+label: Priority
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

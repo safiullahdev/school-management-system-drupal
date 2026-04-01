@@ -1,0 +1,24 @@
+uuid: 6a40c20e-54d7-41e4-ac17-67dbf257f462
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.student
+  module:
+    - text
+id: node.student.body
+field_name: body
+entity_type: node
+bundle: student
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

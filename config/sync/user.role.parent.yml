@@ -3,10 +3,12 @@ langcode: en
 status: true
 dependencies:
   module:
+    - node
     - webform
 id: parent
 label: Parent
 weight: 4
 is_admin: null
 permissions:
+  - 'view own unpublished content'
   - 'view own webform submission'

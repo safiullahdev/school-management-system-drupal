@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - node
     - toolbar
     - webform
 id: teacher
@@ -12,4 +13,5 @@ is_admin: null
 permissions:
   - 'access toolbar'
   - 'access user profiles'
+  - 'view own unpublished content'
   - 'view own webform submission'

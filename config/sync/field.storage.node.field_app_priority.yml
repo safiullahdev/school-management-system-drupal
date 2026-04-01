@@ -1,0 +1,33 @@
+uuid: 9145bc13-6bbc-491f-8c1d-f5341f630846
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_app_priority
+field_name: field_app_priority
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: asfsfdsd
+      label: asfsfdsd
+    -
+      value: low
+      label: Low
+    -
+      value: medium
+      label: Medium
+    -
+      value: high
+      label: High
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

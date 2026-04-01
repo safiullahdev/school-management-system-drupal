@@ -1,0 +1,33 @@
+uuid: 599f2243-0f84-4083-a85f-dd1e82ee6ae1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_app_type
+field_name: field_app_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: student_admission
+      label: 'Student Admission'
+    -
+      value: leave_request
+      label: 'Leave Request'
+    -
+      value: staff_request
+      label: 'Staff Request'
+    -
+      value: general_request
+      label: 'General Request'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

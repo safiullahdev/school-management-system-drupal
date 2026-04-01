@@ -1,0 +1,21 @@
+uuid: 077e7bd7-96ba-4dbc-9029-0e6ac31af5bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_app_submitted_date
+    - node.type.application
+  module:
+    - datetime
+id: node.application.field_app_submitted_date
+field_name: field_app_submitted_date
+entity_type: node
+bundle: application
+label: 'Submitted Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

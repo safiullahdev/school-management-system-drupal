@@ -1,0 +1,19 @@
+uuid: b822649f-e858-49e2-be4f-1fd5a01e12ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_app_requester_name
+    - node.type.application
+id: node.application.field_app_requester_name
+field_name: field_app_requester_name
+entity_type: node
+bundle: application
+label: 'Requester Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

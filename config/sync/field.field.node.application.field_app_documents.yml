@@ -1,0 +1,27 @@
+uuid: 3c8c3572-c7b0-47b0-a2cb-fb14dc667427
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_app_documents
+    - node.type.application
+  module:
+    - file
+id: node.application.field_app_documents
+field_name: field_app_documents
+entity_type: node
+bundle: application
+label: Documents
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'applications/[current-user:uid]/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'pdf jpg jpeg png'
+  max_filesize: ''
+  description_field: false
+field_type: file

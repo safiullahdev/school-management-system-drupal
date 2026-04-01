@@ -1,0 +1,28 @@
+uuid: 609ecfa0-f871-4ed8-9f31-3c1e3be8ce22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.student.body
+    - node.type.student
+  module:
+    - text
+    - user
+id: node.student.default
+targetEntityType: node
+bundle: student
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

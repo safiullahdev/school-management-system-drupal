@@ -1,0 +1,42 @@
+uuid: bc7141fc-5d6b-47d6-8c2a-e79d49eabf60
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_app_status
+field_name: field_app_status
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: gsagds
+      label: Draft
+    -
+      value: gdsg_sdgdsgd
+      label: 'gdsg sdgdsgd'
+    -
+      value: draft
+      label: draft
+    -
+      value: submitted
+      label: Submitted
+    -
+      value: under_review
+      label: 'Under Review'
+    -
+      value: approved
+      label: Approved
+    -
+      value: rejected
+      label: Rejected
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

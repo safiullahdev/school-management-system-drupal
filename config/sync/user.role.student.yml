@@ -1,9 +1,17 @@
 uuid: 490e530d-a23f-4dad-84c5-c0c0c3e8350e
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.application
+  module:
+    - node
 id: student
 label: Student
 weight: 8
 is_admin: null
-permissions: {  }
+permissions:
+  - 'create application content'
+  - 'edit own application content'
+  - 'view application revisions'
+  - 'view own unpublished content'

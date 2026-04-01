@@ -1,0 +1,21 @@
+uuid: 72199e16-0280-4b9c-88fa-8ad5a877246b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_app_decision_date
+    - node.type.application
+  module:
+    - datetime
+id: node.application.field_app_decision_date
+field_name: field_app_decision_date
+entity_type: node
+bundle: application
+label: 'Decision date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

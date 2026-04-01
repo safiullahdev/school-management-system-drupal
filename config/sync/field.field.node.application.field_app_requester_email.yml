@@ -1,0 +1,19 @@
+uuid: 8caec703-49a4-471f-9c89-f1b53b95d190
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_app_requester_email
+    - node.type.application
+id: node.application.field_app_requester_email
+field_name: field_app_requester_email
+entity_type: node
+bundle: application
+label: 'Requester Email'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

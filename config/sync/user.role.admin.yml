@@ -18,4 +18,5 @@ permissions:
   - 'access user profiles'
   - 'access webform overview'
   - 'view any webform submission'
+  - 'view own unpublished content'
   - 'view user email addresses'

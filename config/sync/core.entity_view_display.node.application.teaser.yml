@@ -1,0 +1,54 @@
+uuid: b03b7d75-894b-4070-a47d-0ec6aeae6740
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.application.body
+    - field.field.node.application.field_app_assigned_to
+    - field.field.node.application.field_app_decision_date
+    - field.field.node.application.field_app_description
+    - field.field.node.application.field_app_documents
+    - field.field.node.application.field_app_priority
+    - field.field.node.application.field_app_reference_number
+    - field.field.node.application.field_app_requester_email
+    - field.field.node.application.field_app_requester_name
+    - field.field.node.application.field_app_requester_phone
+    - field.field.node.application.field_app_status
+    - field.field.node.application.field_app_submitted_date
+    - field.field.node.application.field_app_type
+    - node.type.application
+  module:
+    - text
+    - user
+id: node.application.teaser
+targetEntityType: node
+bundle: application
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_app_assigned_to: true
+  field_app_decision_date: true
+  field_app_description: true
+  field_app_documents: true
+  field_app_priority: true
+  field_app_reference_number: true
+  field_app_requester_email: true
+  field_app_requester_name: true
+  field_app_requester_phone: true
+  field_app_status: true
+  field_app_submitted_date: true
+  field_app_type: true
