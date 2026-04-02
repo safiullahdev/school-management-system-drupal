@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.application
+    - node.type.student
   module:
     - node
 id: student
@@ -12,6 +13,8 @@ weight: 8
 is_admin: null
 permissions:
   - 'create application content'
+  - 'create student content'
   - 'edit own application content'
+  - 'edit own student content'
   - 'view application revisions'
   - 'view own unpublished content'

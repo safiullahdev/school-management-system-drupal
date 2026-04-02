@@ -4,27 +4,25 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.student.body
+    - field.field.node.student.field_student_email
+    - field.field.node.student.field_student_id
+    - field.field.node.student.field_student_phone
+    - field.field.node.student.field_student_status
     - node.type.student
   module:
-    - text
     - user
 id: node.student.teaser
 targetEntityType: node
 bundle: student
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 101
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_student_email: true
+  field_student_id: true
+  field_student_phone: true
+  field_student_status: true

@@ -1,0 +1,21 @@
+uuid: 93676693-2588-4403-b470-e98e485caa47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_student_phone
+    - node.type.student
+  module:
+    - telephone
+id: node.student.field_student_phone
+field_name: field_student_phone
+entity_type: node
+bundle: student
+label: 'Student Phone'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

@@ -3,29 +3,51 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.student.body
+    - field.field.node.student.field_student_email
+    - field.field.node.student.field_student_id
+    - field.field.node.student.field_student_phone
+    - field.field.node.student.field_student_status
     - node.type.student
   module:
     - path
-    - text
+    - telephone
 id: node.student.default
 targetEntityType: node
 bundle: student
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 121
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_student_email:
+    type: email_default
+    weight: 129
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_student_id:
+    type: string_textfield
+    weight: 130
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_student_phone:
+    type: telephone_default
+    weight: 131
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_student_status:
+    type: options_select
+    weight: 128
     region: content
     settings: {  }
     third_party_settings: {  }
