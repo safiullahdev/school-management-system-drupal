@@ -12,14 +12,8 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: gsagds
-      label: Draft
-    -
-      value: gdsg_sdgdsgd
-      label: 'gdsg sdgdsgd'
-    -
       value: draft
-      label: draft
+      label: Draft
     -
       value: submitted
       label: Submitted
