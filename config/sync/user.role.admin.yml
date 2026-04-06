@@ -2,6 +2,8 @@ uuid: 3ea122f3-a4b8-4be9-a612-e07bded7484b
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.application
   module:
     - node
     - system
@@ -17,6 +19,7 @@ permissions:
   - 'access toolbar'
   - 'access user profiles'
   - 'access webform overview'
+  - 'edit any application content'
   - 'view any webform submission'
   - 'view own unpublished content'
   - 'view user email addresses'

@@ -26,6 +26,9 @@ settings:
     -
       value: rejected
       label: Rejected
+    -
+      value: ready_for_approval
+      label: 'Ready for Approval'
   allowed_values_function: ''
 module: options
 locked: false
