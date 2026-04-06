@@ -1,0 +1,23 @@
+uuid: 9b9376aa-d65d-4f49-993f-d9d4830a2365
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_class_capacity
+    - node.type.class
+id: node.class.field_class_capacity
+field_name: field_class_capacity
+entity_type: node
+bundle: class
+label: Capacity
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

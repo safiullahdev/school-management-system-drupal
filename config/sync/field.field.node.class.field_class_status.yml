@@ -1,0 +1,23 @@
+uuid: 154de70d-3d06-413c-8996-3a1f970a95c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_class_status
+    - node.type.class
+  module:
+    - options
+id: node.class.field_class_status
+field_name: field_class_status
+entity_type: node
+bundle: class
+label: Status
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: draft
+default_value_callback: ''
+settings: {  }
+field_type: list_string

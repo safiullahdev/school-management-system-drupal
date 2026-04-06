@@ -1,0 +1,19 @@
+uuid: ec8a98fe-b1ce-41a0-a0eb-db189997490d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_class_room
+    - node.type.class
+id: node.class.field_class_room
+field_name: field_class_room
+entity_type: node
+bundle: class
+label: 'Room Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
