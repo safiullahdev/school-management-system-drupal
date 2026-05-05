@@ -5,7 +5,9 @@ dependencies:
   config:
     - node.type.application
     - node.type.student
+    - workflows.workflow.application_workflow
   module:
+    - content_moderation
     - node
 id: student
 label: Student
@@ -16,5 +18,7 @@ permissions:
   - 'create student content'
   - 'edit own application content'
   - 'edit own student content'
+  - 'use application_workflow transition create_new_draft'
+  - 'use application_workflow transition save_draft'
   - 'view application revisions'
   - 'view own unpublished content'

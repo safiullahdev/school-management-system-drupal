@@ -1,0 +1,96 @@
+uuid: 26242135-b1be-47ba-af2f-6c1df350845c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.application
+  module:
+    - content_moderation
+id: application_workflow
+label: 'Application Workflow'
+type: content_moderation
+type_settings:
+  states:
+    approved:
+      label: Approved
+      weight: 5
+      published: true
+      default_revision: true
+    draft:
+      label: Draft
+      weight: 0
+      published: false
+      default_revision: false
+    published:
+      label: Published
+      weight: 1
+      published: true
+      default_revision: true
+    ready_for_approval:
+      label: 'Ready for Approval'
+      weight: 4
+      published: false
+      default_revision: false
+    rejected:
+      label: Rejected
+      weight: 6
+      published: false
+      default_revision: false
+    submitted:
+      label: Submitted
+      weight: 2
+      published: false
+      default_revision: false
+    under_review:
+      label: 'Under Review'
+      weight: 3
+      published: false
+      default_revision: false
+  transitions:
+    approve:
+      label: Approve
+      from:
+        - ready_for_approval
+      to: approved
+      weight: 5
+    create_new_draft:
+      label: 'Create New Draft'
+      from:
+        - draft
+      to: draft
+      weight: 0
+    publish:
+      label: Publish
+      from:
+        - draft
+        - published
+      to: published
+      weight: 1
+    reject:
+      label: Reject
+      from:
+        - ready_for_approval
+      to: rejected
+      weight: 6
+    save_draft:
+      label: Submit
+      from:
+        - draft
+      to: submitted
+      weight: 2
+    send_to_approval:
+      label: 'Send to Approval'
+      from:
+        - under_review
+      to: ready_for_approval
+      weight: 4
+    start_review:
+      label: 'Start Review'
+      from:
+        - submitted
+      to: under_review
+      weight: 3
+  entity_types:
+    node:
+      - application
+  default_moderation_state: draft

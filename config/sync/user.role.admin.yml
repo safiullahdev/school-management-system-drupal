@@ -4,7 +4,10 @@ status: true
 dependencies:
   config:
     - node.type.application
+    - workflows.workflow.application_workflow
   module:
+    - content_moderation
+    - field_permissions
     - node
     - system
     - toolbar
@@ -20,6 +23,15 @@ permissions:
   - 'access user profiles'
   - 'access webform overview'
   - 'edit any application content'
+  - 'edit field_app_status'
+  - 'edit own field_app_status'
+  - 'use application_workflow transition approve'
+  - 'use application_workflow transition reject'
+  - 'view any unpublished content'
   - 'view any webform submission'
+  - 'view application revisions'
+  - 'view field_app_status'
+  - 'view latest version'
+  - 'view own field_app_status'
   - 'view own unpublished content'
   - 'view user email addresses'
