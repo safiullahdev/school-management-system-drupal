@@ -1,0 +1,5 @@
+name: School System
+type: module
+description: Custom logic for School System
+core_version_requirement: ^10
+package: Custom

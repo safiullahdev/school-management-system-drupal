@@ -6,9 +6,11 @@ dependencies:
     - field.field.node.student.field_student_email
     - field.field.node.student.field_student_id
     - field.field.node.student.field_student_phone
+    - field.field.node.student.field_student_source_application
     - field.field.node.student.field_student_status
     - node.type.student
   module:
+    - content_moderation
     - path
     - telephone
 id: node.student.default
@@ -45,9 +47,25 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
+  field_student_source_application:
+    type: entity_reference_autocomplete
+    weight: 132
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_student_status:
     type: options_select
     weight: 128
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
     region: content
     settings: {  }
     third_party_settings: {  }

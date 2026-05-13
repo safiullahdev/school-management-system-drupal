@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.student.field_student_email
     - field.field.node.student.field_student_id
     - field.field.node.student.field_student_phone
+    - field.field.node.student.field_student_source_application
     - field.field.node.student.field_student_status
     - node.type.student
   module:
@@ -37,6 +38,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 111
+    region: content
+  field_student_source_application:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 112
     region: content
   field_student_status:
     type: list_default

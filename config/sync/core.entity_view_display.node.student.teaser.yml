@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.student.field_student_email
     - field.field.node.student.field_student_id
     - field.field.node.student.field_student_phone
+    - field.field.node.student.field_student_source_application
     - field.field.node.student.field_student_status
     - node.type.student
   module:
@@ -25,4 +26,5 @@ hidden:
   field_student_email: true
   field_student_id: true
   field_student_phone: true
+  field_student_source_application: true
   field_student_status: true
