@@ -4,6 +4,9 @@
 
 ### Push to branch
 ```
+git add .
+git commit -m "SMD-40/SMD-41: auto-create student from approved application and generate student ID"
+git push origin <branch>
 git status
 On branch SMD-54-restrict-status-field-visibility-role
 nothing to commit, working tree clean
