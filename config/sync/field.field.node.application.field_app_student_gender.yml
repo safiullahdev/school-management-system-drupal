@@ -1,0 +1,21 @@
+uuid: 3e154765-219b-41bc-8ffe-73fea3b527c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_app_student_gender
+    - node.type.application
+  module:
+    - options
+id: node.application.field_app_student_gender
+field_name: field_app_student_gender
+entity_type: node
+bundle: application
+label: 'Student Gender'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -5,19 +5,29 @@ dependencies:
   config:
     - field.field.node.application.body
     - field.field.node.application.field_app_assigned_to
+    - field.field.node.application.field_app_created_student
     - field.field.node.application.field_app_decision_date
     - field.field.node.application.field_app_description
     - field.field.node.application.field_app_documents
+    - field.field.node.application.field_app_grade_applying_for
+    - field.field.node.application.field_app_parent_guardian_email
+    - field.field.node.application.field_app_parent_guardian_name
+    - field.field.node.application.field_app_parent_guardian_phone
     - field.field.node.application.field_app_priority
     - field.field.node.application.field_app_reference_number
-    - field.field.node.application.field_app_requester_email
-    - field.field.node.application.field_app_requester_name
-    - field.field.node.application.field_app_requester_phone
     - field.field.node.application.field_app_status
+    - field.field.node.application.field_app_street_address
+    - field.field.node.application.field_app_student_dob
+    - field.field.node.application.field_app_student_first_name
+    - field.field.node.application.field_app_student_gender
+    - field.field.node.application.field_app_student_last_name
     - field.field.node.application.field_app_submitted_date
     - field.field.node.application.field_app_type
     - node.type.application
+    - workflows.workflow.application_workflow
   module:
+    - address
+    - content_moderation
     - datetime
     - file
     - path
@@ -54,6 +64,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_app_created_student:
+    type: entity_reference_autocomplete
+    weight: 151
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_app_decision_date:
     type: datetime_default
     weight: 138
@@ -75,6 +95,35 @@ content:
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
+  field_app_grade_applying_for:
+    type: options_select
+    weight: 150
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_app_parent_guardian_email:
+    type: email_default
+    weight: 147
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_app_parent_guardian_name:
+    type: string_textfield
+    weight: 146
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_app_parent_guardian_phone:
+    type: telephone_default
+    weight: 148
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_app_priority:
     type: options_select
     weight: 135
@@ -89,34 +138,46 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_app_requester_email:
-    type: email_default
-    weight: 130
-    region: content
-    settings:
-      placeholder: ''
-      size: 60
-    third_party_settings: {  }
-  field_app_requester_name:
-    type: string_textfield
-    weight: 129
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_app_requester_phone:
-    type: telephone_default
-    weight: 131
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
   field_app_status:
     type: options_select
     weight: 134
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_app_street_address:
+    type: address_default
+    weight: 149
+    region: content
+    settings:
+      wrapper_type: fieldset
+    third_party_settings: {  }
+  field_app_student_dob:
+    type: datetime_default
+    weight: 143
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_app_student_first_name:
+    type: string_textfield
+    weight: 141
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_app_student_gender:
+    type: options_select
+    weight: 144
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_app_student_last_name:
+    type: string_textfield
+    weight: 142
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_app_submitted_date:
     type: datetime_default
@@ -127,6 +188,12 @@ content:
   field_app_type:
     type: options_select
     weight: 132
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
     region: content
     settings: {  }
     third_party_settings: {  }

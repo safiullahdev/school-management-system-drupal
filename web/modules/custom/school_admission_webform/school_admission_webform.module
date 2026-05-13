@@ -1,0 +1,61 @@
+<?php
+
+use Drupal\node\Entity\Node;
+use Drupal\webform\WebformSubmissionInterface;
+
+/**
+ * Implements hook_webform_submission_insert().
+ */
+function school_admission_webform_webform_submission_insert(WebformSubmissionInterface $webform_submission) {
+  $webform = $webform_submission->getWebform();
+
+  if (!$webform || $webform->id() !== 'admission_application') {
+    return;
+  }
+
+  $data = $webform_submission->getData();
+
+  $title = trim(($data['student_first_name'] ?? '') . ' ' . ($data['student_last_name'] ?? ''));
+
+  $node = Node::create([
+    'type' => 'application',
+    'title' => $title ?: 'Admission Application',
+    'field_app_student_first_name' => $data['student_first_name'] ?? '',
+    'field_app_student_last_name' => $data['student_last_name'] ?? '',
+    'field_app_student_dob' => $data['student_date_of_birth'] ?? '',
+    'field_app_student_gender' => $data['student_gender'] ?? '',
+    'field_app_grade_applying_for' => $data['grade_applying_for'] ?? '',
+    'field_app_type' => $data['application_type'] ?? '',
+    'field_app_parent_guardian_name' => $data['parent_guardian_name'] ?? '',
+    'field_app_parent_guardian_email' => $data['parent_guardian_email'] ?? '',
+    'field_app_parent_guardian_phone' => $data['parent_guardian_phone'] ?? '',
+    'field_app_description' => [
+      'value' => $data['description'] ?? '',
+      'format' => 'basic_html',
+    ],
+    'field_app_submitted_date' => date('Y-m-d'),
+    'field_app_status' => 'submitted',
+    'status' => 0,
+  ]);
+
+//   if (!empty($data['street_address']) && is_array($data['street_address'])) {
+//     $node->set('field_app_street_address', $data['street_address']);
+//   }
+if (!empty($data['street_address']) && is_array($data['street_address'])) {
+  $address = $data['street_address'];
+
+  $node->set('field_app_street_address', [
+    'country_code' => 'US',
+    'address_line1' => $address['address'] ?? '',
+    'address_line2' => $address['address_2'] ?? '',
+    'locality' => $address['city'] ?? '',
+    'administrative_area' => $address['state_province'] ?? '',
+    'postal_code' => $address['postal_code'] ?? '',
+  ]);
+}
+
+  $node->save();
+
+  $node->set('field_app_reference_number', 'APP-' . $node->id());
+  $node->save();
+}

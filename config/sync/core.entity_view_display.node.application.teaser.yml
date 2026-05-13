@@ -6,15 +6,22 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.application.body
     - field.field.node.application.field_app_assigned_to
+    - field.field.node.application.field_app_created_student
     - field.field.node.application.field_app_decision_date
     - field.field.node.application.field_app_description
     - field.field.node.application.field_app_documents
+    - field.field.node.application.field_app_grade_applying_for
+    - field.field.node.application.field_app_parent_guardian_email
+    - field.field.node.application.field_app_parent_guardian_name
+    - field.field.node.application.field_app_parent_guardian_phone
     - field.field.node.application.field_app_priority
     - field.field.node.application.field_app_reference_number
-    - field.field.node.application.field_app_requester_email
-    - field.field.node.application.field_app_requester_name
-    - field.field.node.application.field_app_requester_phone
     - field.field.node.application.field_app_status
+    - field.field.node.application.field_app_street_address
+    - field.field.node.application.field_app_student_dob
+    - field.field.node.application.field_app_student_first_name
+    - field.field.node.application.field_app_student_gender
+    - field.field.node.application.field_app_student_last_name
     - field.field.node.application.field_app_submitted_date
     - field.field.node.application.field_app_type
     - node.type.application
@@ -34,6 +41,11 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -41,14 +53,21 @@ content:
     region: content
 hidden:
   field_app_assigned_to: true
+  field_app_created_student: true
   field_app_decision_date: true
   field_app_description: true
   field_app_documents: true
+  field_app_grade_applying_for: true
+  field_app_parent_guardian_email: true
+  field_app_parent_guardian_name: true
+  field_app_parent_guardian_phone: true
   field_app_priority: true
   field_app_reference_number: true
-  field_app_requester_email: true
-  field_app_requester_name: true
-  field_app_requester_phone: true
   field_app_status: true
+  field_app_street_address: true
+  field_app_student_dob: true
+  field_app_student_first_name: true
+  field_app_student_gender: true
+  field_app_student_last_name: true
   field_app_submitted_date: true
   field_app_type: true

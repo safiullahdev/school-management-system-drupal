@@ -1,15 +1,15 @@
-uuid: 8caec703-49a4-471f-9c89-f1b53b95d190
+uuid: 533d9e6d-4fa8-4abd-8dfd-5c9877e67822
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_app_requester_email
+    - field.storage.node.field_app_parent_guardian_email
     - node.type.application
-id: node.application.field_app_requester_email
-field_name: field_app_requester_email
+id: node.application.field_app_parent_guardian_email
+field_name: field_app_parent_guardian_email
 entity_type: node
 bundle: application
-label: 'Requester Email'
+label: 'Parent Guardian Email'
 description: ''
 required: false
 translatable: false

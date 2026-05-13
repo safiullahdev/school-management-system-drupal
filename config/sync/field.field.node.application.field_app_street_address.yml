@@ -1,0 +1,41 @@
+uuid: 6ecddb2d-d4b6-4f5f-9cc2-098016ac5a31
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_app_street_address
+    - node.type.application
+  module:
+    - address
+id: node.application.field_app_street_address
+field_name: field_app_street_address
+entity_type: node
+bundle: application
+label: 'Street Address'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    langcode: null
+    country_code: US
+    administrative_area: ''
+    locality: ''
+    dependent_locality: null
+    postal_code: ''
+    sorting_code: null
+    address_line1: ''
+    address_line2: ''
+    address_line3: ''
+    organization: ''
+    given_name: ''
+    additional_name: null
+    family_name: ''
+default_value_callback: ''
+settings:
+  available_countries:
+    US: US
+  langcode_override: ''
+  field_overrides: {  }
+  fields: {  }
+field_type: address

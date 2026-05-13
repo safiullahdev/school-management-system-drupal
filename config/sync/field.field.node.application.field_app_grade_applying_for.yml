@@ -1,0 +1,21 @@
+uuid: b0d4ec8e-52d0-44c5-94ff-34610f3714d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_app_grade_applying_for
+    - node.type.application
+  module:
+    - options
+id: node.application.field_app_grade_applying_for
+field_name: field_app_grade_applying_for
+entity_type: node
+bundle: application
+label: 'Grade Applying For'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,8 @@
+name: School Admission Webform
+type: module
+description: Creates Application nodes from Admission Webform submissions.
+core_version_requirement: ^10 || ^11
+package: Custom
+dependencies:
+  - drupal:node
+  - webform:webform

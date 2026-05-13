@@ -1,14 +1,15 @@
-uuid: 0854f515-8e46-467a-a5af-bccc91c0b150
+uuid: 229a67ac-cedc-4565-81ca-111a1cfa913d
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_app_requester_email
-field_name: field_app_requester_email
+id: node.field_app_created_student
+field_name: field_app_created_student
 entity_type: node
-type: email
-settings: {  }
+type: entity_reference
+settings:
+  target_type: node
 module: core
 locked: false
 cardinality: 1

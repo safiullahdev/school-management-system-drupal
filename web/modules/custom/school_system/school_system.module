@@ -29,6 +29,11 @@ function school_system_entity_update(\Drupal\Core\Entity\EntityInterface $entity
     \Drupal::messenger()->addMessage('SMD-40: Application is not approved. Student not created.');
     return;
   }
+  // Prevent duplicate student creation.
+  if ($entity->hasField('field_app_created_student') && !$entity->get('field_app_created_student')->isEmpty()) {
+    \Drupal::messenger()->addMessage('SMD-40: Application already has a created student.');
+    return;
+  }
 
   // Check if student already exists for this application.
   $existing = \Drupal::entityTypeManager()
@@ -43,25 +48,38 @@ function school_system_entity_update(\Drupal\Core\Entity\EntityInterface $entity
     return;
   }
 
-  // Create student node.
+  $student_first_name = $entity->get('field_app_student_first_name')->value ?? '';
+  $student_last_name = $entity->get('field_app_student_last_name')->value ?? '';
+  $student_title = trim($student_first_name . ' ' . $student_last_name);
+
   $student = Node::create([
     'type' => 'student',
-    'title' => $entity->get('field_app_requester_name')->value,
-    'field_student_email' => $entity->get('field_app_requester_email')->value,
-    'field_student_phone' => $entity->get('field_app_requester_phone')->value,
-    'field_student_source_application' => $entity->id(),
+    'title' => $student_title ?: $entity->getTitle(),
+    'field_student_email' => $entity->get('field_app_parent_guardian_email')->value ?? '',
+    'field_student_phone' => $entity->get('field_app_parent_guardian_phone')->value ?? '',
+    'field_student_source_application' => [
+      'target_id' => $entity->id(),
+    ],
     'field_student_status' => 'approved',
     'status' => 1,
   ]);
 
-  $student->save();
+$student->save();
 
-  \Drupal::messenger()->addMessage('SMD-40: Student created successfully from approved application.');
+\Drupal::messenger()->addMessage('SMD-40: Student created successfully from approved application.');
 
-  $student_id = 'STU-' . str_pad($student->id(), 4, '0', STR_PAD_LEFT);
-  
-  $student->set('field_student_id', $student_id);
-  $student->save();
+$student_id = 'STU-' . str_pad($student->id(), 4, '0', STR_PAD_LEFT);
 
-  \Drupal::messenger()->addMessage('SMD-41: Student ID generated: ' . $student_id);
+$student->set('field_student_id', $student_id);
+$student->save();
+
+// Save reference to the created Student on the Application node.
+if ($entity->hasField('field_app_created_student')) {
+  $entity->set('field_app_created_student', [
+    'target_id' => $student->id(),
+  ]);
+  $entity->save();
+}
+
+\Drupal::messenger()->addMessage('SMD-41: Student ID generated: ' . $student_id);
 }

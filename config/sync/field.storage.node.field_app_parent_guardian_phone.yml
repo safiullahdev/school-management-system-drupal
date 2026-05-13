@@ -1,0 +1,19 @@
+uuid: ca500321-a2f0-47c6-a7d2-ec61ef5f7544
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - telephone
+id: node.field_app_parent_guardian_phone
+field_name: field_app_parent_guardian_phone
+entity_type: node
+type: telephone
+settings: {  }
+module: telephone
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

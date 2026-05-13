@@ -16,6 +16,63 @@ elements: |-
   student_first_name:
     '#type': textfield
     '#title': 'Student First Name'
+  student_last_name:
+    '#type': textfield
+    '#title': 'Student Last Name'
+  student_date_of_birth:
+    '#type': date
+    '#title': 'Student Date of Birth'
+  student_gender:
+    '#type': select
+    '#title': 'Student Gender'
+    '#options':
+      male: Male
+      female: Female
+      prefer_not_to_say: 'Prefer not to say'
+  grade_applying_for:
+    '#type': select
+    '#title': 'Grade Applying For'
+    '#options':
+      pre_k: pre_k
+      kindergarten: kindergarten
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+      6: '6'
+      7: '7'
+      8: '8'
+      9: '9'
+  application_type:
+    '#type': select
+    '#title': 'Application Type'
+    '#options':
+      student_admission: 'Student Admission'
+      leave_request: 'Leave Request'
+      staff_request: 'Staff Request'
+      general_request: 'General Request'
+  parent_guardian_name:
+    '#type': textfield
+    '#title': 'Parent/Guardian Name'
+  parent_guardian_email:
+    '#type': email
+    '#title': 'Parent/Guardian Email'
+  parent_guardian_phone:
+    '#type': tel
+    '#title': 'Parent/Guardian Phone'
+  street_address:
+    '#type': webform_address
+    '#title': 'Street Address'
+    '#state_province__options': state_province_codes
+    '#country__access': false
+  description:
+    '#type': textarea
+    '#title': Description
+  agreement_certification:
+    '#type': checkbox
+    '#title': 'Agreement / Certification'
+    '#description': '<p>I certify that the information provided is accurate to the best of my knowledge.</p>'
 css: ''
 javascript: ''
 settings:
@@ -123,7 +180,7 @@ settings:
   confirmation_type: page
   confirmation_url: ''
   confirmation_title: ''
-  confirmation_message: ''
+  confirmation_message: '<p>Thank you. Your admission application has been submitted successfully.</p>'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
