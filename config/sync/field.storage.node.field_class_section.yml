@@ -1,0 +1,27 @@
+uuid: 1982b257-ca56-488d-81f8-2f12df3e0274
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_class_section
+field_name: field_class_section
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: section_a
+      label: 'Section A'
+    -
+      value: section_b
+      label: 'Section B'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

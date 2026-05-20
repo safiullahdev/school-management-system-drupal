@@ -3,10 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.class.body
     - field.field.node.class.field_class_capacity
+    - field.field.node.class.field_class_code
+    - field.field.node.class.field_class_description
+    - field.field.node.class.field_class_grade_level
     - field.field.node.class.field_class_room
+    - field.field.node.class.field_class_school_year
+    - field.field.node.class.field_class_section
     - field.field.node.class.field_class_status
+    - field.field.node.class.field_class_students
+    - field.field.node.class.field_class_teacher
     - node.type.class
   module:
     - options
@@ -17,13 +23,6 @@ targetEntityType: node
 bundle: class
 mode: default
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 101
-    region: content
   field_class_capacity:
     type: number_integer
     label: above
@@ -33,6 +32,28 @@ content:
     third_party_settings: {  }
     weight: 103
     region: content
+  field_class_code:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_class_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_class_grade_level:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
   field_class_room:
     type: string
     label: above
@@ -41,12 +62,42 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
+  field_class_school_year:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_class_section:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 107
+    region: content
   field_class_status:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
     weight: 104
+    region: content
+  field_class_students:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_class_teacher:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 109
     region: content
   links:
     settings: {  }

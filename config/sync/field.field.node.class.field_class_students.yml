@@ -1,0 +1,29 @@
+uuid: 1b0895fd-6101-471c-8fe6-ce298d3a62e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_class_students
+    - node.type.class
+    - node.type.student
+id: node.class.field_class_students
+field_name: field_class_students
+entity_type: node
+bundle: class
+label: 'Class Students'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      student: student
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

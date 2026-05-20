@@ -1,0 +1,21 @@
+uuid: 14f356c1-1493-4fab-8a6b-d5367209d0dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_class_section
+    - node.type.class
+  module:
+    - options
+id: node.class.field_class_section
+field_name: field_class_section
+entity_type: node
+bundle: class
+label: 'Class Section'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

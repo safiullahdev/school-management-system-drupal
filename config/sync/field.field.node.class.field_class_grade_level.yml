@@ -1,0 +1,21 @@
+uuid: 13cfb13d-e84a-476a-a30f-a4c4ac41d972
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_class_grade_level
+    - node.type.class
+  module:
+    - options
+id: node.class.field_class_grade_level
+field_name: field_class_grade_level
+entity_type: node
+bundle: class
+label: 'Grade Level'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

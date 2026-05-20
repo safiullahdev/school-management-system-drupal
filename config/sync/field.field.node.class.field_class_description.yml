@@ -1,0 +1,24 @@
+uuid: ab0ec2f6-653f-4a9d-b97b-106a9e918c05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_class_description
+    - filter.format.basic_html
+    - node.type.class
+  module:
+    - text
+id: node.class.field_class_description
+field_name: field_class_description
+entity_type: node
+bundle: class
+label: 'Class Description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long
