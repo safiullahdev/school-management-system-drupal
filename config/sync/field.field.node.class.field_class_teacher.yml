@@ -24,6 +24,14 @@ settings:
       direction: ASC
     auto_create: false
     filter:
-      type: _none
+      type: role
+      role:
+        teacher: teacher
+        content_editor: '0'
+        administrator: '0'
+        parent: '0'
+        registrar: '0'
+        admin: '0'
+        student: '0'
     include_anonymous: true
 field_type: entity_reference

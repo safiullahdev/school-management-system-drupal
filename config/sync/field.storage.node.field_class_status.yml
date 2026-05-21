@@ -12,26 +12,14 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: draft
-      label: Draft
-    -
-      value: submitted
-      label: Submitted
-    -
-      value: under_review
-      label: 'Under Review'
-    -
-      value: approved
-      label: Approved
-    -
-      value: rejected
-      label: Rejected
-    -
-      value: needs_update
-      label: 'Needs Update'
+      value: archived
+      label: Archived
     -
       value: active
       label: Active
+    -
+      value: inactive
+      label: Inactive
   allowed_values_function: ''
 module: options
 locked: false
