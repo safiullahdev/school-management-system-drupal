@@ -29,6 +29,7 @@ dependencies:
     - datetime
     - file
     - options
+    - telephone
     - text
     - user
 id: node.application.default
@@ -111,9 +112,10 @@ content:
     weight: 126
     region: content
   field_app_parent_guardian_phone:
-    type: basic_string
+    type: telephone_link
     label: above
-    settings: {  }
+    settings:
+      title: ''
     third_party_settings: {  }
     weight: 128
     region: content

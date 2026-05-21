@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.student.field_student_phone
     - field.field.node.student.field_student_source_application
     - field.field.node.student.field_student_status
+    - field.field.node.student.field_student_user
     - node.type.student
   module:
     - user
@@ -28,3 +29,4 @@ hidden:
   field_student_phone: true
   field_student_source_application: true
   field_student_status: true
+  field_student_user: true

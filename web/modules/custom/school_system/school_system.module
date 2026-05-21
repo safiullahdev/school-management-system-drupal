@@ -1,85 +1,150 @@
 <?php
 
 use Drupal\node\Entity\Node;
+use Drupal\user\Entity\User;
 
 /**
  * Implements hook_entity_update().
  */
 function school_system_entity_update(\Drupal\Core\Entity\EntityInterface $entity) {
 
-  // Only for Application nodes.
+static $processing = FALSE;
+
+if ($processing) {
+  return;
+}
+
+  // Only run for Application nodes.
   if ($entity->getEntityTypeId() !== 'node' || $entity->bundle() !== 'application') {
     return;
   }
 
-  \Drupal::messenger()->addMessage('SMD-40: Application update hook is running.');
+  \Drupal::messenger()->addMessage('SMD-81: Application update hook is running.');
 
-  // Check application workflow state.
   if (!$entity->hasField('moderation_state')) {
-    \Drupal::messenger()->addMessage('SMD-40: moderation_state field not found.');
+    \Drupal::messenger()->addMessage('SMD-81: moderation_state field not found.');
     return;
   }
 
   $status = $entity->get('moderation_state')->value;
 
-  \Drupal::messenger()->addMessage('SMD-40: Application state is ' . $status);
-
-  // Only continue if Approved.
   if ($status !== 'approved') {
-    \Drupal::messenger()->addMessage('SMD-40: Application is not approved. Student not created.');
-    return;
-  }
-  // Prevent duplicate student creation.
-  if ($entity->hasField('field_app_created_student') && !$entity->get('field_app_created_student')->isEmpty()) {
-    \Drupal::messenger()->addMessage('SMD-40: Application already has a created student.');
+    \Drupal::messenger()->addMessage('SMD-81: Application is not approved. No student/user created.');
     return;
   }
 
-  // Check if student already exists for this application.
-  $existing = \Drupal::entityTypeManager()
-    ->getStorage('node')
-    ->loadByProperties([
+  $student = NULL;
+
+  // 1. First check if Application already has a linked Student.
+  if ($entity->hasField('field_app_created_student') && !$entity->get('field_app_created_student')->isEmpty()) {
+    $student = $entity->get('field_app_created_student')->entity;
+    \Drupal::messenger()->addMessage('SMD-81: Linked student found on application.');
+  }
+
+  // 2. If not linked, check if Student already exists from this Application.
+  if (!$student) {
+    $existing_students = \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->loadByProperties([
+        'type' => 'student',
+        'field_student_source_application' => $entity->id(),
+      ]);
+
+    if (!empty($existing_students)) {
+      $student = reset($existing_students);
+      \Drupal::messenger()->addMessage('SMD-81: Existing student found by source application.');
+    }
+  }
+
+  // 3. If no Student exists, create one.
+  if (!$student) {
+    $student_first_name = $entity->get('field_app_student_first_name')->value ?? '';
+    $student_last_name = $entity->get('field_app_student_last_name')->value ?? '';
+    $student_title = trim($student_first_name . ' ' . $student_last_name);
+
+    $student = Node::create([
       'type' => 'student',
-      'field_student_source_application' => $entity->id(),
+      'title' => $student_title ?: $entity->getTitle(),
+      'field_student_email' => $entity->get('field_app_parent_guardian_email')->value ?? '',
+      'field_student_phone' => $entity->get('field_app_parent_guardian_phone')->value ?? '',
+      'field_student_source_application' => [
+        'target_id' => $entity->id(),
+      ],
+      'field_student_status' => 'approved',
+      'status' => 1,
     ]);
 
-  if (!empty($existing)) {
-    \Drupal::messenger()->addMessage('SMD-40: Student already exists for this application.');
-    return;
+    $student->save();
+
+    $student_id = 'STU-' . str_pad($student->id(), 4, '0', STR_PAD_LEFT);
+
+    if ($student->hasField('field_student_id')) {
+      $student->set('field_student_id', $student_id);
+      $student->save();
+    }
+
+    \Drupal::messenger()->addMessage('SMD-81: Student node created.');
   }
 
-  $student_first_name = $entity->get('field_app_student_first_name')->value ?? '';
-  $student_last_name = $entity->get('field_app_student_last_name')->value ?? '';
-  $student_title = trim($student_first_name . ' ' . $student_last_name);
+  // 4. Link Student back to Application.
+  if ($entity->hasField('field_app_created_student') && $student) {
+    $entity->set('field_app_created_student', [
+      'target_id' => $student->id(),
+    ]);
+  }
 
-  $student = Node::create([
-    'type' => 'student',
-    'title' => $student_title ?: $entity->getTitle(),
-    'field_student_email' => $entity->get('field_app_parent_guardian_email')->value ?? '',
-    'field_student_phone' => $entity->get('field_app_parent_guardian_phone')->value ?? '',
-    'field_student_source_application' => [
-      'target_id' => $entity->id(),
-    ],
-    'field_student_status' => 'approved',
-    'status' => 1,
-  ]);
+  // 5. Create or link Student User.
+  $email = $entity->get('field_app_parent_guardian_email')->value ?? '';
 
-$student->save();
+  if (!empty($email) && $student) {
+    $existing_users = \Drupal::entityTypeManager()
+      ->getStorage('user')
+      ->loadByProperties(['mail' => $email]);
 
-\Drupal::messenger()->addMessage('SMD-40: Student created successfully from approved application.');
+    if (!empty($existing_users)) {
+      $user = reset($existing_users);
+      \Drupal::messenger()->addMessage('SMD-81: Existing user found.');
+    }
+    else {
+      $student_first_name = $entity->get('field_app_student_first_name')->value ?? '';
+      $student_last_name = $entity->get('field_app_student_last_name')->value ?? '';
 
-$student_id = 'STU-' . str_pad($student->id(), 4, '0', STR_PAD_LEFT);
+      $username = strtolower($student_first_name . '.' . $student_last_name . '.' . $student->id());
+      $username = preg_replace('/[^a-z0-9_.-]/', '', $username);
 
-$student->set('field_student_id', $student_id);
-$student->save();
+      $user = User::create([
+        'name' => $username,
+        'mail' => $email,
+        'pass' => 'Test@123',
+        'status' => 1,
+        'roles' => ['student'],
+      ]);
 
-// Save reference to the created Student on the Application node.
-if ($entity->hasField('field_app_created_student')) {
-  $entity->set('field_app_created_student', [
-    'target_id' => $student->id(),
-  ]);
-  $entity->save();
-}
+      $user->save();
 
-\Drupal::messenger()->addMessage('SMD-41: Student ID generated: ' . $student_id);
+      \Drupal::messenger()->addMessage('SMD-81: Student user account created.');
+    }
+
+    // Link user to Student node.
+    if ($student->hasField('field_student_user')) {
+      $student->set('field_student_user', [
+        'target_id' => $user->id(),
+      ]);
+      $student->save();
+
+      \Drupal::messenger()->addMessage('SMD-81: Student user linked to Student node.');
+    }
+  }
+  else {
+    \Drupal::messenger()->addMessage('SMD-81: No email found. User account not created.');
+  }
+
+ // Save Application updates safely.
+$processing = TRUE;
+$entity->save();
+$processing = FALSE;
+
+\Drupal::messenger()->addMessage('SMD-81: Student/user processing completed.');
+
+  \Drupal::messenger()->addMessage('SMD-81: Student/user processing completed.');
 }

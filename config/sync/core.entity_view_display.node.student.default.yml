@@ -8,9 +8,11 @@ dependencies:
     - field.field.node.student.field_student_phone
     - field.field.node.student.field_student_source_application
     - field.field.node.student.field_student_status
+    - field.field.node.student.field_student_user
     - node.type.student
   module:
     - options
+    - telephone
     - user
 id: node.student.default
 targetEntityType: node
@@ -33,9 +35,10 @@ content:
     weight: 110
     region: content
   field_student_phone:
-    type: basic_string
+    type: telephone_link
     label: above
-    settings: {  }
+    settings:
+      title: ''
     third_party_settings: {  }
     weight: 111
     region: content
@@ -53,6 +56,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 108
+    region: content
+  field_student_user:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 113
     region: content
   links:
     settings: {  }
