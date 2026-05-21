@@ -1,0 +1,20 @@
+uuid: 3bc8acf1-5541-4094-a608-668d79990ae3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+id: node.field_class_teacher
+field_name: field_class_teacher
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

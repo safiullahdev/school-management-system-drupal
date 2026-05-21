@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.application
+    - node.type.class
     - workflows.workflow.application_workflow
   module:
     - content_moderation
@@ -22,14 +23,22 @@ permissions:
   - 'access toolbar'
   - 'access user profiles'
   - 'access webform overview'
+  - 'create class content'
+  - 'delete any class content'
+  - 'delete class revisions'
+  - 'delete own class content'
   - 'edit any application content'
+  - 'edit any class content'
   - 'edit field_app_status'
+  - 'edit own class content'
   - 'edit own field_app_status'
+  - 'revert class revisions'
   - 'use application_workflow transition approve'
   - 'use application_workflow transition reject'
   - 'view any unpublished content'
   - 'view any webform submission'
   - 'view application revisions'
+  - 'view class revisions'
   - 'view field_app_status'
   - 'view latest version'
   - 'view own field_app_status'

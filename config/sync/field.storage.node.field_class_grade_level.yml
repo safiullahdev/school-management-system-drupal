@@ -1,25 +1,22 @@
-uuid: 17fb66e0-a2f0-4b0a-8d39-33ba91e926de
+uuid: 341a6a9e-850c-4ae0-8480-defa65c91c23
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - options
-id: node.field_class_status
-field_name: field_class_status
+id: node.field_class_grade_level
+field_name: field_class_grade_level
 entity_type: node
 type: list_string
 settings:
   allowed_values:
     -
-      value: archived
-      label: Archived
+      value: grade_1
+      label: 'Grade 1'
     -
-      value: active
-      label: Active
-    -
-      value: inactive
-      label: Inactive
+      value: grade_2
+      label: 'Grade 2'
   allowed_values_function: ''
 module: options
 locked: false

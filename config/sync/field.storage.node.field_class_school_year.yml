@@ -1,25 +1,22 @@
-uuid: 17fb66e0-a2f0-4b0a-8d39-33ba91e926de
+uuid: 66d227b1-ad7d-47f1-a78c-ce2be908f992
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - options
-id: node.field_class_status
-field_name: field_class_status
+id: node.field_class_school_year
+field_name: field_class_school_year
 entity_type: node
 type: list_string
 settings:
   allowed_values:
     -
-      value: archived
-      label: Archived
+      value: '2026_2027'
+      label: 2026-2027
     -
-      value: active
-      label: Active
-    -
-      value: inactive
-      label: Inactive
+      value: '2027_2028'
+      label: 2027-2028
   allowed_values_function: ''
 module: options
 locked: false
