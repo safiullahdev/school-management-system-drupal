@@ -37,17 +37,10 @@ targetEntityType: node
 bundle: application
 mode: default
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 101
-    region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_app_assigned_to:
     type: entity_reference_label
@@ -55,7 +48,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 116
+    weight: 17
     region: content
   field_app_created_student:
     type: entity_reference_label
@@ -63,23 +56,23 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 131
+    weight: 19
     region: content
   field_app_decision_date:
     type: datetime_default
     label: above
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: html_date
     third_party_settings: {  }
-    weight: 118
+    weight: 16
     region: content
   field_app_description:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 113
+    weight: 12
     region: content
   field_app_documents:
     type: file_default
@@ -87,21 +80,21 @@ content:
     settings:
       use_description_as_link_text: true
     third_party_settings: {  }
-    weight: 120
+    weight: 13
     region: content
   field_app_grade_applying_for:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 130
+    weight: 6
     region: content
   field_app_parent_guardian_email:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 127
+    weight: 8
     region: content
   field_app_parent_guardian_name:
     type: string
@@ -109,7 +102,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 126
+    weight: 7
     region: content
   field_app_parent_guardian_phone:
     type: telephone_link
@@ -117,14 +110,7 @@ content:
     settings:
       title: ''
     third_party_settings: {  }
-    weight: 128
-    region: content
-  field_app_priority:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 115
+    weight: 9
     region: content
   field_app_reference_number:
     type: string
@@ -132,30 +118,30 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 119
+    weight: 18
     region: content
   field_app_status:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 114
+    weight: 14
     region: content
   field_app_street_address:
     type: address_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 129
+    weight: 10
     region: content
   field_app_student_dob:
     type: datetime_default
     label: above
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: html_date
     third_party_settings: {  }
-    weight: 123
+    weight: 5
     region: content
   field_app_student_first_name:
     type: string
@@ -163,14 +149,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 121
+    weight: 2
     region: content
   field_app_student_gender:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 124
+    weight: 4
     region: content
   field_app_student_last_name:
     type: string
@@ -178,27 +164,29 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 122
+    weight: 3
     region: content
   field_app_submitted_date:
     type: datetime_default
     label: above
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: html_date
     third_party_settings: {  }
-    weight: 117
+    weight: 15
     region: content
   field_app_type:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 112
+    weight: 11
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
-hidden: {  }
+hidden:
+  body: true
+  field_app_priority: true

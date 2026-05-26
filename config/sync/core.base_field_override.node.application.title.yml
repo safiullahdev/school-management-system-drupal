@@ -1,0 +1,18 @@
+uuid: 92701d7b-785a-454d-81e6-d5c5c2f23177
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.application
+id: node.application.title
+field_name: title
+entity_type: node
+bundle: application
+label: 'Application Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
