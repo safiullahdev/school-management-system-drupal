@@ -1,0 +1,29 @@
+uuid: a8ff1ceb-50ed-415e-923c-3395c147a93f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_student
+    - node.type.grades
+    - node.type.student
+id: node.grades.field_student
+field_name: field_student
+entity_type: node
+bundle: grades
+label: Student
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      student: student
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

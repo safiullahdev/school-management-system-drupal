@@ -1,0 +1,33 @@
+uuid: eaef2ba2-5df5-4342-ac0d-77fefbd24484
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_grade_status
+field_name: field_grade_status
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: draft
+      label: Draft
+    -
+      value: submitted
+      label: Submitted
+    -
+      value: published
+      label: Published
+    -
+      value: rejected
+      label: Rejected
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

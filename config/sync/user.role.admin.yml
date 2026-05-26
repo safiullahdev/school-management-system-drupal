@@ -5,7 +5,9 @@ dependencies:
   config:
     - node.type.application
     - node.type.class
+    - node.type.grades
     - workflows.workflow.application_workflow
+    - workflows.workflow.grade_workflow
   module:
     - content_moderation
     - field_permissions
@@ -29,12 +31,16 @@ permissions:
   - 'delete own class content'
   - 'edit any application content'
   - 'edit any class content'
+  - 'edit any grades content'
   - 'edit field_app_status'
   - 'edit own class content'
   - 'edit own field_app_status'
   - 'revert class revisions'
   - 'use application_workflow transition approve'
   - 'use application_workflow transition reject'
+  - 'use grade_workflow transition publish'
+  - 'use grade_workflow transition reject'
+  - 'use grade_workflow transition return_to_draft'
   - 'view any unpublished content'
   - 'view any webform submission'
   - 'view application revisions'

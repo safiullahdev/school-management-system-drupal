@@ -1,0 +1,21 @@
+uuid: fae7d6ba-8e77-4856-96b5-fafff7d6ccb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grade_status
+    - node.type.grades
+  module:
+    - options
+id: node.grades.field_grade_status
+field_name: field_grade_status
+entity_type: node
+bundle: grades
+label: 'Grade Status'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

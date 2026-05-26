@@ -2,7 +2,11 @@ uuid: d7372209-ad3f-469d-b5ee-08d6eedac2b0
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.grades
+    - workflows.workflow.grade_workflow
   module:
+    - content_moderation
     - node
     - toolbar
     - webform
@@ -13,5 +17,11 @@ is_admin: null
 permissions:
   - 'access toolbar'
   - 'access user profiles'
+  - 'create grades content'
+  - 'edit own grades content'
+  - 'use grade_workflow transition create_new_draft'
+  - 'use grade_workflow transition recall_submission'
+  - 'use grade_workflow transition submit_for_approval'
+  - 'view grades revisions'
   - 'view own unpublished content'
   - 'view own webform submission'

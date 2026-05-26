@@ -1,0 +1,155 @@
+uuid: 50a29544-1656-4818-9dd3-a5478b6c37fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.grades.body
+    - field.field.node.grades.field_class
+    - field.field.node.grades.field_grade_approved_by
+    - field.field.node.grades.field_grade_assignment_name
+    - field.field.node.grades.field_grade_assignment_type
+    - field.field.node.grades.field_grade_comments
+    - field.field.node.grades.field_grade_letter
+    - field.field.node.grades.field_grade_max_score
+    - field.field.node.grades.field_grade_percentage
+    - field.field.node.grades.field_grade_published_date
+    - field.field.node.grades.field_grade_school_year
+    - field.field.node.grades.field_grade_score
+    - field.field.node.grades.field_grade_status
+    - field.field.node.grades.field_grade_subject
+    - field.field.node.grades.field_grade_submitted_date
+    - field.field.node.grades.field_grade_teacher
+    - field.field.node.grades.field_grade_term
+    - field.field.node.grades.field_student
+    - node.type.grades
+    - workflows.workflow.grade_workflow
+  module:
+    - content_moderation
+id: node.grades.default
+targetEntityType: node
+bundle: grades
+mode: default
+content:
+  field_class:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_grade_assignment_name:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_grade_assignment_type:
+    type: options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_grade_comments:
+    type: string_textarea
+    weight: 12
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_grade_letter:
+    type: options_select
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_grade_school_year:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_grade_score:
+    type: number
+    weight: 9
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_grade_subject:
+    type: entity_reference_autocomplete
+    weight: 4
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_grade_teacher:
+    type: entity_reference_autocomplete
+    weight: 11
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_grade_term:
+    type: entity_reference_autocomplete
+    weight: 6
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_student:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  created: true
+  field_grade_approved_by: true
+  field_grade_max_score: true
+  field_grade_percentage: true
+  field_grade_published_date: true
+  field_grade_status: true
+  field_grade_submitted_date: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

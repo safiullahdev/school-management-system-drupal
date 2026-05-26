@@ -1,0 +1,23 @@
+uuid: e1d64201-3a68-4a26-9f45-7f194afe0ab3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grade_percentage
+    - node.type.grades
+id: node.grades.field_grade_percentage
+field_name: field_grade_percentage
+entity_type: node
+bundle: grades
+label: Percentage
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

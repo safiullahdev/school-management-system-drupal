@@ -1,0 +1,20 @@
+uuid: c8416cd4-7e5f-4e7f-8616-f3ec2811dc2b
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_grade_submitted_date
+field_name: field_grade_submitted_date
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 6766230b-1eed-4313-9d97-8692aa2ef8eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grade_assignment_type
+    - node.type.grades
+  module:
+    - options
+id: node.grades.field_grade_assignment_type
+field_name: field_grade_assignment_type
+entity_type: node
+bundle: grades
+label: 'Assignment Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,29 @@
+uuid: bf6df18f-7b12-4c7d-88d6-5d79eb95e43e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grade_term
+    - node.type.grades
+    - taxonomy.vocabulary.academic_terms
+id: node.grades.field_grade_term
+field_name: field_grade_term
+entity_type: node
+bundle: grades
+label: 'Grade Term'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      academic_terms: academic_terms
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,21 @@
+uuid: 57779df0-ec38-4015-9f3f-073cd788dd0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grade_letter
+    - node.type.grades
+  module:
+    - options
+id: node.grades.field_grade_letter
+field_name: field_grade_letter
+entity_type: node
+bundle: grades
+label: 'Grade Letter'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

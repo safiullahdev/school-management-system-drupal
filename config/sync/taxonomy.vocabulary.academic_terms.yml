@@ -1,0 +1,9 @@
+uuid: 27d8698e-a6c2-4c07-a7e0-c1108eb87819
+langcode: en
+status: true
+dependencies: {  }
+name: 'Academic Terms'
+vid: academic_terms
+description: null
+weight: 0
+new_revision: false

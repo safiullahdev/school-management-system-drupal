@@ -1,0 +1,20 @@
+uuid: f0e8559a-3028-4ffc-a0bc-9a44d315b27e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_grade_term
+field_name: field_grade_term
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
