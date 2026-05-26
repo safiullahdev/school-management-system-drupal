@@ -14,7 +14,7 @@ dependencies:
     - node.type.grades
     - user.role.admin
     - user.role.administrator
-    - workflows.workflow.application_workflow
+    - workflows.workflow.grade_workflow
   module:
     - content_moderation
     - node
@@ -799,10 +799,9 @@ display:
           plugin_id: moderation_state_filter
           operator: in
           value:
-            application_workflow-published: application_workflow-published
-            application_workflow-submitted: application_workflow-submitted
-            application_workflow-approved: application_workflow-approved
-            application_workflow-rejected: application_workflow-rejected
+            grade_workflow-published: grade_workflow-published
+            grade_workflow-submitted: grade_workflow-submitted
+            grade_workflow-rejected: grade_workflow-rejected
           group: 1
           exposed: false
           expose:
@@ -873,7 +872,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: '-school-admin-grade-review-queue'
+      path: admin/grades
     cache_metadata:
       max-age: -1
       contexts:

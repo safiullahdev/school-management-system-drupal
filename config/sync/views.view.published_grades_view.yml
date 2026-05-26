@@ -21,7 +21,7 @@ dependencies:
     - user.role.registrar
     - user.role.student
     - user.role.teacher
-    - workflows.workflow.application_workflow
+    - workflows.workflow.grade_workflow
   module:
     - content_moderation
     - node
@@ -876,7 +876,7 @@ display:
           plugin_id: moderation_state_filter
           operator: in
           value:
-            application_workflow-published: application_workflow-published
+            grade_workflow-published: grade_workflow-published
           group: 1
           exposed: false
           expose:
