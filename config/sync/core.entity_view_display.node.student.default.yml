@@ -3,14 +3,27 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.student.field_student_address
+    - field.field.node.student.field_student_dob
     - field.field.node.student.field_student_email
+    - field.field.node.student.field_student_emergency_contact
+    - field.field.node.student.field_student_emergency_phone
+    - field.field.node.student.field_student_enrollment_date
+    - field.field.node.student.field_student_first_name
+    - field.field.node.student.field_student_gender
+    - field.field.node.student.field_student_grade_class
     - field.field.node.student.field_student_id
+    - field.field.node.student.field_student_last_name
     - field.field.node.student.field_student_phone
+    - field.field.node.student.field_student_photo
     - field.field.node.student.field_student_source_application
     - field.field.node.student.field_student_status
     - field.field.node.student.field_student_user
     - node.type.student
   module:
+    - address
+    - datetime
+    - image
     - options
     - telephone
     - user
@@ -19,20 +32,92 @@ targetEntityType: node
 bundle: student
 mode: default
 content:
+  field_student_address:
+    type: address_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_student_dob:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_student_email:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 109
+    weight: 9
     region: content
-  field_student_id:
+  field_student_emergency_contact:
     type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 110
+    weight: 12
+    region: content
+  field_student_emergency_phone:
+    type: telephone_link
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_student_enrollment_date:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_student_first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_student_gender:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_student_grade_class:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_student_id:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_student_last_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_student_phone:
     type: telephone_link
@@ -40,34 +125,45 @@ content:
     settings:
       title: ''
     third_party_settings: {  }
-    weight: 111
+    weight: 10
+    region: content
+  field_student_photo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
     region: content
   field_student_source_application:
     type: entity_reference_label
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
-    weight: 112
+    weight: 14
     region: content
   field_student_status:
     type: list_default
-    label: above
+    label: inline
     settings: {  }
     third_party_settings: {  }
-    weight: 108
+    weight: 4
     region: content
   field_student_user:
     type: entity_reference_label
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
-    weight: 113
+    weight: 15
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 16
     region: content
 hidden: {  }

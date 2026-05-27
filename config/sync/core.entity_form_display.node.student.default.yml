@@ -3,39 +3,112 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.student.field_student_address
+    - field.field.node.student.field_student_dob
     - field.field.node.student.field_student_email
+    - field.field.node.student.field_student_emergency_contact
+    - field.field.node.student.field_student_emergency_phone
+    - field.field.node.student.field_student_enrollment_date
+    - field.field.node.student.field_student_first_name
+    - field.field.node.student.field_student_gender
+    - field.field.node.student.field_student_grade_class
     - field.field.node.student.field_student_id
+    - field.field.node.student.field_student_last_name
     - field.field.node.student.field_student_phone
+    - field.field.node.student.field_student_photo
     - field.field.node.student.field_student_source_application
     - field.field.node.student.field_student_status
     - field.field.node.student.field_student_user
+    - image.style.thumbnail
     - node.type.student
   module:
+    - address
     - content_moderation
-    - path
+    - datetime
+    - image
     - telephone
 id: node.student.default
 targetEntityType: node
 bundle: student
 mode: default
 content:
-  created:
-    type: datetime_timestamp
-    weight: 10
+  field_student_address:
+    type: address_default
+    weight: 7
+    region: content
+    settings:
+      wrapper_type: fieldset
+    third_party_settings: {  }
+  field_student_dob:
+    type: datetime_default
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   field_student_email:
     type: email_default
-    weight: 129
+    weight: 5
     region: content
     settings:
       placeholder: ''
       size: 60
     third_party_settings: {  }
+  field_student_emergency_contact:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_student_emergency_phone:
+    type: telephone_default
+    weight: 13
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_student_enrollment_date:
+    type: datetime_default
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_student_first_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_student_gender:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_student_grade_class:
+    type: entity_reference_autocomplete
+    weight: 8
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_student_id:
     type: string_textfield
-    weight: 130
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_student_last_name:
+    type: string_textfield
+    weight: 1
     region: content
     settings:
       size: 60
@@ -43,14 +116,22 @@ content:
     third_party_settings: {  }
   field_student_phone:
     type: telephone_default
-    weight: 131
+    weight: 6
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
+  field_student_photo:
+    type: image_image
+    weight: 10
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
   field_student_source_application:
     type: entity_reference_autocomplete
-    weight: 132
+    weight: 15
     region: content
     settings:
       match_operator: CONTAINS
@@ -60,13 +141,13 @@ content:
     third_party_settings: {  }
   field_student_status:
     type: options_select
-    weight: 128
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   field_student_user:
     type: entity_reference_autocomplete
-    weight: 133
+    weight: 16
     region: content
     settings:
       match_operator: CONTAINS
@@ -76,53 +157,22 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 17
     region: content
     settings: {  }
-    third_party_settings: {  }
-  path:
-    type: path
-    weight: 30
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  promote:
-    type: boolean_checkbox
-    weight: 15
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    weight: 120
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    weight: 16
-    region: content
-    settings:
-      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 12
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 5
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

@@ -1,21 +1,21 @@
-uuid: 956eec57-68cd-4904-a367-939c6eab5496
+uuid: e6c04c9a-a398-42be-9cf4-da3de0965877
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_student_status
+    - field.storage.node.field_student_dob
     - node.type.student
   module:
-    - options
-id: node.student.field_student_status
-field_name: field_student_status
+    - datetime
+id: node.student.field_student_dob
+field_name: field_student_dob
 entity_type: node
 bundle: student
-label: Status
+label: 'Student DOB'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: list_string
+field_type: datetime

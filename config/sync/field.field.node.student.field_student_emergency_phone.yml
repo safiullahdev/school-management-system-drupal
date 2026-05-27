@@ -1,0 +1,21 @@
+uuid: 2601edaf-12f4-448e-87a1-e447dc87787d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_student_emergency_phone
+    - node.type.student
+  module:
+    - telephone
+id: node.student.field_student_emergency_phone
+field_name: field_student_emergency_phone
+entity_type: node
+bundle: student
+label: 'Emergency Phone'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

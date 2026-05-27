@@ -1,0 +1,18 @@
+uuid: 29e0c83c-6d7c-471c-a773-819487f3773a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.student
+id: node.student.title
+field_name: title
+entity_type: node
+bundle: student
+label: 'Student Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

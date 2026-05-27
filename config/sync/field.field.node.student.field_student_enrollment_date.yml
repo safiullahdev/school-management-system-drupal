@@ -1,0 +1,21 @@
+uuid: 6fd6feac-041b-4535-aac0-95fa64dcf964
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_student_enrollment_date
+    - node.type.student
+  module:
+    - datetime
+id: node.student.field_student_enrollment_date
+field_name: field_student_enrollment_date
+entity_type: node
+bundle: student
+label: 'Student Enrollment Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

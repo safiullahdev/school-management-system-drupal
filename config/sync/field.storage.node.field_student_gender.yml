@@ -1,0 +1,30 @@
+uuid: f47c0c34-b180-4662-b205-79afe2e42514
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_student_gender
+field_name: field_student_gender
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: male
+      label: Male
+    -
+      value: female
+      label: Female
+    -
+      value: prefer_not_to_say
+      label: 'Prefer Not to Say'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

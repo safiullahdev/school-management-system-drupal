@@ -12,23 +12,20 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: draft
-      label: Draft
+      value: enrolled
+      label: Enrolled
     -
-      value: submitted
-      label: Submitted
-    -
-      value: under_review
-      label: 'Under Review'
-    -
-      value: approved
-      label: Approved
-    -
-      value: rejected
-      label: Rejected
+      value: active
+      label: Active
     -
       value: inactive
       label: Inactive
+    -
+      value: graduated
+      label: Graduated
+    -
+      value: withdrawn
+      label: Withdrawn
   allowed_values_function: ''
 module: options
 locked: false

@@ -1,0 +1,19 @@
+uuid: 9b85ba2f-598c-4e28-ae22-2d288f9368dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - telephone
+id: node.field_student_emergency_phone
+field_name: field_student_emergency_phone
+entity_type: node
+type: telephone
+settings: {  }
+module: telephone
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

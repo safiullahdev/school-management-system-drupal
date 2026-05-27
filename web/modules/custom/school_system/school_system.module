@@ -4,29 +4,44 @@ use Drupal\node\Entity\Node;
 use Drupal\user\Entity\User;
 use Drupal\node\NodeInterface;
 
-
 /**
  * Implements hook_entity_presave().
  */
 function school_system_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) {
-  if (!$entity instanceof NodeInterface || $entity->bundle() !== 'application') {
+  if (!$entity instanceof NodeInterface) {
     return;
   }
-$first_name = $entity->get('field_app_student_first_name')->value ?? '';
-$last_name = $entity->get('field_app_student_last_name')->value ?? '';
-$app_type = $entity->get('field_app_type')->value ?? '';
 
-$full_name = trim($first_name . ' ' . $last_name);
+  // Auto-generate Application title.
+  if ($entity->bundle() === 'application') {
+    $first_name = $entity->get('field_app_student_first_name')->value ?? '';
+    $last_name = $entity->get('field_app_student_last_name')->value ?? '';
+    $app_type = $entity->get('field_app_type')->value ?? '';
 
-if ($full_name !== '') {
-  $title_parts = [$full_name];
+    $full_name = trim($first_name . ' ' . $last_name);
 
-  if ($app_type !== '') {
-    $title_parts[] = ucfirst($app_type);
+    if ($full_name !== '') {
+      $title_parts = [$full_name];
+
+      if ($app_type !== '') {
+        $title_parts[] = ucfirst($app_type);
+      }
+
+      $entity->setTitle(implode(' - ', $title_parts) . ' Application');
+    }
   }
 
-  $entity->setTitle(implode(' - ', $title_parts) . ' Application');
-}
+  // Auto-generate Student title.
+  if ($entity->bundle() === 'student') {
+    $first_name = $entity->get('field_student_first_name')->value ?? '';
+    $last_name = $entity->get('field_student_last_name')->value ?? '';
+
+    $student_name = trim($first_name . ' ' . $last_name);
+
+    if ($student_name !== '') {
+      $entity->setTitle($student_name);
+    }
+  }
 }
 
 /**
@@ -62,10 +77,14 @@ if ($processing) {
   $student = NULL;
 
   // 1. First check if Application already has a linked Student.
-  if ($entity->hasField('field_app_created_student') && !$entity->get('field_app_created_student')->isEmpty()) {
-    $student = $entity->get('field_app_created_student')->entity;
+if ($entity->hasField('field_app_created_student') && !$entity->get('field_app_created_student')->isEmpty()) {
+  $student_id = $entity->get('field_app_created_student')->target_id;
+  $student = Node::load($student_id);
+
+  if ($student) {
     \Drupal::messenger()->addMessage('SMD-81: Linked student found on application.');
   }
+}
 
   // 2. If not linked, check if Student already exists from this Application.
   if (!$student) {
@@ -88,17 +107,30 @@ if ($processing) {
     $student_last_name = $entity->get('field_app_student_last_name')->value ?? '';
     $student_title = trim($student_first_name . ' ' . $student_last_name);
 
-    $student = Node::create([
-      'type' => 'student',
-      'title' => $student_title ?: $entity->getTitle(),
-      'field_student_email' => $entity->get('field_app_parent_guardian_email')->value ?? '',
-      'field_student_phone' => $entity->get('field_app_parent_guardian_phone')->value ?? '',
-      'field_student_source_application' => [
-        'target_id' => $entity->id(),
-      ],
-      'field_student_status' => 'approved',
-      'status' => 1,
-    ]);
+  $student = Node::create([
+    'type' => 'student',
+    'title' => $student_title ?: $entity->getTitle(),
+
+    'field_student_first_name' => $entity->get('field_app_student_first_name')->value ?? '',
+    'field_student_last_name' => $entity->get('field_app_student_last_name')->value ?? '',
+    'field_student_dob' => $entity->get('field_app_student_dob')->value ?? '',
+    'field_student_gender' => $entity->get('field_app_student_gender')->value ?? '',
+
+    'field_student_email' => $entity->get('field_app_parent_guardian_email')->value ?? '',
+    'field_student_phone' => $entity->get('field_app_parent_guardian_phone')->value ?? '',
+    'field_student_address' => $entity->get('field_app_street_address')->getValue(),
+
+    'field_student_emergency_contact' => $entity->get('field_app_parent_guardian_name')->value ?? '',
+    'field_student_emergency_phone' => $entity->get('field_app_parent_guardian_phone')->value ?? '',
+
+    'field_student_source_application' => [
+      'target_id' => $entity->id(),
+    ],
+
+    'field_student_status' => 'enrolled',
+    'field_student_enrollment_date' => date('Y-m-d'),
+    'status' => 1,
+  ]);
 
     $student->save();
 

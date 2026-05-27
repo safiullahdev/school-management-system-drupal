@@ -1,0 +1,35 @@
+uuid: 64aa6842-04cd-4d92-94de-41904369e14f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_student_address
+    - node.type.student
+  module:
+    - address
+id: node.student.field_student_address
+field_name: field_student_address
+entity_type: node
+bundle: student
+label: Address
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+  langcode_override: ''
+  field_overrides:
+    givenName:
+      override: hidden
+    additionalName:
+      override: hidden
+    familyName:
+      override: hidden
+    organization:
+      override: hidden
+    addressLine3:
+      override: hidden
+  fields: {  }
+field_type: address

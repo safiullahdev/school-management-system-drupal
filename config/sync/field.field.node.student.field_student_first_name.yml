@@ -1,21 +1,19 @@
-uuid: 956eec57-68cd-4904-a367-939c6eab5496
+uuid: ecc80430-d14f-4366-949e-c7c5e8549444
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_student_status
+    - field.storage.node.field_student_first_name
     - node.type.student
-  module:
-    - options
-id: node.student.field_student_status
-field_name: field_student_status
+id: node.student.field_student_first_name
+field_name: field_student_first_name
 entity_type: node
 bundle: student
-label: Status
+label: 'Student First Name'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: list_string
+field_type: string

@@ -4,9 +4,19 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.student.field_student_address
+    - field.field.node.student.field_student_dob
     - field.field.node.student.field_student_email
+    - field.field.node.student.field_student_emergency_contact
+    - field.field.node.student.field_student_emergency_phone
+    - field.field.node.student.field_student_enrollment_date
+    - field.field.node.student.field_student_first_name
+    - field.field.node.student.field_student_gender
+    - field.field.node.student.field_student_grade_class
     - field.field.node.student.field_student_id
+    - field.field.node.student.field_student_last_name
     - field.field.node.student.field_student_phone
+    - field.field.node.student.field_student_photo
     - field.field.node.student.field_student_source_application
     - field.field.node.student.field_student_status
     - field.field.node.student.field_student_user
@@ -24,9 +34,19 @@ content:
     weight: 100
     region: content
 hidden:
+  field_student_address: true
+  field_student_dob: true
   field_student_email: true
+  field_student_emergency_contact: true
+  field_student_emergency_phone: true
+  field_student_enrollment_date: true
+  field_student_first_name: true
+  field_student_gender: true
+  field_student_grade_class: true
   field_student_id: true
+  field_student_last_name: true
   field_student_phone: true
+  field_student_photo: true
   field_student_source_application: true
   field_student_status: true
   field_student_user: true
