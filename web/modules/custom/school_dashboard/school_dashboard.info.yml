@@ -1,0 +1,7 @@
+name: School Dashboard
+type: module
+description: Provides role-based dashboards for the school system.
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal:node
