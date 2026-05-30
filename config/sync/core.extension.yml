@@ -36,6 +36,7 @@ module:
   path: 0
   path_alias: 0
   school_admission_webform: 0
+  school_dashboard: 0
   school_system: 0
   search: 0
   shortcut: 0
