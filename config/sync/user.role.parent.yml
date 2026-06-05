@@ -2,6 +2,8 @@ uuid: 6da821b7-9c8a-4751-8a36-a0cced854609
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.application
   module:
     - node
     - webform
@@ -10,5 +12,6 @@ label: Parent
 weight: 4
 is_admin: null
 permissions:
+  - 'create application content'
   - 'view own unpublished content'
   - 'view own webform submission'
