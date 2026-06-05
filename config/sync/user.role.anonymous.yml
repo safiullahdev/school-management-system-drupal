@@ -2,9 +2,12 @@ uuid: 9244c25e-037b-4bf2-9941-373e097d1104
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.application
   module:
     - comment
     - contact
+    - node
     - search
     - system
 _core:
@@ -17,4 +20,5 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
+  - 'create application content'
   - 'search content'

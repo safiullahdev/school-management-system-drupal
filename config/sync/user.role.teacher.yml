@@ -20,7 +20,6 @@ permissions:
   - 'create grades content'
   - 'edit own grades content'
   - 'use grade_workflow transition create_new_draft'
-  - 'use grade_workflow transition recall_submission'
   - 'use grade_workflow transition submit_for_approval'
   - 'view grades revisions'
   - 'view own unpublished content'
