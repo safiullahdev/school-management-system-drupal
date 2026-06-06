@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - node.type.application
+    - workflows.workflow.application_workflow
   module:
+    - content_moderation
     - node
     - webform
 id: parent
@@ -13,5 +15,7 @@ weight: 4
 is_admin: null
 permissions:
   - 'create application content'
+  - 'use application_workflow transition create_new_draft'
+  - 'use application_workflow transition save_draft'
   - 'view own unpublished content'
   - 'view own webform submission'

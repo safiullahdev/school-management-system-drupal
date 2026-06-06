@@ -4,6 +4,16 @@ use Drupal\node\Entity\Node;
 use Drupal\user\Entity\User;
 use Drupal\node\NodeInterface;
 
+use Drupal\user\UserInterface;
+
+/**
+ * Implements hook_user_insert().
+ */
+function school_system_user_insert(UserInterface $account) {
+  $account->addRole('parent');
+  $account->save();
+}
+
 /**
  * Implements hook_entity_presave().
  */
