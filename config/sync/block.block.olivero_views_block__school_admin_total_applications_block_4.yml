@@ -13,7 +13,7 @@ dependencies:
 id: olivero_views_block__school_admin_total_applications_block_4
 theme: olivero
 region: content
-weight: -7
+weight: -9
 provider: null
 plugin: 'views_block:school_admin_total_applications-block_4'
 settings:

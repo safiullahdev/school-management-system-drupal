@@ -1,33 +1,29 @@
-uuid: 2162b84c-c1c3-4377-adf9-7ecd8288c1c3
+uuid: 180c006a-dd3c-4ce7-a84f-ef4c1b44556e
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.school_admin_total_applications
+    - views.view.recent_students
   module:
     - system
     - user
     - views
   theme:
     - olivero
-id: olivero_views_block__school_admin_total_applications_block_1
+id: olivero_views_block__recent_students_block_1
 theme: olivero
 region: content
-weight: -8
+weight: -6
 provider: null
-plugin: 'views_block:school_admin_total_applications-block_1'
+plugin: 'views_block:recent_students-block_1'
 settings:
-  id: 'views_block:school_admin_total_applications-block_1'
+  id: 'views_block:recent_students-block_1'
   label: ''
   label_display: visible
   provider: views
   views_label: ''
   items_per_page: none
 visibility:
-  request_path:
-    id: request_path
-    negate: false
-    pages: /school-admin-dashboard
   user_role:
     id: user_role
     negate: false
@@ -36,3 +32,7 @@ visibility:
     roles:
       administrator: administrator
       admin: admin
+  request_path:
+    id: request_path
+    negate: false
+    pages: /school-admin-dashboard

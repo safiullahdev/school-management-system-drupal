@@ -1,23 +1,23 @@
-uuid: 2162b84c-c1c3-4377-adf9-7ecd8288c1c3
+uuid: 362d6fea-10fe-43a9-8d20-80d49afe84b2
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.school_admin_total_applications
+    - views.view.teachers
   module:
     - system
     - user
     - views
   theme:
     - olivero
-id: olivero_views_block__school_admin_total_applications_block_1
+id: olivero_views_block__teachers_block_1
 theme: olivero
 region: content
-weight: -8
+weight: -5
 provider: null
-plugin: 'views_block:school_admin_total_applications-block_1'
+plugin: 'views_block:teachers-block_1'
 settings:
-  id: 'views_block:school_admin_total_applications-block_1'
+  id: 'views_block:teachers-block_1'
   label: ''
   label_display: visible
   provider: views
