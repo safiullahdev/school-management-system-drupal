@@ -20,7 +20,7 @@ dependencies:
 id: teacher_grade_list_view
 label: 'Teacher Grade List View'
 module: views
-description: ''
+description: 'Displays grade records entered for students assigned to the logged-in teacher.'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -31,7 +31,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Teacher Grade List View'
+      title: 'My Grades'
       fields:
         title:
           id: title
@@ -43,16 +43,34 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-          label: ''
+          label: Title
           exclude: false
           alter:
             alter_text: false
+            text: ''
             make_link: false
+            path: ''
             absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
             word_boundary: false
             ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
             strip_tags: false
             trim: false
+            preserve_tags: ''
             html: false
           element_type: ''
           element_class: ''
@@ -645,15 +663,13 @@ display:
           exposed: false
           granularity: second
       arguments:
-        uid:
-          id: uid
-          table: node_field_data
-          field: uid
+        field_grade_teacher_target_id:
+          id: field_grade_teacher_target_id
+          table: node__field_grade_teacher
+          field: field_grade_teacher_target_id
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          entity_field: uid
           plugin_id: entity_target_id
           default_action: default
           exception:
@@ -736,6 +752,61 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.roles
+      tags:
+        - 'config:field.storage.node.field_class'
+        - 'config:field.storage.node.field_grade_letter'
+        - 'config:field.storage.node.field_grade_score'
+        - 'config:field.storage.node.field_grade_subject'
+        - 'config:field.storage.node.field_student'
+  block_1:
+    id: block_1
+    display_title: 'Teacher Dashboard - Recent Grades'
+    display_plugin: block
+    position: 2
+    display_options:
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 5
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'No grades available'
+            format: basic_html
+          tokenize: false
+      defaults:
+        empty: false
+        pager: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+        link_display: false
+        link_url: false
+      display_description: ''
+      use_more: true
+      use_more_always: true
+      use_more_text: 'View All Grades'
+      link_display: page_1
+      link_url: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
         - user
         - 'user.node_grants:view'
         - user.roles

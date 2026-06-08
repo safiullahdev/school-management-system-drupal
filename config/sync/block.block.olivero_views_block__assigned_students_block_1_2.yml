@@ -1,33 +1,34 @@
-uuid: 3f6a22d0-1fff-458f-9af1-8d583c6af825
+uuid: 49564461-0d6e-4b96-8b00-d9a41890c114
 langcode: en
-status: true
+status: false
 dependencies:
   config:
-    - views.view.school_admin_total_applications
+    - views.view.assigned_students
   module:
     - system
     - user
     - views
   theme:
     - olivero
-id: olivero_views_block__school_admin_total_applications_block_2
+id: olivero_views_block__assigned_students_block_1_2
 theme: olivero
 region: content
-weight: -13
+weight: -2
 provider: null
-plugin: 'views_block:school_admin_total_applications-block_2'
+plugin: 'views_block:assigned_students-block_1'
 settings:
-  id: 'views_block:school_admin_total_applications-block_2'
+  id: 'views_block:assigned_students-block_1'
   label: ''
   label_display: visible
   provider: views
+  context_mapping: {  }
   views_label: ''
   items_per_page: none
 visibility:
   request_path:
     id: request_path
     negate: false
-    pages: /school-admin-dashboard
+    pages: /teacher-dashboard
   user_role:
     id: user_role
     negate: false
@@ -35,4 +36,4 @@ visibility:
       user: '@user.current_user_context:current_user'
     roles:
       administrator: administrator
-      admin: admin
+      teacher: teacher

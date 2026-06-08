@@ -6,11 +6,17 @@ dependencies:
     - node.type.application
     - node.type.class
     - node.type.grades
+    - user.role.admin
+    - user.role.parent
+    - user.role.registrar
+    - user.role.student
+    - user.role.teacher
     - workflows.workflow.application_workflow
     - workflows.workflow.grade_workflow
   module:
     - content_moderation
     - field_permissions
+    - masquerade
     - node
     - system
     - toolbar
@@ -35,6 +41,11 @@ permissions:
   - 'edit field_app_status'
   - 'edit own class content'
   - 'edit own field_app_status'
+  - 'masquerade as admin'
+  - 'masquerade as parent'
+  - 'masquerade as registrar'
+  - 'masquerade as student'
+  - 'masquerade as teacher'
   - 'revert class revisions'
   - 'use application_workflow transition approve'
   - 'use application_workflow transition reject'

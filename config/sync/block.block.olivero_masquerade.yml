@@ -1,0 +1,33 @@
+uuid: bc5e2374-7ace-4465-b62d-6e8c91d25e70
+langcode: en
+status: true
+dependencies:
+  module:
+    - masquerade
+    - user
+  theme:
+    - olivero
+id: olivero_masquerade
+theme: olivero
+region: content
+weight: -15
+provider: null
+plugin: masquerade
+settings:
+  id: masquerade
+  label: Masquerade
+  label_display: visible
+  provider: masquerade
+  show_unmasquerade_link: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      parent: parent
+      registrar: registrar
+      teacher: teacher
+      admin: admin
+      student: student

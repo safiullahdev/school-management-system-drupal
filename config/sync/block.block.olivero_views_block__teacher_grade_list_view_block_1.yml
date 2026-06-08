@@ -1,33 +1,34 @@
-uuid: 3f6a22d0-1fff-458f-9af1-8d583c6af825
+uuid: bc60b9a0-3f62-48e0-963d-d2b7f86ecc73
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.school_admin_total_applications
+    - views.view.teacher_grade_list_view
   module:
     - system
     - user
     - views
   theme:
     - olivero
-id: olivero_views_block__school_admin_total_applications_block_2
+id: olivero_views_block__teacher_grade_list_view_block_1
 theme: olivero
 region: content
-weight: -13
+weight: 0
 provider: null
-plugin: 'views_block:school_admin_total_applications-block_2'
+plugin: 'views_block:teacher_grade_list_view-block_1'
 settings:
-  id: 'views_block:school_admin_total_applications-block_2'
+  id: 'views_block:teacher_grade_list_view-block_1'
   label: ''
   label_display: visible
   provider: views
+  context_mapping: {  }
   views_label: ''
   items_per_page: none
 visibility:
   request_path:
     id: request_path
     negate: false
-    pages: /school-admin-dashboard
+    pages: /teacher-dashboard
   user_role:
     id: user_role
     negate: false
@@ -35,4 +36,4 @@ visibility:
       user: '@user.current_user_context:current_user'
     roles:
       administrator: administrator
-      admin: admin
+      teacher: teacher

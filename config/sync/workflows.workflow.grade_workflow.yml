@@ -36,6 +36,7 @@ type_settings:
       label: 'Create New Draft'
       from:
         - draft
+        - published
       to: draft
       weight: 6
     publish:
