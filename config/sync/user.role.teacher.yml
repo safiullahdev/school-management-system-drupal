@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.assignment
     - node.type.grades
     - workflows.workflow.grade_workflow
   module:
@@ -17,7 +18,9 @@ is_admin: null
 permissions:
   - 'access toolbar'
   - 'access user profiles'
+  - 'create assignment content'
   - 'create grades content'
+  - 'edit own assignment content'
   - 'edit own grades content'
   - 'use grade_workflow transition create_new_draft'
   - 'use grade_workflow transition submit_for_approval'
