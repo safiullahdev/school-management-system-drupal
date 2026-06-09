@@ -1,0 +1,29 @@
+uuid: 8c114d69-8633-480d-b86d-437ef5c7715c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_assignment_class
+    - node.type.assignment
+    - node.type.class
+id: node.assignment.field_assignment_class
+field_name: field_assignment_class
+entity_type: node
+bundle: assignment
+label: Class
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      class: class
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

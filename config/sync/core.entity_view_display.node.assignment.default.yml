@@ -1,0 +1,94 @@
+uuid: b2a2479b-e8f2-4fc5-9861-24a61bc9e56a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.assignment.field_assignment_class
+    - field.field.node.assignment.field_assignment_due_date
+    - field.field.node.assignment.field_assignment_instructions
+    - field.field.node.assignment.field_assignment_name
+    - field.field.node.assignment.field_assignment_status
+    - field.field.node.assignment.field_assignment_teacher
+    - field.field.node.assignment.field_assignment_total_points
+    - field.field.node.assignment.field_assignment_type
+    - node.type.assignment
+  module:
+    - datetime
+    - options
+    - user
+id: node.assignment.default
+targetEntityType: node
+bundle: assignment
+mode: default
+content:
+  field_assignment_class:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_assignment_due_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_assignment_instructions:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_assignment_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_assignment_status:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_assignment_teacher:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_assignment_total_points:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_assignment_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,20 @@
+uuid: 454ea212-4e5f-4619-a91d-4c65d1156fe0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+id: node.field_assignment_teacher
+field_name: field_assignment_teacher
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

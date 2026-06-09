@@ -1,0 +1,20 @@
+uuid: af8310c4-f44d-4047-a826-7aa61b64a934
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_assignment_total_points
+field_name: field_assignment_total_points
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

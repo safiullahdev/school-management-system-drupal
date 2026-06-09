@@ -1,0 +1,23 @@
+uuid: 00ac52c4-e055-4705-9c32-89a6f11b0871
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_assignment_total_points
+    - node.type.assignment
+id: node.assignment.field_assignment_total_points
+field_name: field_assignment_total_points
+entity_type: node
+bundle: assignment
+label: 'Total Points'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

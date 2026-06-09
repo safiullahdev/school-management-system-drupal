@@ -1,0 +1,37 @@
+uuid: 82c442b5-5e48-467c-91ff-1da978945f4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_assignment_teacher
+    - node.type.assignment
+id: node.assignment.field_assignment_teacher
+field_name: field_assignment_teacher
+entity_type: node
+bundle: assignment
+label: Teacher
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        teacher: teacher
+        content_editor: '0'
+        administrator: '0'
+        parent: '0'
+        registrar: '0'
+        admin: '0'
+        student: '0'
+    include_anonymous: true
+field_type: entity_reference

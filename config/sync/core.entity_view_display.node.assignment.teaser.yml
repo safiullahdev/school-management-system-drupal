@@ -1,0 +1,36 @@
+uuid: 6a3c0558-8004-4a1f-8027-51c040d96731
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.assignment.field_assignment_class
+    - field.field.node.assignment.field_assignment_due_date
+    - field.field.node.assignment.field_assignment_instructions
+    - field.field.node.assignment.field_assignment_name
+    - field.field.node.assignment.field_assignment_status
+    - field.field.node.assignment.field_assignment_teacher
+    - field.field.node.assignment.field_assignment_total_points
+    - field.field.node.assignment.field_assignment_type
+    - node.type.assignment
+  module:
+    - user
+id: node.assignment.teaser
+targetEntityType: node
+bundle: assignment
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_assignment_class: true
+  field_assignment_due_date: true
+  field_assignment_instructions: true
+  field_assignment_name: true
+  field_assignment_status: true
+  field_assignment_teacher: true
+  field_assignment_total_points: true
+  field_assignment_type: true
