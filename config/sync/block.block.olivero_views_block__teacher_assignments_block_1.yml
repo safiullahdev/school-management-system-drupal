@@ -1,0 +1,39 @@
+uuid: 18e131ee-677b-4204-b8f0-22f061abc748
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.teacher_assignments
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - olivero
+id: olivero_views_block__teacher_assignments_block_1
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:teacher_assignments-block_1'
+settings:
+  id: 'views_block:teacher_assignments-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /teacher-dashboard
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      teacher: teacher
