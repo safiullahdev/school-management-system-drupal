@@ -4,42 +4,25 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.grades.body
-    - field.field.node.grades.field_class
     - field.field.node.grades.field_grade_approved_by
     - field.field.node.grades.field_grade_assignment
-    - field.field.node.grades.field_grade_assignment_name
-    - field.field.node.grades.field_grade_assignment_type
     - field.field.node.grades.field_grade_comments
     - field.field.node.grades.field_grade_letter
-    - field.field.node.grades.field_grade_max_score
     - field.field.node.grades.field_grade_percentage
     - field.field.node.grades.field_grade_published_date
-    - field.field.node.grades.field_grade_school_year
     - field.field.node.grades.field_grade_score
     - field.field.node.grades.field_grade_status
-    - field.field.node.grades.field_grade_subject
     - field.field.node.grades.field_grade_submitted_date
-    - field.field.node.grades.field_grade_teacher
     - field.field.node.grades.field_grade_term
     - field.field.node.grades.field_student
     - node.type.grades
   module:
-    - text
     - user
 id: node.grades.teaser
 targetEntityType: node
 bundle: grades
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 101
-    region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
@@ -51,21 +34,14 @@ content:
     weight: 100
     region: content
 hidden:
-  field_class: true
   field_grade_approved_by: true
   field_grade_assignment: true
-  field_grade_assignment_name: true
-  field_grade_assignment_type: true
   field_grade_comments: true
   field_grade_letter: true
-  field_grade_max_score: true
   field_grade_percentage: true
   field_grade_published_date: true
-  field_grade_school_year: true
   field_grade_score: true
   field_grade_status: true
-  field_grade_subject: true
   field_grade_submitted_date: true
-  field_grade_teacher: true
   field_grade_term: true
   field_student: true

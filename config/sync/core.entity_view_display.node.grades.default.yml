@@ -3,23 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.grades.body
-    - field.field.node.grades.field_class
     - field.field.node.grades.field_grade_approved_by
     - field.field.node.grades.field_grade_assignment
-    - field.field.node.grades.field_grade_assignment_name
-    - field.field.node.grades.field_grade_assignment_type
     - field.field.node.grades.field_grade_comments
     - field.field.node.grades.field_grade_letter
-    - field.field.node.grades.field_grade_max_score
     - field.field.node.grades.field_grade_percentage
     - field.field.node.grades.field_grade_published_date
-    - field.field.node.grades.field_grade_school_year
     - field.field.node.grades.field_grade_score
     - field.field.node.grades.field_grade_status
-    - field.field.node.grades.field_grade_subject
     - field.field.node.grades.field_grade_submitted_date
-    - field.field.node.grades.field_grade_teacher
     - field.field.node.grades.field_grade_term
     - field.field.node.grades.field_student
     - node.type.grades
@@ -36,14 +28,6 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_class:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_grade_assignment:
     type: entity_reference_label
     label: above
@@ -51,21 +35,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 14
-    region: content
-  field_grade_assignment_name:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 8
-    region: content
-  field_grade_assignment_type:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 9
     region: content
   field_grade_comments:
     type: basic_string
@@ -92,14 +61,6 @@ content:
     third_party_settings: {  }
     weight: 12
     region: content
-  field_grade_school_year:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 6
-    region: content
   field_grade_score:
     type: number_decimal
     label: above
@@ -110,22 +71,6 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 10
-    region: content
-  field_grade_subject:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_grade_teacher:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 5
     region: content
   field_grade_term:
     type: entity_reference_label
@@ -149,9 +94,7 @@ content:
     weight: 1
     region: content
 hidden:
-  body: true
   field_grade_approved_by: true
-  field_grade_max_score: true
   field_grade_published_date: true
   field_grade_status: true
   field_grade_submitted_date: true
