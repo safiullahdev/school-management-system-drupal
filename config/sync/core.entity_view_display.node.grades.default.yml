@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.grades.body
     - field.field.node.grades.field_class
     - field.field.node.grades.field_grade_approved_by
+    - field.field.node.grades.field_grade_assignment
     - field.field.node.grades.field_grade_assignment_name
     - field.field.node.grades.field_grade_assignment_type
     - field.field.node.grades.field_grade_comments
@@ -42,6 +43,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_grade_assignment:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 14
     region: content
   field_grade_assignment_name:
     type: string

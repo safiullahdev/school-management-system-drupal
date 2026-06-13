@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.grades.body
     - field.field.node.grades.field_class
     - field.field.node.grades.field_grade_approved_by
+    - field.field.node.grades.field_grade_assignment
     - field.field.node.grades.field_grade_assignment_name
     - field.field.node.grades.field_grade_assignment_type
     - field.field.node.grades.field_grade_comments
@@ -39,6 +40,11 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -47,6 +53,7 @@ content:
 hidden:
   field_class: true
   field_grade_approved_by: true
+  field_grade_assignment: true
   field_grade_assignment_name: true
   field_grade_assignment_type: true
   field_grade_comments: true

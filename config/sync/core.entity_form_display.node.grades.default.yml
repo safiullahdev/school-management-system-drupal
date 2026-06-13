@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.grades.body
     - field.field.node.grades.field_class
     - field.field.node.grades.field_grade_approved_by
+    - field.field.node.grades.field_grade_assignment
     - field.field.node.grades.field_grade_assignment_name
     - field.field.node.grades.field_grade_assignment_type
     - field.field.node.grades.field_grade_comments
@@ -30,9 +31,9 @@ targetEntityType: node
 bundle: grades
 mode: default
 content:
-  field_class:
+  field_grade_assignment:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 9
     region: content
     settings:
       match_operator: CONTAINS
@@ -40,23 +41,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_grade_assignment_name:
-    type: string_textfield
-    weight: 7
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_grade_assignment_type:
-    type: options_select
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_grade_comments:
     type: string_textarea
-    weight: 12
+    weight: 8
     region: content
     settings:
       rows: 5
@@ -64,28 +51,11 @@ content:
     third_party_settings: {  }
   field_grade_letter:
     type: options_select
-    weight: 10
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   field_grade_school_year:
-    type: entity_reference_autocomplete
-    weight: 5
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_grade_score:
-    type: number
-    weight: 9
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_grade_subject:
     type: entity_reference_autocomplete
     weight: 4
     region: content
@@ -95,9 +65,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_grade_teacher:
+  field_grade_score:
+    type: number
+    weight: 6
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_grade_subject:
     type: entity_reference_autocomplete
-    weight: 11
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -107,7 +84,7 @@ content:
     third_party_settings: {  }
   field_grade_term:
     type: entity_reference_autocomplete
-    weight: 6
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS
@@ -142,12 +119,16 @@ content:
 hidden:
   body: true
   created: true
+  field_class: true
   field_grade_approved_by: true
+  field_grade_assignment_name: true
+  field_grade_assignment_type: true
   field_grade_max_score: true
   field_grade_percentage: true
   field_grade_published_date: true
   field_grade_status: true
   field_grade_submitted_date: true
+  field_grade_teacher: true
   path: true
   promote: true
   status: true
