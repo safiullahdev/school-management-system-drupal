@@ -538,13 +538,15 @@ display:
           prefix: ''
           suffix: ''
       arguments:
-        field_grade_teacher_target_id:
-          id: field_grade_teacher_target_id
-          table: node__field_grade_teacher
-          field: field_grade_teacher_target_id
+        uid:
+          id: uid
+          table: node_field_data
+          field: uid
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: uid
           plugin_id: entity_target_id
           default_action: default
           exception:
