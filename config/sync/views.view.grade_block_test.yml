@@ -17,7 +17,7 @@ dependencies:
     - options
     - user
 id: grade_block_test
-label: 'grade block test'
+label: 'Teachers grades view'
 module: views
 description: ''
 tag: ''
