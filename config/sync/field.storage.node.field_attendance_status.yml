@@ -1,0 +1,42 @@
+uuid: 6510c8f2-d8d8-45c9-98f8-15d3a6ca66e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_attendance_status
+field_name: field_attendance_status
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: present
+      label: Present
+    -
+      value: absent
+      label: Absent
+    -
+      value: tardy
+      label: Tardy
+    -
+      value: excused
+      label: Excused
+    -
+      value: early_dismissal
+      label: 'Early Dismissal'
+    -
+      value: remote_learning
+      label: 'Remote Learning'
+    -
+      value: unexcused_absence
+      label: 'Unexcused Absence'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

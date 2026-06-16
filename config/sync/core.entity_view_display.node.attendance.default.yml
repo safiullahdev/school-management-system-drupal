@@ -1,0 +1,83 @@
+uuid: d6f78d8a-4062-4b56-852f-6a639d7b67ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.attendance.field_attendance_class
+    - field.field.node.attendance.field_attendance_date
+    - field.field.node.attendance.field_attendance_notes
+    - field.field.node.attendance.field_attendance_school_year
+    - field.field.node.attendance.field_attendance_status
+    - field.field.node.attendance.field_attendance_student
+    - field.field.node.attendance.field_attendance_teacher
+    - node.type.attendance
+  module:
+    - datetime
+    - options
+    - user
+id: node.attendance.default
+targetEntityType: node
+bundle: attendance
+mode: default
+content:
+  field_attendance_class:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_attendance_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_attendance_notes:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_attendance_school_year:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_attendance_status:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_attendance_student:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_attendance_teacher:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

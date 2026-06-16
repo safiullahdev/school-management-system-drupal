@@ -1,0 +1,21 @@
+uuid: 19c5a99b-9fa3-4e33-adf5-10bede482702
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attendance_date
+    - node.type.attendance
+  module:
+    - datetime
+id: node.attendance.field_attendance_date
+field_name: field_attendance_date
+entity_type: node
+bundle: attendance
+label: 'Attendance Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

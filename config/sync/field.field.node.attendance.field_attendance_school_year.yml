@@ -1,0 +1,29 @@
+uuid: b9c08898-be06-447e-9c5a-718f6ed1f38b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attendance_school_year
+    - node.type.attendance
+    - taxonomy.vocabulary.school_years
+id: node.attendance.field_attendance_school_year
+field_name: field_attendance_school_year
+entity_type: node
+bundle: attendance
+label: 'School Year'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      school_years: school_years
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

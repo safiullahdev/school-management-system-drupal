@@ -1,0 +1,19 @@
+uuid: d2e3fde4-a5c7-4091-8615-bfa56c5f2ef0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_attendance_student
+field_name: field_attendance_student
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

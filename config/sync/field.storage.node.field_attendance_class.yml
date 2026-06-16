@@ -1,0 +1,19 @@
+uuid: dd275340-999a-4461-b006-a87e58bc6abe
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_attendance_class
+field_name: field_attendance_class
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
