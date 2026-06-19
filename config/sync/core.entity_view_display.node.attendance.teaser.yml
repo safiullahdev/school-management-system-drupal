@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.attendance.field_attendance_status
     - field.field.node.attendance.field_attendance_student
     - field.field.node.attendance.field_attendance_teacher
+    - field.field.node.attendance.field_attendance_term
     - node.type.attendance
   module:
     - user
@@ -32,3 +33,4 @@ hidden:
   field_attendance_status: true
   field_attendance_student: true
   field_attendance_teacher: true
+  field_attendance_term: true
