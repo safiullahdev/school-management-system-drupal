@@ -788,12 +788,212 @@ display:
         - 'config:field.storage.node.field_attendance_status'
         - 'config:field.storage.node.field_attendance_student'
         - 'config:field.storage.node.field_attendance_teacher'
+  block_1:
+    id: block_1
+    display_title: 'Recent Attendance'
+    display_plugin: block
+    position: 2
+    display_options:
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 5
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            attendance: attendance
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        pager: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+        link_display: false
+        link_url: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      use_more: true
+      use_more_always: true
+      use_more_text: 'View All Attendance'
+      link_display: page_1
+      link_url: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - user
+        - 'user.node_grants:view'
+        - user.roles
+      tags:
+        - 'config:field.storage.node.field_attendance_class'
+        - 'config:field.storage.node.field_attendance_date'
+        - 'config:field.storage.node.field_attendance_notes'
+        - 'config:field.storage.node.field_attendance_school_year'
+        - 'config:field.storage.node.field_attendance_status'
+        - 'config:field.storage.node.field_attendance_student'
+        - 'config:field.storage.node.field_attendance_teacher'
   page_1:
     id: page_1
-    display_title: Page
+    display_title: 'Attendance Page'
     display_plugin: page
     position: 1
     display_options:
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            attendance: attendance
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: field_attendance_class
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Class
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              parent: '0'
+              registrar: '0'
+              teacher: '0'
+              admin: '0'
+              student: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_attendance_school_year_target_id:
+          id: field_attendance_school_year_target_id
+          table: node__field_attendance_school_year
+          field: field_attendance_school_year_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_attendance_school_year_target_id_op
+            label: 'School Year'
+            description: ''
+            use_operator: false
+            operator: field_attendance_school_year_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_attendance_school_year_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              parent: '0'
+              registrar: '0'
+              teacher: '0'
+              admin: '0'
+              student: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: school_years
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        filters: false
+        filter_groups: false
+      display_description: ''
       display_extenders: {  }
       path: teacher-attendance
     cache_metadata:
