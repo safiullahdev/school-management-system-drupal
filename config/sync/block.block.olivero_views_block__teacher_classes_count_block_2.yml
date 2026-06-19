@@ -13,7 +13,7 @@ dependencies:
 id: olivero_views_block__teacher_classes_count_block_2
 theme: olivero
 region: content
-weight: -5
+weight: -6
 provider: null
 plugin: 'views_block:teacher_classes_count-block_2'
 settings:

@@ -13,7 +13,7 @@ dependencies:
 id: olivero_views_block__recent_students_block_1
 theme: olivero
 region: content
-weight: -9
+weight: -10
 provider: null
 plugin: 'views_block:recent_students-block_1'
 settings:

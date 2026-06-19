@@ -1,33 +1,34 @@
-uuid: 362d6fea-10fe-43a9-8d20-80d49afe84b2
+uuid: 48636547-86f4-4dbd-8793-160ebc9379a0
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.teachers
+    - views.view.teacher_classes_count
   module:
     - system
     - user
     - views
   theme:
     - olivero
-id: olivero_views_block__teachers_block_1
+id: olivero_views_block__teacher_classes_count_block_4
 theme: olivero
 region: content
-weight: -9
+weight: -4
 provider: null
-plugin: 'views_block:teachers-block_1'
+plugin: 'views_block:teacher_classes_count-block_4'
 settings:
-  id: 'views_block:teachers-block_1'
+  id: 'views_block:teacher_classes_count-block_4'
   label: ''
   label_display: visible
   provider: views
+  context_mapping: {  }
   views_label: ''
   items_per_page: none
 visibility:
   request_path:
     id: request_path
     negate: false
-    pages: /school-admin-dashboard
+    pages: /teacher-dashboard
   user_role:
     id: user_role
     negate: false
@@ -35,4 +36,4 @@ visibility:
       user: '@user.current_user_context:current_user'
     roles:
       administrator: administrator
-      admin: admin
+      teacher: teacher
