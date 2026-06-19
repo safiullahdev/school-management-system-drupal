@@ -1,0 +1,29 @@
+uuid: 90de29d5-e442-472e-9b55-e8951460dffb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attendance_term
+    - node.type.attendance
+    - taxonomy.vocabulary.academic_terms
+id: node.attendance.field_attendance_term
+field_name: field_attendance_term
+entity_type: node
+bundle: attendance
+label: 'Academic Term'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      academic_terms: academic_terms
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

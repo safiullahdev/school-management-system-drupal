@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.attendance.field_attendance_status
     - field.field.node.attendance.field_attendance_student
     - field.field.node.attendance.field_attendance_teacher
+    - field.field.node.attendance.field_attendance_term
     - node.type.attendance
   module:
     - datetime
@@ -74,6 +75,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 106
+    region: content
+  field_attendance_term:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 109
     region: content
   links:
     settings: {  }
