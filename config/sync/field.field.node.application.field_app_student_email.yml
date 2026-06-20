@@ -1,0 +1,19 @@
+uuid: 9851d0ac-03db-4dd7-a029-33fd65531492
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_app_student_email
+    - node.type.application
+id: node.application.field_app_student_email
+field_name: field_app_student_email
+entity_type: node
+bundle: application
+label: 'Student Email'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email
