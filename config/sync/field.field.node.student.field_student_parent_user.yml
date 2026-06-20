@@ -1,0 +1,37 @@
+uuid: cbc7a085-e073-4a13-acf1-6b313c1d850b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_student_parent_user
+    - node.type.student
+id: node.student.field_student_parent_user
+field_name: field_student_parent_user
+entity_type: node
+bundle: student
+label: 'Parent User'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        parent: parent
+        content_editor: '0'
+        administrator: '0'
+        registrar: '0'
+        teacher: '0'
+        admin: '0'
+        student: '0'
+    include_anonymous: true
+field_type: entity_reference

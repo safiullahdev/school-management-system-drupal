@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.student.field_student_grade_class
     - field.field.node.student.field_student_id
     - field.field.node.student.field_student_last_name
+    - field.field.node.student.field_student_parent_user
     - field.field.node.student.field_student_phone
     - field.field.node.student.field_student_photo
     - field.field.node.student.field_student_source_application
@@ -45,6 +46,7 @@ hidden:
   field_student_grade_class: true
   field_student_id: true
   field_student_last_name: true
+  field_student_parent_user: true
   field_student_phone: true
   field_student_photo: true
   field_student_source_application: true

@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.student.field_student_grade_class
     - field.field.node.student.field_student_id
     - field.field.node.student.field_student_last_name
+    - field.field.node.student.field_student_parent_user
     - field.field.node.student.field_student_phone
     - field.field.node.student.field_student_photo
     - field.field.node.student.field_student_source_application
@@ -118,6 +119,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_student_parent_user:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 17
     region: content
   field_student_phone:
     type: telephone_link
