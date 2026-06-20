@@ -58,45 +58,32 @@ function school_system_entity_presave(\Drupal\Core\Entity\EntityInterface $entit
  * Implements hook_entity_update().
  */
 function school_system_entity_update(\Drupal\Core\Entity\EntityInterface $entity) {
+  static $processing = FALSE;
 
-static $processing = FALSE;
+  if ($processing) {
+    return;
+  }
 
-if ($processing) {
-  return;
-}
-
-  // Only run for Application nodes.
   if ($entity->getEntityTypeId() !== 'node' || $entity->bundle() !== 'application') {
     return;
   }
 
-  \Drupal::messenger()->addMessage('SMD-81: Application update hook is running.');
-
   if (!$entity->hasField('moderation_state')) {
-    \Drupal::messenger()->addMessage('SMD-81: moderation_state field not found.');
     return;
   }
 
-  $status = $entity->get('moderation_state')->value;
-
-  if ($status !== 'approved') {
-    \Drupal::messenger()->addMessage('SMD-81: Application is not approved. No student/user created.');
+  if ($entity->get('moderation_state')->value !== 'approved') {
     return;
   }
 
   $student = NULL;
 
-  // 1. First check if Application already has a linked Student.
-if ($entity->hasField('field_app_created_student') && !$entity->get('field_app_created_student')->isEmpty()) {
-  $student_id = $entity->get('field_app_created_student')->target_id;
-  $student = Node::load($student_id);
-
-  if ($student) {
-    \Drupal::messenger()->addMessage('SMD-81: Linked student found on application.');
+  // 1. Check linked student on application.
+  if ($entity->hasField('field_app_created_student') && !$entity->get('field_app_created_student')->isEmpty()) {
+    $student = Node::load($entity->get('field_app_created_student')->target_id);
   }
-}
 
-  // 2. If not linked, check if Student already exists from this Application.
+  // 2. Check existing student by source application.
   if (!$student) {
     $existing_students = \Drupal::entityTypeManager()
       ->getStorage('node')
@@ -107,112 +94,83 @@ if ($entity->hasField('field_app_created_student') && !$entity->get('field_app_c
 
     if (!empty($existing_students)) {
       $student = reset($existing_students);
-      \Drupal::messenger()->addMessage('SMD-81: Existing student found by source application.');
     }
   }
 
-  // 3. If no Student exists, create one.
+  // 3. Create student node if needed.
   if (!$student) {
     $student_first_name = $entity->get('field_app_student_first_name')->value ?? '';
     $student_last_name = $entity->get('field_app_student_last_name')->value ?? '';
     $student_title = trim($student_first_name . ' ' . $student_last_name);
 
-  $student = Node::create([
-    'type' => 'student',
-    'title' => $student_title ?: $entity->getTitle(),
-
-    'field_student_first_name' => $entity->get('field_app_student_first_name')->value ?? '',
-    'field_student_last_name' => $entity->get('field_app_student_last_name')->value ?? '',
-    'field_student_dob' => $entity->get('field_app_student_dob')->value ?? '',
-    'field_student_gender' => $entity->get('field_app_student_gender')->value ?? '',
-
-    'field_student_email' => $entity->get('field_app_parent_guardian_email')->value ?? '',
-    'field_student_phone' => $entity->get('field_app_parent_guardian_phone')->value ?? '',
-    'field_student_address' => $entity->get('field_app_street_address')->getValue(),
-
-    'field_student_emergency_contact' => $entity->get('field_app_parent_guardian_name')->value ?? '',
-    'field_student_emergency_phone' => $entity->get('field_app_parent_guardian_phone')->value ?? '',
-
-    'field_student_source_application' => [
-      'target_id' => $entity->id(),
-    ],
-
-    'field_student_status' => 'enrolled',
-    'field_student_enrollment_date' => date('Y-m-d'),
-    'status' => 1,
-  ]);
+    $student = Node::create([
+      'type' => 'student',
+      'title' => $student_title ?: $entity->getTitle(),
+      'field_student_first_name' => $student_first_name,
+      'field_student_last_name' => $student_last_name,
+      'field_student_dob' => $entity->get('field_app_student_dob')->value ?? '',
+      'field_student_gender' => $entity->get('field_app_student_gender')->value ?? '',
+      'field_student_email' => $entity->get('field_app_parent_guardian_email')->value ?? '',
+      'field_student_phone' => $entity->get('field_app_parent_guardian_phone')->value ?? '',
+      'field_student_address' => $entity->get('field_app_street_address')->getValue(),
+      'field_student_emergency_contact' => $entity->get('field_app_parent_guardian_name')->value ?? '',
+      'field_student_emergency_phone' => $entity->get('field_app_parent_guardian_phone')->value ?? '',
+      'field_student_source_application' => ['target_id' => $entity->id()],
+      'field_student_status' => 'enrolled',
+      'field_student_enrollment_date' => date('Y-m-d'),
+      'status' => 1,
+    ]);
 
     $student->save();
 
-    $student_id = 'STU-' . str_pad($student->id(), 4, '0', STR_PAD_LEFT);
-
     if ($student->hasField('field_student_id')) {
+      $student_id = 'STU-' . str_pad($student->id(), 4, '0', STR_PAD_LEFT);
       $student->set('field_student_id', $student_id);
       $student->save();
     }
-
-    \Drupal::messenger()->addMessage('SMD-81: Student node created.');
   }
 
-  // 4. Link Student back to Application.
+  // 4. Link student back to application.
   if ($entity->hasField('field_app_created_student') && $student) {
-    $entity->set('field_app_created_student', [
-      'target_id' => $student->id(),
-    ]);
+    $entity->set('field_app_created_student', ['target_id' => $student->id()]);
   }
 
-  // 5. Create or link Student User.
-  $email = $entity->get('field_app_parent_guardian_email')->value ?? '';
+  // 5. Parent/student user mapping.
+  $author = User::load($entity->getOwnerId());
 
-  if (!empty($email) && $student) {
-    $existing_users = \Drupal::entityTypeManager()
-      ->getStorage('user')
-      ->loadByProperties(['mail' => $email]);
+  if ($author && $student) {
+    $roles = $author->getRoles();
 
-    if (!empty($existing_users)) {
-      $user = reset($existing_users);
-      \Drupal::messenger()->addMessage('SMD-81: Existing user found.');
-    }
-    else {
-      $student_first_name = $entity->get('field_app_student_first_name')->value ?? '';
-      $student_last_name = $entity->get('field_app_student_last_name')->value ?? '';
+    // Parent-submitted application.
+    if (in_array('parent', $roles, TRUE)) {
+      if ($student->hasField('field_student_parent_user')) {
+        $student->set('field_student_parent_user', ['target_id' => $author->id()]);
+      }
 
-      $username = strtolower($student_first_name . '.' . $student_last_name . '.' . $student->id());
-      $username = preg_replace('/[^a-z0-9_.-]/', '', $username);
+      // Important: do not link parent as student user.
+      if ($student->hasField('field_student_user')) {
+        $student->set('field_student_user', NULL);
+      }
 
-      $user = User::create([
-        'name' => $username,
-        'mail' => $email,
-        'pass' => 'Test@123',
-        'status' => 1,
-        'roles' => ['student'],
-      ]);
-
-      $user->save();
-
-      \Drupal::messenger()->addMessage('SMD-81: Student user account created.');
-    }
-
-    // Link user to Student node.
-    if ($student->hasField('field_student_user')) {
-      $student->set('field_student_user', [
-        'target_id' => $user->id(),
-      ]);
       $student->save();
+      \Drupal::messenger()->addMessage('SMD-187: Parent linked. Student user left blank.');
+    }
 
-      \Drupal::messenger()->addMessage('SMD-81: Student user linked to Student node.');
+    // Student-submitted application.
+    elseif (in_array('student', $roles, TRUE)) {
+      if ($student->hasField('field_student_user')) {
+        $student->set('field_student_user', ['target_id' => $author->id()]);
+        $student->save();
+      }
+
+      \Drupal::messenger()->addMessage('SMD-187: Student user linked.');
     }
   }
-  else {
-    \Drupal::messenger()->addMessage('SMD-81: No email found. User account not created.');
-  }
 
- // Save Application updates safely.
-$processing = TRUE;
-$entity->save();
-$processing = FALSE;
+  // 6. Save application update safely.
+  $processing = TRUE;
+  $entity->save();
+  $processing = FALSE;
 
-\Drupal::messenger()->addMessage('SMD-81: Student/user processing completed.');
-
-  \Drupal::messenger()->addMessage('SMD-81: Student/user processing completed.');
+  \Drupal::messenger()->addMessage('SMD-187: Student processing completed.');
 }
