@@ -110,7 +110,7 @@ function school_system_entity_update(\Drupal\Core\Entity\EntityInterface $entity
       'field_student_last_name' => $student_last_name,
       'field_student_dob' => $entity->get('field_app_student_dob')->value ?? '',
       'field_student_gender' => $entity->get('field_app_student_gender')->value ?? '',
-      'field_student_email' => $entity->get('field_app_parent_guardian_email')->value ?? '',
+      'field_student_email' => $entity->get('field_app_student_email')->value ?? '',
       'field_student_phone' => $entity->get('field_app_parent_guardian_phone')->value ?? '',
       'field_student_address' => $entity->get('field_app_street_address')->getValue(),
       'field_student_emergency_contact' => $entity->get('field_app_parent_guardian_name')->value ?? '',
@@ -134,7 +134,6 @@ function school_system_entity_update(\Drupal\Core\Entity\EntityInterface $entity
   if ($entity->hasField('field_app_created_student') && $student) {
     $entity->set('field_app_created_student', ['target_id' => $student->id()]);
   }
-
   // 5. Parent/student user mapping.
   $author = User::load($entity->getOwnerId());
 
@@ -147,13 +146,47 @@ function school_system_entity_update(\Drupal\Core\Entity\EntityInterface $entity
         $student->set('field_student_parent_user', ['target_id' => $author->id()]);
       }
 
-      // Important: do not link parent as student user.
-      if ($student->hasField('field_student_user')) {
-        $student->set('field_student_user', NULL);
+      $student_email = $entity->hasField('field_app_student_email')
+        ? trim((string) $entity->get('field_app_student_email')->value)
+        : '';
+
+      if ($student_email !== '') {
+        $existing_users = \Drupal::entityTypeManager()
+          ->getStorage('user')
+          ->loadByProperties(['mail' => $student_email]);
+
+        if (!empty($existing_users)) {
+          $student_user = reset($existing_users);
+        }
+        else {
+          $student_first_name = $entity->get('field_app_student_first_name')->value ?? '';
+          $student_last_name = $entity->get('field_app_student_last_name')->value ?? '';
+
+          $username = strtolower($student_first_name . '.' . $student_last_name . '.' . $student->id());
+          $username = preg_replace('/[^a-z0-9_.-]/', '', $username);
+
+          $student_user = User::create([
+            'name' => $username,
+            'mail' => $student_email,
+            'pass' => 'Test@123',
+            'status' => 1,
+          ]);
+
+          $student_user->save();
+        }
+
+        // Ensure this account is treated as a student account only.
+        $student_user->addRole('student');
+        $student_user->removeRole('parent');
+        $student_user->save();
+
+        if ($student->hasField('field_student_user')) {
+          $student->set('field_student_user', ['target_id' => $student_user->id()]);
+        }
       }
 
       $student->save();
-      \Drupal::messenger()->addMessage('SMD-187: Parent linked. Student user left blank.');
+      \Drupal::messenger()->addMessage('SMD-188: Parent linked and student user processed.');
     }
 
     // Student-submitted application.
@@ -163,14 +196,13 @@ function school_system_entity_update(\Drupal\Core\Entity\EntityInterface $entity
         $student->save();
       }
 
-      \Drupal::messenger()->addMessage('SMD-187: Student user linked.');
+      \Drupal::messenger()->addMessage('SMD-188: Student user linked.');
     }
   }
-
   // 6. Save application update safely.
   $processing = TRUE;
   $entity->save();
   $processing = FALSE;
 
-  \Drupal::messenger()->addMessage('SMD-187: Student processing completed.');
+      \Drupal::messenger()->addMessage('SMD-188: Student processing completed.');
 }
