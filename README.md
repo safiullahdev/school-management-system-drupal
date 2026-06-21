@@ -1,30 +1,70 @@
-# schoolsystem-drupal
+# School Management System (Drupal)
 
-## Push code to branch and then merge with main
+## Overview
 
-### Push to branch
+This project is a Drupal-based School Management System built to
+demonstrate my Drupal development skills. It showcases content
+architecture, workflows, permissions, dashboards, Views, configuration
+management, and custom development.
+
+## Features
+
+-   Student application workflow
+-   Parent self-registration
+-   Student account creation
+-   Class management
+-   Teacher dashboard
+-   Registrar dashboard
+-   School Admin dashboard
+-   Assignment management
+-   Attendance management
+-   Grade management
+-   Role-based permissions
+-   Drupal Views
+-   Content Moderation workflow
+
+## User Roles
+
+-   School Admin
+-   Registrar
+-   Teacher
+-   Parent
+-   Student
+
+## Tech Stack
+
+-   Drupal 11
+-   PHP
+-   MySQL
+-   DDEV
+-   Git
+-   GitHub
+
+## Project Highlights
+
+-   Feature-based Git workflow
+-   Jira-style user stories (SMD-###)
+-   Configuration exported to code
+-   Reusable Views
+-   Entity references
+-   Custom hooks and automation
+
+## Local Setup
+
+``` bash
+git clone <repository-url>
+cd schoolsystem
+ddev start
+ddev composer install
+ddev drush cim -y
+ddev drush cr
 ```
-git add .
-git commit -m "SMD-40/SMD-41: auto-create student from approved application and generate student ID"
-git push origin <branch>
-git status
-On branch SMD-54-restrict-status-field-visibility-role
-nothing to commit, working tree clean
-```
-### Merge with main
-```
-# 1. Go to main
-git checkout main
 
-# 2. Get latest from remote
-git pull origin main
+## Status
 
-# 3. Merge your branch
-git merge SMD-54-restrict-status-field-visibility-role
+This is an active portfolio project. New features and improvements
+continue to be added.
 
-# 4. 
-git push origin main
+## Author
 
-```
-
-
+Mohammed Safiullah
