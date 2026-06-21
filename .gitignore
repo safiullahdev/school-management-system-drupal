@@ -17,6 +17,7 @@ web/sites/default/files/
 # Settings (environment-specific)
 web/sites/default/settings.php
 web/sites/default/settings.local.php
+web/sites/default/services.local.yml
 
 # Private files
 web/sites/default/private/
