@@ -33,7 +33,7 @@ management, and custom development.
 
 ## Tech Stack
 
--   Drupal 11
+-   Drupal 10
 -   PHP
 -   MySQL
 -   DDEV
