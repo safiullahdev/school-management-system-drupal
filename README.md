@@ -49,6 +49,10 @@ management, and custom development.
 -   Entity references
 -   Custom hooks and automation
 
+## Screenshots
+
+Screenshots will be added after the UI polish phase.
+
 ## Local Setup
 
 ``` bash
