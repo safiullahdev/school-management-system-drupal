@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function portfolio_home_theme($existing, $type, $theme, $path): array {
+  return [
+    'portfolio_home' => [
+      'render element' => 'elements',
+      'template' => 'portfolio-home',
+      'path' => $path . '/templates',
+    ],
+  ];
+}

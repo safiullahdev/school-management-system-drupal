@@ -1,0 +1,7 @@
+portfolio_home.home:
+  path: '/portfolio-home'
+  defaults:
+    _controller: '\Drupal\portfolio_home\Controller\PortfolioHomeController::home'
+    _title: 'School Management System'
+  requirements:
+    _permission: 'access content'
