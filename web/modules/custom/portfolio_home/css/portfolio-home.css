@@ -1,0 +1,53 @@
+.portfolio-home {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 1.5rem;
+}
+
+.portfolio-home__inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.portfolio-home__eyebrow {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.portfolio-home h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+  margin: 0 0 1.5rem;
+}
+
+.portfolio-home__summary {
+  max-width: 720px;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.portfolio-home__actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.portfolio-home__button {
+  display: inline-block;
+  padding: 0.9rem 1.25rem;
+  border-radius: 999px;
+  background: #f0710a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.portfolio-home__link {
+  display: inline-block;
+  padding: 0.9rem 0;
+  color: inherit;
+  font-weight: 700;
+}

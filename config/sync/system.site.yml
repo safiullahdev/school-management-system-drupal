@@ -2,13 +2,13 @@ _core:
   default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
 langcode: en
 uuid: 70bea284-a2ce-4a0d-86ab-d11390b18b67
-name: 'Drush Site-Install'
+name: 'School Management System (Drupal)'
 mail: admin@example.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node/108
+  front: /portfolio-home
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en

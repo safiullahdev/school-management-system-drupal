@@ -1,0 +1,5 @@
+name: Portfolio Home
+type: module
+description: Code-based portfolio homepage.
+core_version_requirement: ^10 || ^11
+package: Custom
