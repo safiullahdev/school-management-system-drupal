@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: hero
+label: 'Hero'
+revision: true
+description: 'Reusable Hero block (supports Split and Minimal layouts).'

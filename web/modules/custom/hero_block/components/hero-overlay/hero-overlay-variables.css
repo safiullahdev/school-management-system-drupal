@@ -1,0 +1,48 @@
+/*
+  File: hero-overlay-variables.css
+
+  Purpose:
+  Variables for the Hero Overlay component.
+*/
+
+/* ======================================
+   START: HERO OVERLAY — VARIABLES
+   ====================================== */
+
+:root {
+  /* Layout */
+  --hb-overlay-min-height: 700px;
+  --hb-overlay-container-max-width: 1280px;
+  --hb-overlay-container-padding: 7rem 2rem;
+  --hb-overlay-content-max-width: 720px;
+
+  /* Background */
+  --hb-overlay-bg-color: #f8fafc;
+  --hb-overlay-gradient-start: rgba(248, 250, 252, .98);
+  --hb-overlay-gradient-mid: rgba(248, 250, 252, .65);
+  --hb-overlay-gradient-end: rgba(248, 250, 252, 0);
+
+  /* Text */
+  --hb-overlay-eyebrow-color: #0b57d0;
+  --hb-overlay-headline-color: #071942;
+  --hb-overlay-subheadline-color: #1f365e;
+
+  /* CTA */
+  --hb-overlay-primary-color: #ffffff;
+  --hb-overlay-primary-bg: #0b57d0;
+  --hb-overlay-primary-bg-hover: #0847ad;
+  --hb-overlay-secondary-color: #071942;
+  --hb-overlay-secondary-bg: rgba(255, 255, 255, .92);
+  --hb-overlay-border-color: #9aa9c2;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --hb-overlay-container-padding: 5rem 1.25rem;
+    --hb-overlay-min-height: auto;
+  }
+}
+
+/* ======================================
+   END: HERO OVERLAY — VARIABLES
+   ====================================== */

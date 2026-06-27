@@ -1,0 +1,42 @@
+/*
+  File: hero.css
+
+  Purpose:
+  Shared base styles for Hero SDC components.
+*/
+
+.hero {
+  box-sizing: border-box;
+}
+
+.hero *,
+.hero *::before,
+.hero *::after {
+  box-sizing: inherit;
+}
+
+.hero .field {
+  margin: 0;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__headline {
+  margin: 0;
+}
+
+.hero__subheadline p {
+  margin: 0;
+}
+
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hero__cta a {
+  text-decoration: none;
+}

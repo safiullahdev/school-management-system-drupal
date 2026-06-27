@@ -1,0 +1,32 @@
+name: "Hero: Overlay"
+status: stable
+
+libraryOverrides:
+  css:
+    component:
+      hero-overlay-variables.css: {}
+      hero-overlay.css: {}
+  dependencies:
+    - hero_block/hero-base
+
+props:
+  type: object
+  required:
+    - headline
+  properties:
+    background_image:
+      type: [string, "null"]
+    eyebrow:
+      type: [string, object, "null"]
+    headline:
+      type: [string, object]
+    subheadline:
+      type: [string, object, "null"]
+    cta_primary:
+      type: [object, "null"]
+    cta_secondary:
+      type: [object, "null"]
+    cta_tertiary:
+      type: [object, "null"]
+    bullets:
+      type: [object, "null"]

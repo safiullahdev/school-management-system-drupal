@@ -1,0 +1,81 @@
+{#
+/**
+ * @file
+ * Hero Block - Overlay
+ *
+ * Variables:
+ * - eyebrow
+ * - headline
+ * - subheadline
+ * - cta_primary
+ * - cta_secondary
+ * - cta_tertiary
+ * - bullets
+ * - background_image
+ */
+#}
+
+<section
+  class="hero hero--overlay"
+  data-component="hero_block:hero-overlay"
+  data-component-type="Drupal SDC"
+  {% if background_image is defined and background_image %}
+    style="--hero-bg-image: url('{{ background_image }}');"
+  {% endif %}
+>
+  <div class="hero__overlay"></div>
+
+  <div class="hero__container">
+    <div class="hero__content">
+
+      {% if eyebrow is defined and eyebrow %}
+        <div class="hero__eyebrow">
+          {{ eyebrow }}
+        </div>
+      {% endif %}
+
+      {% if headline is defined and headline %}
+        <h1 class="hero__headline">
+          {{ headline }}
+        </h1>
+      {% endif %}
+
+      {% if subheadline is defined and subheadline %}
+        <div class="hero__subheadline">
+          {{ subheadline }}
+        </div>
+      {% endif %}
+
+      {% if cta_primary or cta_secondary or cta_tertiary %}
+        <div class="hero__ctas">
+
+          {% if cta_primary %}
+            <div class="hero__cta hero__cta--primary">
+              {{ cta_primary }}
+            </div>
+          {% endif %}
+
+          {% if cta_secondary %}
+            <div class="hero__cta hero__cta--secondary">
+              {{ cta_secondary }}
+            </div>
+          {% endif %}
+
+          {% if cta_tertiary %}
+            <div class="hero__cta hero__cta--tertiary">
+              {{ cta_tertiary }}
+            </div>
+          {% endif %}
+
+        </div>
+      {% endif %}
+
+      {% if bullets is defined and bullets %}
+        <div class="hero__bullets">
+          {{ bullets }}
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</section>

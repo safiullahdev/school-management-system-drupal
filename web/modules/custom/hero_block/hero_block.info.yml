@@ -1,0 +1,11 @@
+name: Hero Block
+type: module
+description: Reusable Hero Block component built with Drupal Single Directory Components (SDC).
+core_version_requirement: ^10 || ^11
+package: Reusable Components
+
+dependencies:
+  - drupal:block_content
+  - drupal:field
+  - drupal:link
+  - drupal:media

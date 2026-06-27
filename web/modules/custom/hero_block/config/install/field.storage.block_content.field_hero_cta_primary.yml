@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+id: block_content.field_hero_cta_primary
+field_name: field_hero_cta_primary
+entity_type: block_content
+type: link
+settings:
+  link_type: 17
+  title: 1
+module: link
+locked: false
+cardinality: 1
+translatable: false
+indexes: { }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,13 @@
+hero-base:
+  css:
+    component:
+      css/base/hero-block-variables.css: { weight: -100 }
+      css/base/hero.css: { weight: -90 }
+
+hero-overlay:
+  css:
+    component:
+      components/hero-overlay/hero-overlay-variables.css: {}
+      components/hero-overlay/hero-overlay.css: {}
+  dependencies:
+    - hero_block/hero-base

@@ -1,0 +1,35 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function hero_block_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  if ($entity->getEntityTypeId() !== 'block_content' || $entity->bundle() !== 'hero') {
+    return;
+  }
+
+  $build = [
+    '#type' => 'component',
+    '#component' => 'hero_block:hero-overlay',
+    '#props' => [
+      'eyebrow' => $build['field_hero_eyebrow'] ?? NULL,
+      'headline' => $build['field_hero_headline'] ?? NULL,
+      'subheadline' => $build['field_hero_subheadline'] ?? NULL,
+      'cta_primary' => $build['field_hero_cta_primary'] ?? NULL,
+      'cta_secondary' => $build['field_hero_cta_secondary'] ?? NULL,
+      'cta_tertiary' => $build['field_hero_cta_tertiary'] ?? NULL,
+      'bullets' => $build['field_hero_bullets'] ?? NULL,
+    ],
+    '#attributes' => [
+      'class' => [
+        'hero-row',
+        'hero-row--overlay',
+      ],
+      'data-component' => 'hero_block:hero-overlay',
+      'data-component-type' => 'Drupal SDC',
+    ],
+  ];
+}

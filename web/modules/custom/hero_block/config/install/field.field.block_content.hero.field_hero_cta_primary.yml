@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.storage.block_content.field_hero_cta_primary
+  module:
+    - link
+id: block_content.hero.field_hero_cta_primary
+field_name: field_hero_cta_primary
+entity_type: block_content
+bundle: hero
+label: 'Primary CTA'
+description: 'Main call-to-action button/link.'
+required: true
+translatable: false
+default_value: { }
+settings:
+  title: 1
+  link_type: 17
+field_type: link

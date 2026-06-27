@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.storage.block_content.field_hero_subheadline
+  module:
+    - text
+id: block_content.hero.field_hero_subheadline
+field_name: field_hero_subheadline
+entity_type: block_content
+bundle: hero
+label: 'Subheadline'
+description: 'Supporting text under the headline.'
+required: false
+translatable: false
+default_value: { }
+settings: { }
+field_type: text_long

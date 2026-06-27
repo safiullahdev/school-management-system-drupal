@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.storage.block_content.field_hero_eyebrow
+id: block_content.hero.field_hero_eyebrow
+field_name: field_hero_eyebrow
+entity_type: block_content
+bundle: hero
+label: 'Eyebrow'
+description: 'Small text above headline (Minimal layout).'
+required: false
+translatable: false
+default_value: { }
+settings: { }
+field_type: string
