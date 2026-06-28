@@ -23,6 +23,12 @@
     </nav>
   {% endif %}
 
+  {% if page.hero %}
+    <section class="mosafi-hero-region">
+      {{ page.hero }}
+    </section>
+  {% endif %}
+
   {% if page.highlighted %}
     <section class="mosafi-highlighted">
       <div class="mosafi-container">
