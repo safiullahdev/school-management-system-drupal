@@ -1,0 +1,21 @@
+uuid: ffdc99c1-adaa-437a-8d2d-9b44e3945852
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.storage.block_content.field_hero_bullets
+_core:
+  default_config_hash: 0Eskb7iM5H1UXb-WwinV9a7qfaS04uZByqAoYgCR29Q
+id: block_content.hero.field_hero_bullets
+field_name: field_hero_bullets
+entity_type: block_content
+bundle: hero
+label: Bullets
+description: 'Short bullet points (Split layout). One per line.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

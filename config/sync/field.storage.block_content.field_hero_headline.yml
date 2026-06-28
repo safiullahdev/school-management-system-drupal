@@ -1,0 +1,22 @@
+uuid: 898a5426-eaa4-432b-a48c-f1d697d64842
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - text
+_core:
+  default_config_hash: ub70boa6PeSaJWeLQGKqhDsQbkmJSgoicWuDokDJBy4
+id: block_content.field_hero_headline
+field_name: field_hero_headline
+entity_type: block_content
+type: text
+settings:
+  max_length: 85
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

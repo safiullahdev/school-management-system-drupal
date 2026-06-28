@@ -1,0 +1,21 @@
+uuid: d29ebe5c-c096-40d7-8185-62cd37df611a
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - link
+_core:
+  default_config_hash: u0LxJ0RYzjM_JiG_ZPywEsVWghkdojzGDlo7VxDH2L4
+id: block_content.field_hero_cta_secondary
+field_name: field_hero_cta_secondary
+entity_type: block_content
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

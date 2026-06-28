@@ -1,0 +1,39 @@
+uuid: 2e23bb8d-915c-46ff-837e-449d08653fc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.teacher_classes_count
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - mosafi_theme
+id: mosafi_theme_views_block__teacher_classes_count_block_3
+theme: mosafi_theme
+region: content
+weight: -5
+provider: null
+plugin: 'views_block:teacher_classes_count-block_3'
+settings:
+  id: 'views_block:teacher_classes_count-block_3'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /teacher-dashboard
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      teacher: teacher

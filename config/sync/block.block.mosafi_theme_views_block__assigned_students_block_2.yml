@@ -1,0 +1,39 @@
+uuid: c76163a4-1ce9-42c1-82f8-906426e7ea80
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.assigned_students
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - mosafi_theme
+id: mosafi_theme_views_block__assigned_students_block_2
+theme: mosafi_theme
+region: content
+weight: -1
+provider: null
+plugin: 'views_block:assigned_students-block_2'
+settings:
+  id: 'views_block:assigned_students-block_2'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /teacher-dashboard
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      teacher: teacher

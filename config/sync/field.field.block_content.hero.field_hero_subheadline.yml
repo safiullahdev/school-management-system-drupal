@@ -1,0 +1,24 @@
+uuid: 97f71950-54f6-402b-8fb0-ca4eec2bd9ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.storage.block_content.field_hero_subheadline
+  module:
+    - text
+_core:
+  default_config_hash: iIMIOuCOmvNyDORXYV9IHNcUYabBg-IAl_5KbOo5AY0
+id: block_content.hero.field_hero_subheadline
+field_name: field_hero_subheadline
+entity_type: block_content
+bundle: hero
+label: Subheadline
+description: 'Supporting text under the headline.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

@@ -1,0 +1,20 @@
+uuid: 6e7fd9f0-815e-497b-a672-fc9c77f5613b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - mosafi_theme
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: mosafi_theme_primary_admin_actions
+theme: mosafi_theme
+region: highlighted
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

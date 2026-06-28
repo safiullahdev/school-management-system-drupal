@@ -1,0 +1,21 @@
+uuid: 7739f69a-28ce-4728-8f5c-d8e425a872fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.storage.block_content.field_hero_eyebrow
+_core:
+  default_config_hash: qXgm2ipHsr4vNmIRXmszVGxUhRwkC7y48UBCZFZaMi4
+id: block_content.hero.field_hero_eyebrow
+field_name: field_hero_eyebrow
+entity_type: block_content
+bundle: hero
+label: Eyebrow
+description: 'Small text above headline (Minimal layout).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: 5084022d-82dd-4027-9e5b-f5fcff7da879
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+_core:
+  default_config_hash: l7MOSpzup8yvro-WRxvgXjBWhiVJI-60HpidMFi4fOM
+id: block_content.field_hero_bullets
+field_name: field_hero_bullets
+entity_type: block_content
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: -1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

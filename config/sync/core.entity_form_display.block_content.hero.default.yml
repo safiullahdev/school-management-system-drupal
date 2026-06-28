@@ -1,0 +1,80 @@
+uuid: da39e3bb-c2f4-4b1c-88e3-7abc00e3b2fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.field.block_content.hero.field_hero_bullets
+    - field.field.block_content.hero.field_hero_cta_primary
+    - field.field.block_content.hero.field_hero_cta_secondary
+    - field.field.block_content.hero.field_hero_eyebrow
+    - field.field.block_content.hero.field_hero_headline
+    - field.field.block_content.hero.field_hero_subheadline
+  module:
+    - link
+    - text
+_core:
+  default_config_hash: FDcwYWayALz7EcAkPybeu3tFAAfOBDMfrfJkY75LATI
+id: block_content.hero.default
+targetEntityType: block_content
+bundle: hero
+mode: default
+content:
+  field_hero_bullets:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: 'One bullet per field value'
+    third_party_settings: {  }
+  field_hero_cta_primary:
+    type: link_default
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_hero_cta_secondary:
+    type: link_default
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_hero_eyebrow:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_hero_headline:
+    type: text_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_hero_subheadline:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -10
+    region: content
+    settings:
+      size: 60
+      placeholder: 'Short description shown in the block library'
+    third_party_settings: {  }
+hidden:
+  created: true
+  revision_log_message: true
+  revision_translation_affected: true
+  status: true
+  uid: true

@@ -1,0 +1,22 @@
+uuid: e685ec65-4be1-46b8-8a6c-8a1bc5a1cc71
+langcode: en
+status: true
+dependencies:
+  theme:
+    - mosafi_theme
+_core:
+  default_config_hash: ydSxdq7R66I8UMC460rOzlfzvlUL4VRbdwc6z9DWaUI
+id: mosafi_theme_secondary_local_tasks
+theme: mosafi_theme
+region: highlighted
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

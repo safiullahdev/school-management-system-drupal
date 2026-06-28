@@ -1,0 +1,23 @@
+uuid: 5966d48a-301f-4e6e-8a2d-1a50721be3d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+_core:
+  default_config_hash: kyBKw5OAdAzbkQA_d6-8KusgK4kPBqT_fMneXW32mkA
+id: block_content.field_hero_eyebrow
+field_name: field_hero_eyebrow
+entity_type: block_content
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

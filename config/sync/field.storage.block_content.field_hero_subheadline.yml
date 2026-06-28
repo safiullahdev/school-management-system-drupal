@@ -1,0 +1,21 @@
+uuid: 4ca2bca1-3e6f-4015-a445-735b1c3110cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - text
+_core:
+  default_config_hash: NL245OT_B91SCPmdBOyR8AFBOxrf0eZo5xUP6AL0Jlw
+id: block_content.field_hero_subheadline
+field_name: field_hero_subheadline
+entity_type: block_content
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: ee16a15c-f847-4000-a405-8bbcce349992
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - link
+_core:
+  default_config_hash: 8uQoDY30dHatOGRSBeDuDUwozDuZVChBM6adpZFYLYs
+id: block_content.field_hero_cta_primary
+field_name: field_hero_cta_primary
+entity_type: block_content
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

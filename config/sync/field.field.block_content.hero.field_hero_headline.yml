@@ -1,0 +1,26 @@
+uuid: 77a94917-d1d9-4e58-9e10-3aa537b33f8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.storage.block_content.field_hero_headline
+    - filter.format.basic_html
+  module:
+    - text
+_core:
+  default_config_hash: JqbJahkb5xy5ru2pR8LykP4ENqOKnMVYFvDnmEOJE60
+id: block_content.hero.field_hero_headline
+field_name: field_hero_headline
+entity_type: block_content
+bundle: hero
+label: Headline
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text

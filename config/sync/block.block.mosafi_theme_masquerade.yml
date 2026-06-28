@@ -1,0 +1,33 @@
+uuid: 0f42aafc-1ba3-43d8-83e6-f30aafe9a94f
+langcode: en
+status: true
+dependencies:
+  module:
+    - masquerade
+    - user
+  theme:
+    - mosafi_theme
+id: mosafi_theme_masquerade
+theme: mosafi_theme
+region: content
+weight: -16
+provider: null
+plugin: masquerade
+settings:
+  id: masquerade
+  label: Masquerade
+  label_display: visible
+  provider: masquerade
+  show_unmasquerade_link: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      parent: parent
+      registrar: registrar
+      teacher: teacher
+      admin: admin
+      student: student

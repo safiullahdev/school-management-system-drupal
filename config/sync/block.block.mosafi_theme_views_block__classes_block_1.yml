@@ -1,0 +1,38 @@
+uuid: 749ae93c-de89-4ff1-9644-232b794ecf1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.classes
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - mosafi_theme
+id: mosafi_theme_views_block__classes_block_1
+theme: mosafi_theme
+region: content
+weight: -8
+provider: null
+plugin: 'views_block:classes-block_1'
+settings:
+  id: 'views_block:classes-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /school-admin-dashboard
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      admin: admin

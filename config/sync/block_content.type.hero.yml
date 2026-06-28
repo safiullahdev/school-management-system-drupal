@@ -1,0 +1,10 @@
+uuid: 1834101d-7d0b-48f7-b00f-90dc049f6f1d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: nGoya5G_BJ24yP_ws9fusIYlQrUDC6k7W1j_R_sg4sA
+id: hero
+label: Hero
+revision: true
+description: 'Reusable Hero block (supports Split and Minimal layouts).'

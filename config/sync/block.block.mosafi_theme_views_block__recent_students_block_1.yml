@@ -1,0 +1,38 @@
+uuid: 1dbe5842-c785-4918-9498-8cf4adb6f401
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.recent_students
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - mosafi_theme
+id: mosafi_theme_views_block__recent_students_block_1
+theme: mosafi_theme
+region: content
+weight: -10
+provider: null
+plugin: 'views_block:recent_students-block_1'
+settings:
+  id: 'views_block:recent_students-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      admin: admin
+  request_path:
+    id: request_path
+    negate: false
+    pages: /school-admin-dashboard
