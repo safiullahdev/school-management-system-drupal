@@ -1,0 +1,317 @@
+/* css/base/layout.css */
+/* ======================================================
+   LAYOUT SYSTEM
+   Structural layout utilities only
+
+   - mosafi-* prefix for reusable framework classes
+   - Uses global semantic/layout tokens
+   - Atomic spacing utilities belong in utilities.css
+   ====================================================== */
+
+:root {
+
+  /* ======================================================
+     LAYOUT TOKENS
+     ====================================================== */
+
+  --layout-max-width: 1200px;
+  --layout-max-width-narrow: 960px;
+  --layout-max-width-wide: 1400px;
+
+  --layout-container-padding: var(--space-4);
+
+  --layout-section-spacing: clamp(56px, 7vw, 96px);
+  --layout-section-spacing-sm: clamp(40px, 5vw, 64px);
+  --layout-section-spacing-lg: clamp(72px, 9vw, 128px);
+  --layout-section-spacing-xl: clamp(96px, 12vw, 180px);
+
+  --layout-header-height: 70px;
+}
+
+
+/* ======================================================
+   CONTAINER SYSTEM
+   ====================================================== */
+
+.mosafi-container {
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin-inline: auto;
+  padding-inline: var(--layout-container-padding);
+}
+
+.mosafi-container--narrow {
+  max-width: var(--layout-max-width-narrow);
+}
+
+.mosafi-container--wide {
+  width: 100%;
+  max-width: var(--layout-max-width-wide);
+}
+
+.mosafi-container--fluid {
+  max-width: none;
+}
+
+
+/* ======================================================
+   SECTION SPACING
+   ====================================================== */
+
+.mosafi-section {
+  padding-block: var(--layout-section-spacing);
+}
+
+.mosafi-section--sm {
+  padding-block: var(--layout-section-spacing-sm);
+}
+
+.mosafi-section--lg {
+  padding-block: var(--layout-section-spacing-lg);
+}
+
+.mosafi-section--xl {
+  padding-block: var(--layout-section-spacing-xl);
+}
+
+
+/* ======================================================
+   GRID SYSTEM
+   ====================================================== */
+
+.mosafi-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.mosafi-grid--cols-1 {
+  grid-template-columns: 1fr;
+}
+
+.mosafi-grid--cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.mosafi-grid--cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.mosafi-grid--cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.mosafi-grid--cols-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.mosafi-grid--cols-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+
+/* ======================================================
+   AUTO FIT GRIDS
+   ====================================================== */
+
+.mosafi-grid--auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.mosafi-grid--auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+
+/* ======================================================
+   RESPONSIVE GRID
+   Mobile first
+   ====================================================== */
+
+@media (max-width: 767px) {
+  .mosafi-grid--cols-2,
+  .mosafi-grid--cols-3,
+  .mosafi-grid--cols-4,
+  .mosafi-grid--cols-5,
+  .mosafi-grid--cols-6 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .mosafi-grid--md-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .mosafi-grid--md-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mosafi-grid--md-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .mosafi-grid--md-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .mosafi-grid--md-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .mosafi-grid--md-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .mosafi-grid--lg-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mosafi-grid--lg-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .mosafi-grid--lg-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .mosafi-grid--lg-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .mosafi-grid--lg-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* ======================================================
+   FLEXBOX SYSTEM
+   ====================================================== */
+
+.mosafi-flex {
+  display: flex;
+}
+
+.mosafi-flex-col {
+  flex-direction: column;
+}
+
+.mosafi-flex-row {
+  flex-direction: row;
+}
+
+.mosafi-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.mosafi-flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.mosafi-flex-1 {
+  flex: 1 1 0%;
+}
+
+.mosafi-flex-auto {
+  flex: 1 1 auto;
+}
+
+.mosafi-flex-none {
+  flex: none;
+}
+
+
+/* ======================================================
+   ALIGN ITEMS
+   ====================================================== */
+
+.mosafi-items-start {
+  align-items: flex-start;
+}
+
+.mosafi-items-center {
+  align-items: center;
+}
+
+.mosafi-items-end {
+  align-items: flex-end;
+}
+
+.mosafi-items-stretch {
+  align-items: stretch;
+}
+
+.mosafi-items-baseline {
+  align-items: baseline;
+}
+
+
+/* ======================================================
+   JUSTIFY CONTENT
+   ====================================================== */
+
+.mosafi-justify-start {
+  justify-content: flex-start;
+}
+
+.mosafi-justify-center {
+  justify-content: center;
+}
+
+.mosafi-justify-end {
+  justify-content: flex-end;
+}
+
+.mosafi-justify-between {
+  justify-content: space-between;
+}
+
+.mosafi-justify-around {
+  justify-content: space-around;
+}
+
+.mosafi-justify-evenly {
+  justify-content: space-evenly;
+}
+
+
+/* ======================================================
+   ALIGN SELF
+   ====================================================== */
+
+.mosafi-self-start {
+  align-self: flex-start;
+}
+
+.mosafi-self-center {
+  align-self: center;
+}
+
+.mosafi-self-end {
+  align-self: flex-end;
+}
+
+.mosafi-self-stretch {
+  align-self: stretch;
+}
+
+
+/* ======================================================
+   RESPONSIVE ROOT TOKENS
+   ====================================================== */
+
+@media (min-width: 768px) {
+  :root {
+    --layout-container-padding: var(--space-3);
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --layout-container-padding: var(--space-4);
+  }
+}
+

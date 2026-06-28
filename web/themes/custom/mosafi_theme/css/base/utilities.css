@@ -1,0 +1,186 @@
+/* css/base/utilities.css */
+/* ======================================================
+   UTILITIES - Single-purpose atomic classes
+   Load last. Framework-safe via mosafi-* namespace.
+   ====================================================== */
+
+/* TRANSITIONS */
+
+.mosafi-transition {
+  transition-property: background-color, border-color, color, opacity, box-shadow, transform;
+  transition-duration: var(--transition-base);
+  transition-timing-function: var(--ease-out);
+}
+
+.mosafi-transition-colors {
+  transition-property: background-color, border-color, color;
+  transition-duration: var(--transition-base);
+  transition-timing-function: var(--ease-out);
+}
+
+/* HOVER BACKGROUNDS */
+
+.mosafi-hover-surface:hover {
+  background: var(--color-button-tertiary-hover);
+}
+
+.mosafi-hover-accent:hover {
+  background: var(--section-light-accent);
+  color: var(--section-light-accent-contrast);
+}
+
+.mosafi-hover-accent-soft:hover {
+  background: var(--section-light-accent-soft);
+}
+
+/* DISPLAY */
+
+.mosafi-hidden { display: none; }
+.mosafi-block { display: block; }
+.mosafi-inline { display: inline; }
+.mosafi-inline-block { display: inline-block; }
+.mosafi-inline-flex { display: inline-flex; }
+
+/* RESPONSIVE DISPLAY */
+
+@media (max-width: 767px) {
+  .mosafi-hidden-mobile { display: none; }
+  .mosafi-block-mobile { display: block; }
+}
+
+@media (min-width: 768px) {
+  .mosafi-hidden-desktop { display: none; }
+  .mosafi-block-md { display: block; }
+  .mosafi-inline-md { display: inline; }
+  .mosafi-inline-block-md { display: inline-block; }
+}
+
+/* GAP */
+
+.mosafi-gap-0 { gap: 0; }
+.mosafi-gap-1 { gap: var(--space-1); }
+.mosafi-gap-2 { gap: var(--space-2); }
+.mosafi-gap-3 { gap: var(--space-3); }
+.mosafi-gap-4 { gap: var(--space-4); }
+.mosafi-gap-5 { gap: var(--space-5); }
+.mosafi-gap-6 { gap: var(--space-6); }
+.mosafi-gap-8 { gap: var(--space-8); }
+
+.mosafi-gap-x-2 { column-gap: var(--space-2); }
+.mosafi-gap-x-4 { column-gap: var(--space-4); }
+.mosafi-gap-y-2 { row-gap: var(--space-2); }
+.mosafi-gap-y-4 { row-gap: var(--space-4); }
+
+/* MARGIN */
+
+.mosafi-m-0 { margin: 0; }
+.mosafi-m-1 { margin: var(--space-1); }
+.mosafi-m-2 { margin: var(--space-2); }
+.mosafi-m-3 { margin: var(--space-3); }
+.mosafi-m-4 { margin: var(--space-4); }
+.mosafi-m-5 { margin: var(--space-5); }
+.mosafi-m-6 { margin: var(--space-6); }
+.mosafi-m-8 { margin: var(--space-8); }
+.mosafi-m-auto { margin: auto; }
+
+.mosafi-mt-0 { margin-top: 0; }
+.mosafi-mt-1 { margin-top: var(--space-1); }
+.mosafi-mt-2 { margin-top: var(--space-2); }
+.mosafi-mt-3 { margin-top: var(--space-3); }
+.mosafi-mt-4 { margin-top: var(--space-4); }
+.mosafi-mt-5 { margin-top: var(--space-5); }
+.mosafi-mt-6 { margin-top: var(--space-6); }
+.mosafi-mt-8 { margin-top: var(--space-8); }
+
+.mosafi-mb-0 { margin-bottom: 0; }
+.mosafi-mb-1 { margin-bottom: var(--space-1); }
+.mosafi-mb-2 { margin-bottom: var(--space-2); }
+.mosafi-mb-3 { margin-bottom: var(--space-3); }
+.mosafi-mb-4 { margin-bottom: var(--space-4); }
+.mosafi-mb-5 { margin-bottom: var(--space-5); }
+.mosafi-mb-6 { margin-bottom: var(--space-6); }
+.mosafi-mb-8 { margin-bottom: var(--space-8); }
+
+/* PADDING */
+
+.mosafi-p-0 { padding: 0; }
+.mosafi-p-1 { padding: var(--space-1); }
+.mosafi-p-2 { padding: var(--space-2); }
+.mosafi-p-3 { padding: var(--space-3); }
+.mosafi-p-4 { padding: var(--space-4); }
+.mosafi-p-5 { padding: var(--space-5); }
+.mosafi-p-6 { padding: var(--space-6); }
+.mosafi-p-8 { padding: var(--space-8); }
+
+.mosafi-px-0 { padding-inline: 0; }
+.mosafi-px-2 { padding-inline: var(--space-2); }
+.mosafi-px-4 { padding-inline: var(--space-4); }
+
+.mosafi-py-0 { padding-block: 0; }
+.mosafi-py-2 { padding-block: var(--space-2); }
+.mosafi-py-4 { padding-block: var(--space-4); }
+.mosafi-py-6 { padding-block: var(--space-6); }
+
+/* WIDTH & HEIGHT */
+
+.mosafi-w-full { width: 100%; }
+.mosafi-w-auto { width: auto; }
+.mosafi-w-fit { width: fit-content; }
+.mosafi-h-full { height: 100%; }
+.mosafi-h-auto { height: auto; }
+.mosafi-max-w-full { max-width: 100%; }
+
+/* BORDER RADIUS */
+
+.mosafi-rounded-none { border-radius: 0; }
+.mosafi-rounded-sm { border-radius: var(--radius-sm); }
+.mosafi-rounded { border-radius: var(--radius-md); }
+.mosafi-rounded-lg { border-radius: var(--radius-lg); }
+.mosafi-rounded-xl { border-radius: var(--radius-xl); }
+.mosafi-rounded-full { border-radius: var(--radius-full); }
+
+/* BORDER */
+
+.mosafi-border { border: 1px solid var(--section-light-line); }
+.mosafi-border-0 { border: 0; }
+.mosafi-border-t { border-top: 1px solid var(--section-light-line); }
+.mosafi-border-b { border-bottom: 1px solid var(--section-light-line); }
+.mosafi-border-accent { border-color: var(--section-light-accent); }
+
+/* SHADOW */
+
+.mosafi-shadow-none { box-shadow: none; }
+.mosafi-shadow-sm { box-shadow: var(--shadow-sm); }
+.mosafi-shadow { box-shadow: var(--shadow-md); }
+.mosafi-shadow-lg { box-shadow: var(--shadow-lg); }
+.mosafi-shadow-xl { box-shadow: var(--shadow-xl); }
+
+/* POSITION */
+
+.mosafi-relative { position: relative; }
+.mosafi-absolute { position: absolute; }
+.mosafi-fixed { position: fixed; }
+
+.mosafi-sticky {
+  position: sticky;
+  top: 0;
+}
+
+/* OVERFLOW */
+
+.mosafi-overflow-hidden { overflow: hidden; }
+.mosafi-overflow-auto { overflow: auto; }
+
+/* INTERACTION */
+
+.mosafi-cursor-pointer { cursor: pointer; }
+.mosafi-select-none { user-select: none; }
+
+/* Z-INDEX */
+
+.mosafi-z-0 { z-index: var(--z-0); }
+.mosafi-z-10 { z-index: var(--z-10); }
+.mosafi-z-20 { z-index: var(--z-20); }
+.mosafi-z-30 { z-index: var(--z-30); }
+.mosafi-z-40 { z-index: var(--z-40); }
+.mosafi-z-50 { z-index: var(--z-50); }

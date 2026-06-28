@@ -1,0 +1,8 @@
+name: Mosafi Theme
+type: theme
+description: 'Reusable parent theme for Mosafi Drupal projects.'
+core_version_requirement: ^10 || ^11
+base theme: stable9
+
+libraries:
+  - mosafi_theme/global

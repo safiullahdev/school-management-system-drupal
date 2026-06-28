@@ -1,0 +1,567 @@
+/* css/components/nav.css */
+/* ======================================================
+   NAV COMPONENT - Mobile First
+   Framework-safe via mosafi-* namespace
+   ====================================================== */
+
+
+/* ===================================
+   BASE
+   =================================== */
+
+.mosafi-nav,
+.mosafi-menu,
+.mosafi-tabs,
+.mosafi-breadcrumb,
+.mosafi-pager {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+/* ===================================
+   MENUS
+   =================================== */
+
+.mosafi-menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.mosafi-menu__item {
+  display: block;
+}
+
+.mosafi-menu__link,
+.mosafi-menu a {
+  display: flex;
+  align-items: center;
+
+  min-height: 48px;
+
+  padding: var(--space-3) var(--space-4);
+
+  font-size: var(--text-base);
+
+  color: var(--site-text);
+
+  text-decoration: none;
+
+  border-radius: var(--radius-md);
+
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mosafi-menu__link:active,
+.mosafi-menu a:active {
+  background: var(--site-surface-soft);
+  color: var(--site-accent);
+}
+
+.mosafi-menu__link.is-active,
+.mosafi-menu a.is-active {
+  background:
+    color-mix(
+      in srgb,
+      var(--site-accent) 15%,
+      transparent
+    );
+
+  color: var(--site-accent);
+
+  font-weight: var(--font-weight-semibold);
+}
+
+
+/* Nested menus */
+
+.mosafi-menu .mosafi-menu {
+  margin-left: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.mosafi-menu .mosafi-menu .mosafi-menu__link {
+  min-height: 40px;
+
+  font-size: var(--text-sm);
+
+  padding: var(--space-2) var(--space-4);
+}
+
+
+/* ===================================
+   HORIZONTAL MENUS
+   =================================== */
+
+.mosafi-nav--horizontal,
+.mosafi-menu--horizontal {
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+
+/* ===================================
+   PRIMARY TABS
+   =================================== */
+
+.mosafi-tabs--primary,
+.mosafi-tabs.primary {
+  display: flex;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  gap: var(--space-1);
+
+  margin-bottom: var(--space-5);
+
+  border-bottom: 2px solid var(--site-line);
+
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: none;
+}
+
+.mosafi-tabs--primary::-webkit-scrollbar,
+.mosafi-tabs.primary::-webkit-scrollbar {
+  display: none;
+}
+
+.mosafi-tabs--primary > li,
+.mosafi-tabs.primary > li {
+  margin-bottom: -2px;
+  flex-shrink: 0;
+}
+
+.mosafi-tabs--primary a,
+.mosafi-tabs.primary a {
+  display: block;
+
+  padding: var(--space-3) var(--space-4);
+
+  font-size: var(--text-base);
+
+  color: var(--site-text-muted);
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  border: 2px solid transparent;
+  border-bottom: 0;
+
+  border-radius:
+    var(--radius-md)
+    var(--radius-md)
+    0
+    0;
+
+  transition: color var(--transition-base);
+}
+
+.mosafi-tabs--primary a:active,
+.mosafi-tabs.primary a:active {
+  color: var(--site-text);
+  background: var(--site-surface-soft);
+}
+
+.mosafi-tabs--primary a.is-active,
+.mosafi-tabs.primary a.is-active,
+.mosafi-tabs--primary .is-active a,
+.mosafi-tabs.primary .is-active a {
+  color: var(--site-text);
+
+  background: var(--site-surface);
+
+  border-color: var(--site-line);
+  border-bottom-color: var(--site-surface);
+
+  font-weight: var(--font-weight-semibold);
+}
+
+
+/* ===================================
+   SECONDARY TABS
+   =================================== */
+
+.mosafi-tabs--secondary,
+.mosafi-tabs.secondary {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: var(--space-2);
+
+  margin-bottom: var(--space-4);
+
+  padding: var(--space-3);
+
+  background: var(--site-surface-sunken);
+
+  border-radius: var(--radius-md);
+}
+
+.mosafi-tabs--secondary a,
+.mosafi-tabs.secondary a {
+  display: block;
+
+  padding: var(--space-2) var(--space-3);
+
+  font-size: var(--text-sm);
+
+  color: var(--site-text-muted);
+
+  text-decoration: none;
+
+  border-radius: var(--radius-sm);
+
+  transition: background-color var(--transition-base);
+}
+
+.mosafi-tabs--secondary a:active,
+.mosafi-tabs.secondary a:active {
+  background: var(--site-surface);
+  color: var(--site-text);
+}
+
+.mosafi-tabs--secondary a.is-active,
+.mosafi-tabs.secondary a.is-active,
+.mosafi-tabs--secondary .is-active a,
+.mosafi-tabs.secondary .is-active a {
+  background: var(--site-accent);
+  color: var(--site-accent-contrast);
+
+  font-weight: var(--font-weight-semibold);
+}
+
+
+/* ===================================
+   BREADCRUMBS
+   =================================== */
+
+.mosafi-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  gap: var(--space-2);
+
+  margin-bottom: var(--space-4);
+
+  font-size: var(--text-sm);
+
+  color: var(--site-text-muted);
+}
+
+.mosafi-breadcrumb__item {
+  display: flex;
+  align-items: center;
+
+  gap: var(--space-2);
+}
+
+.mosafi-breadcrumb__item:not(:last-child)::after {
+  content: "/";
+  color: var(--site-line-strong);
+}
+
+.mosafi-breadcrumb__link {
+  display: flex;
+  align-items: center;
+
+  min-height: 32px;
+
+  color: var(--site-accent);
+
+  text-decoration: none;
+}
+
+.mosafi-breadcrumb__link:active {
+  color: var(--site-accent-hover);
+  text-decoration: underline;
+}
+
+.mosafi-breadcrumb__item:last-child {
+  color: var(--site-text);
+  font-weight: var(--font-weight-medium);
+}
+
+
+/* ===================================
+   PAGER
+   =================================== */
+
+.mosafi-pager,
+.mosafi-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  gap: var(--space-2);
+
+  margin-top: var(--space-6);
+}
+
+.mosafi-pager__item,
+.mosafi-pagination li {
+  display: block;
+}
+
+.mosafi-pager__link,
+.mosafi-pagination a,
+.mosafi-pagination span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 44px;
+  height: 44px;
+
+  padding: 0 var(--space-3);
+
+  font-size: var(--text-base);
+
+  color: var(--site-text);
+
+  text-decoration: none;
+
+  background: var(--site-surface);
+
+  border: 2px solid var(--site-line);
+
+  border-radius: var(--radius-md);
+
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base);
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mosafi-pager__link:active,
+.mosafi-pagination a:active {
+  background: var(--site-surface-soft);
+  border-color: var(--site-line-strong);
+}
+
+.mosafi-pager__item.is-active .mosafi-pager__link,
+.mosafi-pagination .is-active a,
+.mosafi-pagination .is-active span {
+  background: var(--site-accent);
+  border-color: var(--site-accent);
+
+  color: var(--site-accent-contrast);
+
+  font-weight: var(--font-weight-semibold);
+
+  cursor: default;
+}
+
+.mosafi-pager__item--first,
+.mosafi-pager__item--previous,
+.mosafi-pager__item--next,
+.mosafi-pager__item--last {
+  font-size: var(--text-sm);
+}
+
+.mosafi-pager__item--ellipsis span {
+  border: 0;
+  background: transparent;
+  min-width: auto;
+}
+
+
+/* ===================================
+   LOCAL ACTIONS
+   =================================== */
+
+.mosafi-local-actions {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-2);
+
+  margin-bottom: var(--space-4);
+}
+
+.mosafi-local-actions li {
+  margin: 0;
+}
+
+
+/* ===================================
+   MOBILE NAV TOGGLE
+   =================================== */
+
+.mosafi-nav-toggle {
+  display: flex;
+  align-items: center;
+
+  gap: var(--space-2);
+
+  min-height: 44px;
+
+  padding: var(--space-2) var(--space-3);
+}
+
+.mosafi-nav--collapsible {
+  display: none;
+}
+
+.mosafi-nav--collapsible.is-open {
+  display: flex;
+}
+
+
+/* ===================================
+   TABLET+
+   =================================== */
+
+@media (min-width: 768px) {
+
+  .mosafi-menu__link,
+  .mosafi-menu a {
+    min-height: 40px;
+
+    padding: var(--space-2) var(--space-3);
+
+    font-size: var(--text-sm);
+
+    border-radius: var(--radius-sm);
+  }
+
+  .mosafi-menu__link:hover,
+  .mosafi-menu a:hover {
+    background: var(--site-surface-soft);
+    color: var(--site-accent);
+  }
+
+  .mosafi-menu .mosafi-menu .mosafi-menu__link {
+    min-height: 32px;
+
+    font-size: var(--text-xs);
+
+    padding: var(--space-1) var(--space-3);
+  }
+
+  .mosafi-nav--horizontal,
+  .mosafi-menu--horizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: var(--space-2);
+  }
+
+  .mosafi-nav--horizontal .mosafi-menu__link {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .mosafi-tabs--primary a,
+  .mosafi-tabs.primary a {
+    padding: var(--space-2) var(--space-4);
+
+    font-size: var(--text-sm);
+
+    border-radius:
+      var(--radius-sm)
+      var(--radius-sm)
+      0
+      0;
+  }
+
+  .mosafi-tabs--primary a:hover,
+  .mosafi-tabs.primary a:hover {
+    color: var(--site-text);
+    background: var(--site-surface-soft);
+  }
+
+  .mosafi-tabs--secondary,
+  .mosafi-tabs.secondary {
+    gap: var(--space-1);
+    padding: var(--space-2);
+  }
+
+  .mosafi-tabs--secondary a,
+  .mosafi-tabs.secondary a {
+    padding: var(--space-1) var(--space-3);
+
+    font-size: var(--text-xs);
+  }
+
+  .mosafi-tabs--secondary a:hover,
+  .mosafi-tabs.secondary a:hover {
+    background: var(--site-surface);
+    color: var(--site-text);
+  }
+
+  .mosafi-breadcrumb {
+    font-size: var(--text-xs);
+  }
+
+  .mosafi-breadcrumb__link {
+    min-height: 0;
+  }
+
+  .mosafi-breadcrumb__link:hover {
+    color: var(--site-accent-hover);
+    text-decoration: underline;
+  }
+
+  .mosafi-pager__link,
+  .mosafi-pagination a,
+  .mosafi-pagination span {
+    min-width: 36px;
+    height: 36px;
+
+    font-size: var(--text-sm);
+
+    border-width: 1px;
+
+    border-radius: var(--radius-sm);
+  }
+
+  .mosafi-pager__link:hover,
+  .mosafi-pagination a:hover {
+    background: var(--site-surface-soft);
+    border-color: var(--site-line-strong);
+  }
+
+  .mosafi-pager__item--first,
+  .mosafi-pager__item--previous,
+  .mosafi-pager__item--next,
+  .mosafi-pager__item--last {
+    font-size: var(--text-xs);
+  }
+
+  .mosafi-local-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .mosafi-nav-toggle {
+    display: none;
+  }
+
+  .mosafi-nav--collapsible {
+    display: flex;
+  }
+}
+
+
+/* ===================================
+   DESKTOP
+   =================================== */
+
+@media (min-width: 1024px) {
+
+  .mosafi-menu__link,
+  .mosafi-menu a {
+    min-height: 36px;
+  }
+}

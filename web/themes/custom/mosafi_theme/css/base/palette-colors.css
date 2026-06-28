@@ -1,0 +1,13 @@
+:root,
+html.mosafi-theme {
+  --site-bg: #ffffff;
+  --site-surface: #ffffff;
+  --site-surface-soft: #f8fafc;
+  --site-text: #0f172a;
+  --site-text-soft: #475569;
+  --site-text-muted: #64748b;
+  --site-line: #e2e8f0;
+
+  --site-accent: #2563eb;
+  --site-accent-dark: #1d4ed8;
+}

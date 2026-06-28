@@ -1,0 +1,294 @@
+/* css/base/semantics.css */
+/* ======================================================
+   SEMANTIC TOKENS - MEANING & ROLE
+   Maps palette → usage. Brand decisions live here.
+   ====================================================== */
+
+:root {
+  /* TYPE SCALE - from tokens */
+  /* --type-size-display: clamp(36px, 4vw, var(--font-size-3xl));
+  --type-size-h1: clamp(30px, 3vw, 42px);
+  --type-size-h2: clamp(24px, 2.4vw, 34px);
+  --type-size-h3: clamp(20px, 2vw, 28px);
+  --type-size-h4: clamp(18px, 1.6vw, 22px); */
+ --type-size-display: clamp(2.25rem, 4vw, 4rem);
+  --type-size-h1: clamp(1.875rem, 3vw, 2.625rem);
+
+  --type-size-h2: clamp(1.8rem, 2.4vw, 2.425rem);
+
+  /* Large marketing/hero H2 */
+  --type-size-h2-xl: clamp(2rem, 3.8vw, 2.875rem);
+
+  --type-size-h3: clamp(1.25rem, 2vw, 1.75rem);
+
+  --type-size-h4: clamp(1.125rem, 1.6vw, 1.375rem);
+  --type-size-h5: var(--font-size-lg);
+  --type-size-h6: var(--font-size-md);
+  --type-size-body-lg: 18px;
+  --type-size-body: var(--font-size-md);
+  --type-size-body-sm: var(--font-size-sm);
+  --type-size-meta: var(--font-size-xs);
+  --type-size-label: var(--font-size-2xs);
+
+  /* TYPE - semantic assignments */
+  --type-line-height-heading: 1.15;
+  --type-line-height-body: 1.6;
+  --type-line-height-label: 1.2;
+
+  --type-font-weight-heading: var(--font-weight-heavy);
+  --type-font-weight-body: var(--font-weight-regular);
+  --type-font-weight-label: var(--font-weight-bold);
+
+  --type-letter-spacing-label: var(--letter-spacing-wide);
+  --type-letter-spacing-heading: var(--letter-spacing-tight);
+  --type-letter-spacing-body: var(--letter-spacing-normal);
+
+  /* FONT FAMILY - semantic assignment */
+  --font-family-heading: var(--font-family-montserrat);
+  --font-family-body: var(--font-family-opensans);
+
+  /* ======================================================
+     LIGHT SECTION - Default
+     ====================================================== */
+  --section-light-bg: var(--site-bg-light);
+  --section-light-surface: var(--site-surface-light);
+  --section-light-surface-soft: var(--site-surface-soft-light);
+  --section-light-text: var(--site-text-light);
+  --section-light-text-soft: var(--site-text-soft-light);
+  --section-light-text-muted: var(--site-text-muted-light);
+  --section-light-line: var(--site-line-light);
+  
+  /* Light accent - primary */
+  --section-light-accent: var(--site-accent);
+  --section-light-accent-contrast: #ffffff;
+  /* --section-light-accent-contrast: color-contrast(var(--section-light-accent) vs #111, #fff); */
+  --section-light-accent-hover: var(--site-accent-dark);
+  --section-light-accent-active: color-mix(in srgb, var(--section-light-accent) 75%, black);
+  --section-light-accent-focus: color-mix(in srgb, var(--section-light-accent) 60%, transparent);
+  --section-light-accent-border: color-mix(in srgb, var(--section-light-accent) 45%, white);
+  
+  /* Soft tints */
+  --section-light-accent-soft-5:  color-mix(in srgb, var(--section-light-accent) 5%, white);
+  --section-light-accent-soft-15: color-mix(in srgb, var(--section-light-accent) 15%, white);
+  --section-light-accent-soft-25: color-mix(in srgb, var(--section-light-accent) 25%, white);
+  --section-light-accent-soft-35: color-mix(in srgb, var(--section-light-accent) 35%, white);
+  --section-light-accent-soft-45: color-mix(in srgb, var(--section-light-accent) 45%, white);
+  --section-light-accent-soft: var(--section-light-accent-soft-15);
+  --section-light-accent-bg: color-mix(in srgb, var(--section-light-accent) 12%, white);
+  
+  /* Secondary accent */
+  --section-light-accent-2: var(--color-green-500);
+  --section-light-accent-2-contrast: #ffffff;
+  --section-light-accent-2-contrast: color-contrast(var(--section-light-accent-2) vs #111, #fff);
+  --section-light-accent-2-hover: var(--color-green-600);
+  --section-light-accent-2-active: var(--color-green-700);
+  --section-light-accent-2-border: color-mix(in srgb, var(--section-light-accent-2) 45%, white);
+  --section-light-accent-2-soft-15: color-mix(in srgb, var(--section-light-accent-2) 15%, white);
+  
+  /* Status colors - light */
+  --section-light-status-success: var(--color-green-600);
+  --section-light-status-success-bg: var(--color-green-50);
+  --section-light-status-danger: var(--color-red-600);
+  --section-light-status-danger-bg: var(--color-red-50);
+  --section-light-status-warning: var(--color-amber-500);
+  --section-light-status-warning-bg: var(--color-amber-50);
+  --section-light-status-info: var(--color-blue-600);
+  --section-light-status-info-bg: var(--color-blue-50);
+
+  /* ======================================================
+     DARK SECTION
+     ====================================================== */
+  --section-dark-bg: var(--site-bg);
+  --section-dark-surface: var(--site-surface);
+  --section-dark-surface-soft: var(--site-surface-soft);
+  --section-dark-text: var(--site-text);
+  --section-dark-text-soft: var(--site-text-soft);
+  --section-dark-text-muted: var(--site-text-muted);
+  --section-dark-line: var(--site-line);
+  
+  /* Dark accent - primary */
+  --section-dark-accent: var(--site-accent);
+  --section-dark-accent-contrast: #ffffff;
+  --section-dark-accent-contrast: color-contrast(var(--section-dark-accent) vs #000, #fff);
+  --section-dark-accent-hover: color-mix(in srgb, var(--section-dark-accent) 85%, white);
+  --section-dark-accent-active: color-mix(in srgb, var(--section-dark-accent) 70%, white);
+  --section-dark-accent-focus: color-mix(in srgb, var(--section-dark-accent) 50%, transparent);
+  --section-dark-accent-border: color-mix(in srgb, var(--section-dark-accent) 60%, white);
+  
+  /* Soft tints */
+  --section-dark-accent-soft-5:  color-mix(in srgb, var(--section-dark-accent) 5%, var(--section-dark-bg));
+  --section-dark-accent-soft-15: color-mix(in srgb, var(--section-dark-accent) 15%, var(--section-dark-bg));
+  --section-dark-accent-soft-25: color-mix(in srgb, var(--section-dark-accent) 25%, var(--section-dark-bg));
+  --section-dark-accent-soft-35: color-mix(in srgb, var(--section-dark-accent) 35%, var(--section-dark-bg));
+  --section-dark-accent-soft-45: color-mix(in srgb, var(--section-dark-accent) 45%, var(--section-dark-bg));
+  --section-dark-accent-soft: var(--section-dark-accent-soft-15);
+  --section-dark-accent-bg: color-mix(in srgb, var(--section-dark-accent) 12%, var(--section-dark-bg));
+  
+  /* Secondary accent */
+  --section-dark-accent-2: var(--color-green-400);
+  --section-dark-accent-2-contrast: #000000;
+  --section-dark-accent-2-contrast: color-contrast(var(--section-dark-accent-2) vs #000, #fff);
+  --section-dark-accent-2-hover: color-mix(in srgb, var(--section-dark-accent-2) 85%, white);
+  --section-dark-accent-2-active: color-mix(in srgb, var(--section-dark-accent-2) 70%, white);
+  --section-dark-accent-2-border: color-mix(in srgb, var(--section-dark-accent-2) 60%, white);
+  --section-dark-accent-2-soft-15: color-mix(in srgb, var(--section-dark-accent-2) 15%, var(--section-dark-bg));
+  
+  /* Status colors - dark */
+  --section-dark-status-success: var(--color-green-400);
+  --section-dark-status-success-bg: color-mix(in srgb, var(--color-green-500) 15%, var(--section-dark-bg));
+  --section-dark-status-danger: var(--color-red-400);
+  --section-dark-status-danger-bg: color-mix(in srgb, var(--color-red-500) 15%, var(--section-dark-bg));
+  --section-dark-status-warning: var(--color-amber-400);
+  --section-dark-status-warning-bg: color-mix(in srgb, var(--color-amber-500) 15%, var(--section-dark-bg));
+  --section-dark-status-info: var(--color-blue-400);
+  --section-dark-status-info-bg: color-mix(in srgb, var(--color-blue-500) 15%, var(--section-dark-bg));
+
+  /* ======================================================
+     BUTTON TOKENS - Semantic shortcuts
+     ====================================================== */
+  /* Primary button */
+  --color-button-primary-bg: var(--section-light-accent);
+  --color-button-primary-text: var(--section-light-accent-contrast);
+  --color-button-primary-hover: var(--section-light-accent-hover);
+  --color-button-primary-active: var(--section-light-accent-active);
+  --color-button-primary-border: var(--section-light-accent);
+  
+  /* Secondary button */
+  --color-button-secondary-bg: transparent;
+  --color-button-secondary-text: var(--section-light-accent);
+  --color-button-secondary-hover: var(--section-light-accent-soft-15);
+  --color-button-secondary-active: var(--section-light-accent-soft-35);
+  --color-button-secondary-border: var(--section-light-accent-border);
+  
+  /* Tertiary button */
+  --color-button-tertiary-bg: transparent;
+  --color-button-tertiary-text: var(--section-light-text);
+  --color-button-tertiary-hover: var(--section-light-surface-soft);
+  --color-button-tertiary-active: var(--color-neutral-200);
+  --color-button-tertiary-border: transparent;
+
+  --size-control-xs: 32px;
+  --size-control-sm: 36px;
+  --size-control-md: 44px;
+  --size-control-lg: 52px;
+  --size-control-xl: 60px;
+
+  --section-light-status-success-hover: color-mix(in srgb, var(--section-light-status-success) 85%, black);
+  --section-light-status-danger-hover: color-mix(in srgb, var(--section-light-status-danger) 85%, black);
+  --section-light-status-warning-hover: color-mix(in srgb, var(--section-light-status-warning) 85%, black);
+
+  /* INDEX */
+  --z-base: var(--z-0);
+  --z-dropdown: var(--z-10);
+  --z-sticky: var(--z-20);
+  --z-fixed: var(--z-30);
+  --z-modal-backdrop: var(--z-40);
+  --z-modal: var(--z-40);
+  --z-popover: var(--z-50);
+  --z-tooltip: var(--z-50);
+  --z-toast: var(--z-50);
+
+  /* Light section icons */
+--section-light-icon-color: var(--section-light-accent);
+--section-light-icon-bg: var(--section-light-accent-soft-15);
+
+--section-light-icon-active-color: var(--section-light-accent-contrast);
+--section-light-icon-active-bg: var(--section-light-accent);
+
+/* Dark section icons */
+--section-dark-icon-color: var(--section-dark-accent);
+--section-dark-icon-bg: var(--section-dark-accent-soft-15);
+
+--section-dark-icon-active-color: var(--section-dark-accent-contrast);
+--section-dark-icon-active-bg: var(--section-dark-accent);
+
+/* ======================================================
+   SECTION SPACING TOKENS
+   Large layout rhythm / vertical spacing
+   ====================================================== */
+
+--layout-space-section-2xs: clamp(16px, 2vw, 24px);
+--layout-space-section-xs: clamp(24px, 3vw, 40px);
+--layout-space-section-sm: clamp(40px, 5vw, 64px);
+--layout-space-section-md: clamp(56px, 7vw, 96px);
+--layout-space-section-lg: clamp(72px, 9vw, 128px);
+--layout-space-section-xl: clamp(96px, 12vw, 180px);
+
+
+/* ======================================================
+   FORM TOKENS
+   Default form style = light form/card
+   ====================================================== */
+
+--form-bg: var(--section-light-surface);
+--form-bg-soft: var(--section-light-surface-soft);
+--form-text: var(--section-light-text);
+--form-text-soft: var(--section-light-text-soft);
+--form-text-muted: var(--section-light-text-muted);
+--form-border: var(--section-light-line);
+--form-focus: var(--section-light-accent);
+--form-focus-ring: color-mix(in srgb, var(--form-focus) 15%, transparent);
+--form-danger: var(--section-light-status-danger);
+--form-danger-ring: color-mix(in srgb, var(--form-danger) 15%, transparent);
+--form-disabled-bg: var(--section-light-surface-soft);
+
+
+/* ======================================================
+   SECTION THEMES
+   ====================================================== */
+
+.mosafi-section--light-soft {
+  background: var(--section-light-surface-soft);
+  color: var(--section-light-text);
+}
+
+.mosafi-section--light-soft h1,
+.mosafi-section--light-soft h2,
+.mosafi-section--light-soft h3,
+.mosafi-section--light-soft h4,
+.mosafi-section--light-soft h5,
+.mosafi-section--light-soft h6 {
+  color: var(--section-light-text);
+}
+
+.mosafi-section--light-soft p {
+  color: var(--section-light-text-soft);
+}
+
+.mosafi-section--light {
+  background: var(--section-light-bg);
+  color: var(--section-light-text);
+}
+
+.mosafi-section--light h1,
+.mosafi-section--light h2,
+.mosafi-section--light h3,
+.mosafi-section--light h4,
+.mosafi-section--light h5,
+.mosafi-section--light h6 {
+  color: var(--section-light-text);
+}
+
+.mosafi-section--light p {
+  color: var(--section-light-text-soft);
+}
+
+
+.mosafi-section--dark-soft {
+  background: var(--section-dark-surface-soft);
+  color: var(--section-dark-text);
+}
+
+.mosafi-section--dark-soft h1,
+.mosafi-section--dark-soft h2,
+.mosafi-section--dark-soft h3,
+.mosafi-section--dark-soft h4,
+.mosafi-section--dark-soft h5,
+.mosafi-section--dark-soft h6 {
+  color: var(--section-dark-text);
+}
+
+.mosafi-section--dark-soft p {
+  color: var(--section-dark-text-soft);
+}
+}

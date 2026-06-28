@@ -1,0 +1,352 @@
+/* css/components/menu.css */
+/* ======================================================
+   MENU COMPONENT - Mobile First
+   Framework-safe via mosafi-* namespace
+   ====================================================== */
+
+.mosafi-menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+
+  width: 100%;
+
+  margin: 0;
+  padding: var(--space-2);
+
+  list-style: none;
+
+  background: var(--section-light-surface);
+
+  border: 1px solid var(--section-light-line);
+  border-radius: var(--radius-lg);
+}
+
+
+/* ======================================================
+   MENU ITEMS
+   ====================================================== */
+
+.mosafi-menu a,
+.mosafi-menu-link,
+.mosafi-menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+
+  width: 100%;
+  min-height: var(--size-control-md);
+
+  padding: var(--space-3);
+
+  border: 0;
+  border-radius: var(--radius-md);
+
+  background: transparent;
+
+  color: var(--section-light-text);
+
+  text-decoration: none;
+
+  font-size: var(--type-size-body);
+  font-weight: var(--font-weight-semibold);
+
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.mosafi-menu-item {
+  appearance: none;
+  cursor: pointer;
+}
+
+
+/* ======================================================
+   HOVER / FOCUS
+   ====================================================== */
+
+.mosafi-menu a:hover,
+.mosafi-menu a:focus,
+.mosafi-menu-link:hover,
+.mosafi-menu-link:focus,
+.mosafi-menu-item:hover,
+.mosafi-menu-item:focus {
+  background: var(--section-light-surface-soft);
+  color: var(--section-light-accent);
+  text-decoration: none;
+}
+
+
+/* ======================================================
+   ACTIVE STATES
+   ====================================================== */
+
+.mosafi-menu a.is-active,
+.mosafi-menu li.is-active > a,
+.mosafi-menu-link.is-active,
+.mosafi-menu-link[aria-current="page"],
+.mosafi-menu-item--active,
+.mosafi-menu-item[aria-current="page"] {
+  background: var(--section-light-accent-soft);
+  color: var(--section-light-accent);
+  font-weight: var(--font-weight-medium);
+}
+/* ACTIVE ICON */
+.mosafi-menu a.is-active .mosafi-menu-item__icon,
+.mosafi-menu li.is-active > a .mosafi-menu-item__icon,
+.mosafi-menu-link.is-active .mosafi-menu-item__icon,
+.mosafi-menu-link[aria-current="page"] .mosafi-menu-item__icon {
+  color: var(--section-light-accent);
+}
+
+/* ======================================================
+   DISABLED
+   ====================================================== */
+
+.mosafi-menu-item:disabled {
+  color: var(--section-light-text-muted);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+
+/* ======================================================
+   ICONS
+   ====================================================== */
+
+.mosafi-menu-item__icon {
+  flex-shrink: 0;
+
+  width: 24px;
+  height: 24px;
+
+  color: var(--section-light-text-soft);
+}
+
+
+/* ======================================================
+   LABEL
+   ====================================================== */
+
+.mosafi-menu-item__label {
+  flex: 1 1 auto;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* ======================================================
+   SHORTCUT
+   ====================================================== */
+
+.mosafi-menu-item__shortcut {
+  display: none;
+
+  margin-left: auto;
+
+  color: var(--section-light-text-muted);
+
+  font-size: var(--type-size-meta);
+  font-family: var(--font-mono);
+}
+
+
+/* ======================================================
+   NESTED MENUS
+   ====================================================== */
+
+.mosafi-menu .mosafi-menu {
+  position: static;
+
+  margin-top: var(--space-1);
+  margin-left: var(--space-4);
+
+  padding-left: var(--space-2);
+
+  border-left: 2px solid var(--section-light-line);
+
+  border-radius: 0;
+  box-shadow: none;
+}
+
+
+/* ======================================================
+   HORIZONTAL
+   ====================================================== */
+
+.mosafi-menu--horizontal {
+  flex-direction: row;
+
+  overflow-x: auto;
+
+  padding: var(--space-1);
+
+  background: transparent;
+
+  border: 0;
+  box-shadow: none;
+}
+
+.mosafi-menu--horizontal .mosafi-menu-item,
+.mosafi-menu--horizontal a {
+  width: auto;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+
+/* ======================================================
+   DIVIDER
+   ====================================================== */
+
+.mosafi-menu-divider {
+  height: 1px;
+
+  margin: var(--space-2) 0;
+
+  background: var(--section-light-line);
+
+  border: 0;
+}
+
+
+/* ======================================================
+   GROUP LABEL
+   ====================================================== */
+
+.mosafi-menu-group__label {
+  padding:
+    var(--space-2)
+    var(--space-3)
+    var(--space-1);
+
+  color: var(--section-light-text-muted);
+
+  font-size: var(--type-size-meta);
+  font-weight: var(--font-weight-semibold);
+
+  text-transform: uppercase;
+}
+
+
+/* ======================================================
+   TABLET+
+   ====================================================== */
+
+@media (min-width: 768px) {
+
+  .mosafi-menu {
+    width: auto;
+    min-width: 240px;
+    max-width: 320px;
+
+    box-shadow: var(--shadow-md);
+  }
+
+  .mosafi-menu a,
+  .mosafi-menu-link,
+  .mosafi-menu-item {
+    min-height: var(--size-control-sm);
+
+    padding: var(--space-2) var(--space-3);
+
+    font-size: var(--type-size-body-sm);
+  }
+
+  .mosafi-menu-item__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .mosafi-menu-item__shortcut {
+    display: block;
+  }
+
+  .mosafi-menu .mosafi-menu {
+    position: absolute;
+
+    top: 0;
+    left: 100%;
+
+    margin-top: 0;
+    margin-left: var(--space-2);
+
+    padding: var(--space-2);
+
+    border-left: 1px solid var(--section-light-line);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-lg);
+  }
+
+  .mosafi-menu--horizontal {
+    overflow: visible;
+  }
+
+  .mosafi-menu--compact a,
+  .mosafi-menu--compact .mosafi-menu-link,
+  .mosafi-menu--compact .mosafi-menu-item {
+    min-height: var(--size-control-xs);
+
+    padding: var(--space-1) var(--space-2);
+
+    font-size: var(--type-size-meta);
+  }
+}
+
+/* ======================================================
+   LINKS
+   ====================================================== */
+
+   /* ======================================================
+   ACTIVE MENU STATES
+   Generic / reusable
+   ====================================================== */
+
+.is-active,
+.active-trail > .menu-link {
+  color: var(--section-light-accent-hover);
+}
+
+.is-active .menu-link__icon,
+.active-trail > .menu-link .menu-link__icon {
+  color: var(--section-light-accent-hover);
+  opacity: 1;
+}
+
+@media (max-width: 1199px) {
+
+  .is-active,
+  .active-trail > .menu-link {
+    background: var(--section-dark-surface-soft);
+    color: var(--section-dark-accent-hover);
+  }
+
+  .is-active .menu-link__icon,
+  .active-trail > .menu-link .menu-link__icon {
+    color: var(--section-dark-accent-hover);
+  }
+
+}
+a {
+  color: var(--section-light-accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--section-light-accent-hover);
+  text-decoration-color: currentColor;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--section-light-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}

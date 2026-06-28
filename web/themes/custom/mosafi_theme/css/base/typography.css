@@ -1,0 +1,305 @@
+/* css/base/typography.css */
+/* ======================================================
+   TYPOGRAPHY UTILITIES
+   Reusable mosafi type classes only.
+
+   - Base element styles belong in base.css
+   - Tokens/semantic vars belong in semantics.css
+   - mosafi-* prefix protects from Drupal/contrib collisions
+   ====================================================== */
+
+/* Heading utilities */
+
+.mosafi-type-h1 {
+  font-family: var(--font-family-heading);
+  font-size: var(--type-size-h1);
+  line-height: var(--type-line-height-heading);
+  font-weight: var(--type-font-weight-heading);
+  letter-spacing: var(--type-letter-spacing-heading);
+}
+
+.mosafi-type-h2 {
+  font-family: var(--font-family-heading);
+  font-size: var(--type-size-h2);
+  line-height: var(--type-line-height-heading);
+  font-weight: var(--type-font-weight-heading);
+  letter-spacing: var(--type-letter-spacing-heading);
+}
+
+.mosafi-type-h2--xl {
+  font-size: var(--type-size-h2-xl);
+}
+
+.mosafi-type-h3 {
+  font-family: var(--font-family-heading);
+  font-size: var(--type-size-h3);
+  line-height: var(--type-line-height-heading);
+  font-weight: var(--type-font-weight-heading);
+  letter-spacing: var(--type-letter-spacing-heading);
+}
+
+.mosafi-type-h4 {
+  font-family: var(--font-family-heading);
+  font-size: var(--type-size-h4);
+  line-height: var(--type-line-height-heading);
+  font-weight: var(--type-font-weight-heading);
+  letter-spacing: var(--type-letter-spacing-heading);
+}
+
+.mosafi-type-h5 {
+  font-family: var(--font-family-heading);
+  font-size: var(--type-size-h5);
+  line-height: var(--type-line-height-heading);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--type-letter-spacing-heading);
+}
+
+.mosafi-type-h6 {
+  font-family: var(--font-family-heading);
+  font-size: var(--type-size-h6);
+  line-height: var(--type-line-height-heading);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--type-letter-spacing-heading);
+}
+
+/* Display text */
+
+.mosafi-type-display {
+  font-family: var(--font-family-heading);
+  font-size: var(--type-size-display);
+  line-height: var(--type-line-height-heading);
+  font-weight: var(--type-font-weight-heading);
+  letter-spacing: var(--type-letter-spacing-heading);
+}
+
+/* Body text */
+
+.mosafi-type-body {
+  font-family: var(--font-family-body);
+  font-size: var(--type-size-body);
+  line-height: var(--type-line-height-body);
+  font-weight: var(--type-font-weight-body);
+  letter-spacing: var(--type-letter-spacing-body);
+}
+
+.mosafi-type-body-lg {
+  font-family: var(--font-family-body);
+  font-size: var(--type-size-body-lg);
+  line-height: var(--type-line-height-body);
+  font-weight: var(--type-font-weight-body);
+  letter-spacing: var(--type-letter-spacing-body);
+}
+
+.mosafi-type-body-sm {
+  font-family: var(--font-family-body);
+  font-size: var(--type-size-body-sm);
+  line-height: var(--type-line-height-body);
+  font-weight: var(--type-font-weight-body);
+  letter-spacing: var(--type-letter-spacing-body);
+}
+
+/* Meta / label / overline */
+
+.mosafi-type-meta {
+  font-family: var(--font-family-body);
+  font-size: var(--type-size-meta);
+  line-height: var(--type-line-height-body);
+  font-weight: var(--type-font-weight-body);
+  letter-spacing: var(--type-letter-spacing-body);
+}
+
+.mosafi-type-label {
+  font-family: var(--font-family-body);
+  font-size: var(--type-size-label);
+  line-height: var(--type-line-height-label);
+  font-weight: var(--type-font-weight-label);
+  letter-spacing: var(--type-letter-spacing-label);
+}
+
+.mosafi-type-overline {
+  display: inline-block;
+  font-family: var(--font-family-body);
+  font-size: var(--type-size-label);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase;
+  color: inherit;
+}
+
+/* Supporting text */
+
+.mosafi-subtitle,
+.mosafi-subheadline {
+  font-family: var(--font-family-body);
+  font-size: var(--type-size-body-sm);
+  line-height: var(--type-line-height-body);
+  color: var(--section-light-text-soft);
+}
+
+.mosafi-section--dark .mosafi-subtitle,
+.mosafi-section--dark .mosafi-subheadline {
+  color: var(--section-dark-text-soft);
+}
+
+/* Color variants */
+
+.mosafi-type-muted {
+  color: var(--section-light-text-muted);
+}
+
+.mosafi-type-soft {
+  color: var(--section-light-text-soft);
+}
+
+.mosafi-type-strong {
+  color: var(--section-light-text);
+}
+
+.mosafi-type-accent {
+  color: var(--section-light-accent);
+}
+
+.mosafi-section--dark .mosafi-type-muted {
+  color: var(--section-dark-text-muted);
+}
+
+.mosafi-section--dark .mosafi-type-soft {
+  color: var(--section-dark-text-soft);
+}
+
+.mosafi-section--dark .mosafi-type-strong {
+  color: var(--section-dark-text);
+}
+
+.mosafi-section--dark .mosafi-type-accent {
+  color: var(--section-dark-accent);
+}
+
+/* Overline variants */
+
+.mosafi-type-overline--muted {
+  color: var(--section-light-text-muted);
+}
+
+.mosafi-type-overline--accent {
+  color: var(--section-light-accent);
+}
+
+.mosafi-section--dark .mosafi-type-overline--muted {
+  color: var(--section-dark-text-muted);
+}
+
+.mosafi-section--dark .mosafi-type-overline--accent {
+  color: var(--section-dark-accent);
+}
+
+/* Spacing helpers */
+
+.mosafi-type-mb-0 {
+  margin-bottom: 0;
+}
+
+.mosafi-type-mb-xs {
+  margin-bottom: var(--space-1);
+}
+
+.mosafi-type-mb-sm {
+  margin-bottom: var(--space-2);
+}
+
+.mosafi-type-mb-md {
+  margin-bottom: var(--space-3);
+}
+
+.mosafi-type-mb-lg {
+  margin-bottom: var(--space-4);
+}
+
+/* Text alignment */
+
+.mosafi-text-left {
+  text-align: left;
+}
+
+.mosafi-text-center {
+  text-align: center;
+}
+
+.mosafi-text-right {
+  text-align: right;
+}
+
+/* Typography utilities */
+
+.mosafi-type-uppercase {
+  text-transform: uppercase;
+}
+
+.mosafi-type-capitalize {
+  text-transform: capitalize;
+}
+
+.mosafi-type-lowercase {
+  text-transform: lowercase;
+}
+
+.mosafi-type-heading-font {
+  font-family: var(--font-family-heading);
+}
+
+.mosafi-type-body-font {
+  font-family: var(--font-family-body);
+}
+
+.mosafi-type-tight {
+  line-height: var(--line-height-tight);
+}
+
+.mosafi-type-base {
+  line-height: var(--line-height-base);
+}
+
+.mosafi-type-loose {
+  line-height: var(--line-height-loose);
+}
+
+.mosafi-type-nowrap {
+  white-space: nowrap;
+}
+
+.mosafi-type-balance {
+  text-wrap: balance;
+}
+
+.mosafi-type-pretty {
+  text-wrap: pretty;
+}
+
+.mosafi-type-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Font weight utilities */
+
+.mosafi-font-normal {
+  font-weight: var(--font-weight-regular);
+}
+
+.mosafi-font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.mosafi-font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.mosafi-font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.mosafi-font-heavy {
+  font-weight: var(--font-weight-heavy);
+}

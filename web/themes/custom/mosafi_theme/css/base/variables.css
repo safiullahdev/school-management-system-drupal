@@ -1,0 +1,274 @@
+/* css/base/variables.css */
+/* ======================================================
+   DESIGN TOKENS - PRIMITIVES ONLY
+   No brand. No meaning. Never changes per client.
+   ====================================================== */
+:root {
+
+
+
+  /* COLORS - raw palette */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* PURPLE SCALE - brand, AI, premium */
+  --color-purple-50: #faf5ff;
+  --color-purple-100: #f3e8ff;
+  --color-purple-200: #e9d5ff;
+  --color-purple-300: #d8b4fe;
+  --color-purple-400: #c084fc;
+  --color-purple-500: #a855f7;
+  --color-purple-600: #9333ea;
+  --color-purple-700: #7e22ce;
+  --color-purple-800: #6b21a8;
+  --color-purple-900: #581c87;
+
+  /* TEAL SCALE - secondary, success alt */
+  --color-teal-50: #f0fdfa;
+--color-teal-100: #ccfbf1;
+--color-teal-200: #99f6e4;
+--color-teal-300: #5eead4;
+--color-teal-400: #2dd4bf;
+--color-teal-500: #14b8a6;
+--color-teal-600: #0d9488;
+--color-teal-700: #0f766e;
+--color-teal-800: #115e59;
+--color-teal-900: #134e4a;
+
+/* ORANGE SCALE - warnings, attention */
+--color-orange-50: #fff7ed;
+--color-orange-100: #ffedd5;
+--color-orange-200: #fed7aa;
+--color-orange-300: #fdba74;
+--color-orange-400: #fb923c;
+--color-orange-500: #f97316;
+--color-orange-600: #ea580c;
+--color-orange-700: #c2410c;
+--color-orange-800: #9a3412;
+--color-orange-900: #7c2d12;
+
+/* PINK SCALE - accents, social */
+--color-pink-50: #fdf2f8;
+--color-pink-100: #fce7f3;
+--color-pink-200: #fbcfe8;
+--color-pink-300: #f9a8d4;
+--color-pink-400: #f472b6;
+--color-pink-500: #ec4899;
+--color-pink-600: #db2777;
+--color-pink-700: #be185d;
+--color-pink-800: #9d174d;
+--color-pink-900: #831843;
+
+  /* NEUTRAL SCALE */
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #eeeeee;
+  --color-neutral-300: #e0e0e0;
+  --color-neutral-400: #bdbdbd;
+  --color-neutral-500: #9e9e9e;
+  --color-neutral-600: #757575;
+  --color-neutral-700: #616161;
+  --color-neutral-800: #424242;
+  --color-neutral-900: #212121;
+
+  /* BLUE SCALE */
+  --color-blue-50: #eef6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-200: #bfdbfe;
+  --color-blue-300: #93c5fd;
+  --color-blue-400: #60a5fa;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+  --color-blue-800: #1e40af;
+  --color-blue-900: #1e3a8a;
+
+  /* RED SCALE */
+  --color-red-50: #fef2f2;
+  --color-red-100: #fee2e2;
+  --color-red-200: #fecaca;
+  --color-red-300: #fca5a5;
+  --color-red-400: #f87171;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-red-700: #b91c1c;
+  --color-red-800: #991b1b;
+  --color-red-900: #7f1d1d;
+
+  /* GREEN SCALE */
+  --color-green-50: #f0fdf4;
+  --color-green-100: #dcfce7;
+  --color-green-200: #bbf7d0;
+  --color-green-300: #86efac;
+  --color-green-400: #4ade80;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-green-700: #15803d;
+  --color-green-800: #166534;
+  --color-green-900: #14532d;
+
+  /* AMBER SCALE */
+  --color-amber-50: #fffbeb;
+  --color-amber-100: #fef3c7;
+  --color-amber-200: #fde68a;
+  --color-amber-300: #fcd34d;
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f4b400;
+  --color-amber-600: #d97706;
+  --color-amber-700: #b45309;
+  --color-amber-800: #92400e;
+  --color-amber-900: #78350f;
+
+
+  /* FONT FAMILIES - primitives only */
+  --font-family-system: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-family-serif: "Merriweather", Georgia, serif;
+  --font-family-mono: "Roboto Mono", monospace;
+  --font-family-fira-code: "Fira Code", monospace;
+  --font-family-montserrat: "Montserrat", sans-serif;
+  --font-family-opensans: "Open Sans", sans-serif;
+
+  /* FONT SIZE - raw scale - primitives only */
+  --font-size-2xs: 0.75rem;   /* 12px */
+  --font-size-xs: 0.8125rem;  /* 13px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-md: 1rem;       /* 16px */
+  --font-size-lg: 1.25rem;    /* 20px */
+  --font-size-xl: 1.5rem;     /* 24px */
+  --font-size-2xl: 1.875rem;  /* 30px */
+  --font-size-3xl: 3.5rem;    /* 56px */
+
+  /* FONT WEIGHT */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-heavy: 800;
+
+  /* LINE HEIGHT */
+  --line-height-tight: 1.2;
+  --line-height-base: 1.5;
+  --line-height-loose: 1.7;
+
+
+  /* LETTER SPACING */
+  --letter-spacing-normal: 0;
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-wide: 0.08em;
+  --letter-spacing-wider: 0.12em;
+
+  /* SPACING - 8px base */
+  --space-0: 0;
+  --space-1: 0.5rem;   /* 8px */
+  --space-2: 1rem;     /* 16px */
+  --space-3: 1.5rem;   /* 24px */
+  --space-4: 2rem;     /* 32px */
+  --space-5: 3rem;     /* 48px */
+  --space-6: 4rem;     /* 64px */
+  --space-7: 5rem;     /* 80px */
+  --space-8: 6rem;     /* 96px */
+  --space-9: 8rem;     /* 128px */
+
+  /* RADIUS - primitives only */
+  --radius-sm: 0.25rem;  /* 4px */
+  --radius-md: 0.5rem;   /* 8px */
+  --radius-lg: 1rem;     /* 16px */
+  --radius-xl: 1.5rem;   /* 24px */
+  --radius-2xl: 2rem;    /* 32px */
+  --radius-full: 9999px; /* pill/circle - px is fine here */
+
+  /* SHADOW - primitives only */
+  --shadow-color: 0 0 0; /* rgb for black, used with / alpha */
+  --shadow-sm: 0 0.125rem 0.25rem rgb(var(--shadow-color) / 0.08);
+  --shadow-md: 0 0.25rem 0.5rem rgb(var(--shadow-color) / 0.12);
+  --shadow-lg: 0 0.625rem 1.25rem rgb(var(--shadow-color) / 0.18);
+  --shadow-xl: 0 1.25rem 2.5rem rgb(var(--shadow-color) / 0.24);
+  
+  /* ======================================================
+    TRANSITION DURATION - primitives
+    ====================================================== */
+
+  --duration-instant: 0ms;
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-slow: 300ms;
+  --duration-slower: 500ms;
+
+
+  /* ======================================================
+    TRANSITION EASING - primitives
+    ====================================================== */
+
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-default: ease;
+
+
+  /* ======================================================
+    TRANSITION TOKENS - semantic
+    ====================================================== */
+
+  --transition-fast: var(--duration-fast) var(--ease-default);
+  --transition-base: var(--duration-base) var(--ease-default);
+  --transition-slow: var(--duration-slow) var(--ease-default);
+
+  /* ICON SIZES - primitives only */
+  --icon-size-xs: 1.75rem;  /* 28px */
+  --icon-size-sm: 2rem;     /* 32px */
+  --icon-size-md: 2.75rem;  /* 44px */
+  --icon-size-lg: 4rem;     /* 64px */
+  --icon-size-xl: 5.5rem;   /* 88px */
+
+  /* BREAKPOINTS - for reference . Cant be used in media queries because they are not valid CSS values 
+    320px → smallest supported
+    360px → modern phones (S23)
+    500px → large phones
+    768px → tablets
+  */
+  --breakpoint-2xs: 360px;
+  --breakpoint-xs: 500px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
+
+  /* variables.css - LAYOUT SCALE - primitives only */
+  --size-0: 0;
+  --size-px: 1px;
+  --size-4: 0.25rem;   /* 4px */
+  --size-8: 0.5rem;    /* 8px */
+  --size-12: 0.75rem;  /* 12px */
+  --size-16: 1rem;     /* 16px */
+  --size-20: 1.25rem;  /* 20px */
+  --size-24: 1.5rem;   /* 24px */
+  --size-32: 2rem;     /* 32px */
+  --size-40: 2.5rem;   /* 40px - use instead of 38px */
+  --size-48: 3rem;     /* 48px */
+  --size-64: 4rem;     /* 64px */
+  --size-70: 4.375rem; /* 70px - keep if you must */
+  --size-80: 5rem;     /* 80px */
+  --size-96: 6rem;     /* 96px */
+  --size-320: 20rem;   /* 320px */
+  --size-640: 40rem;   /* 640px */
+  --size-768: 48rem;   /* 768px */
+  --size-960: 60rem;   /* 960px */
+  --size-1024: 64rem;  /* 1024px */
+  --size-1200: 75rem;  /* 1200px */
+  --size-1400: 87.5rem; /* 1400px */
+
+  --size-full: 100%;
+  --size-screen-w: 100vw;
+  --size-screen-h: 100vh;
+
+  /* Z-INDEX SCALE - primitives only */
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+}

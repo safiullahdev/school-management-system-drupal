@@ -1,0 +1,268 @@
+/* css/components/views.css */
+/* ======================================================
+   VIEWS COMPONENT - Mobile First
+   Framework-safe via mosafi-* namespace
+   ====================================================== */
+
+
+/* ===================================
+   EXPOSED FILTERS
+   =================================== */
+
+.mosafi-views-exposed-form,
+.views-exposed-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-3);
+
+  margin-bottom: var(--space-6);
+  padding: var(--space-4);
+
+  background: var(--site-surface-sunken);
+
+  border: 2px solid var(--site-line);
+  border-radius: var(--radius-lg);
+}
+
+.mosafi-views-exposed-form .form-item,
+.views-exposed-form .form-item {
+  width: 100%;
+  margin: 0;
+}
+
+.mosafi-views-exposed-form .form-actions,
+.views-exposed-form .form-actions {
+  width: 100%;
+  margin: 0;
+}
+
+.mosafi-views-exposed-form .form-actions .mosafi-btn,
+.views-exposed-form .form-actions .mosafi-btn,
+.views-exposed-form .form-actions .btn {
+  width: 100%;
+}
+
+
+/* ===================================
+   HEADER / FOOTER
+   =================================== */
+
+.mosafi-view-header,
+.view-header,
+.mosafi-view-footer,
+.view-footer {
+  margin-bottom: var(--space-5);
+
+  color: var(--site-text-muted);
+
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+
+/* ===================================
+   VIEW ROWS
+   =================================== */
+
+.mosafi-views-row,
+.views-row {
+  margin-bottom: var(--space-5);
+}
+
+.mosafi-views-row:last-child,
+.views-row:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ===================================
+   GRID
+   =================================== */
+
+.mosafi-views-grid,
+.views-view-grid {
+  display: grid;
+
+  gap: var(--space-4);
+
+  grid-template-columns: 1fr;
+}
+
+
+/* Mobile stack */
+
+.mosafi-views-grid.cols-2,
+.mosafi-views-grid.cols-3,
+.mosafi-views-grid.cols-4,
+.views-view-grid.cols-2,
+.views-view-grid.cols-3,
+.views-view-grid.cols-4 {
+  grid-template-columns: 1fr;
+}
+
+
+/* ===================================
+   TABLES
+   =================================== */
+
+.mosafi-views-table,
+.views-table {
+  /* inherits from tables.css */
+}
+
+
+/* ===================================
+   EMPTY
+   =================================== */
+
+.mosafi-view-empty,
+.view-empty {
+  padding: var(--space-6);
+
+  text-align: center;
+
+  color: var(--site-text-muted);
+
+  font-size: var(--text-base);
+
+  background: var(--site-surface-sunken);
+
+  border: 2px solid var(--site-line);
+  border-radius: var(--radius-lg);
+}
+
+
+/* ===================================
+   PAGER
+   =================================== */
+
+.mosafi-view .mosafi-pager,
+.view .pager {
+  margin-top: var(--space-6);
+}
+
+
+/* ===================================
+   ATTACHMENTS
+   =================================== */
+
+.mosafi-attachment-before,
+.attachment-before,
+.mosafi-attachment-after,
+.attachment-after {
+  margin-bottom: var(--space-6);
+}
+
+
+/* ===================================
+   TABLET+
+   =================================== */
+
+@media (min-width: 768px) {
+
+  .mosafi-views-exposed-form,
+  .views-exposed-form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+
+    gap: var(--space-3);
+
+    padding: var(--space-4);
+
+    border-width: 1px;
+    border-radius: var(--radius-md);
+  }
+
+  .mosafi-views-exposed-form .form-item,
+  .views-exposed-form .form-item {
+    flex: 1 1 200px;
+    width: auto;
+  }
+
+  .mosafi-views-exposed-form .form-actions,
+  .views-exposed-form .form-actions {
+    flex: 0 0 auto;
+    width: auto;
+  }
+
+  .mosafi-views-exposed-form .form-actions .mosafi-btn,
+  .views-exposed-form .form-actions .mosafi-btn,
+  .views-exposed-form .form-actions .btn {
+    width: auto;
+  }
+
+  .mosafi-view-header,
+  .view-header,
+  .mosafi-view-footer,
+  .view-footer {
+    margin-bottom: var(--space-4);
+    font-size: var(--text-xs);
+  }
+
+  .mosafi-views-row,
+  .views-row {
+    margin-bottom: var(--space-5);
+  }
+
+  .mosafi-views-grid,
+  .views-view-grid {
+    gap: var(--space-4);
+  }
+
+  .mosafi-views-grid.cols-2,
+  .views-view-grid.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mosafi-views-grid.cols-3,
+  .views-view-grid.cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .mosafi-views-grid.cols-4,
+  .views-view-grid.cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .mosafi-view-empty,
+  .view-empty {
+    padding: var(--space-6);
+
+    font-size: var(--text-sm);
+
+    border-width: 1px;
+    border-radius: var(--radius-md);
+  }
+
+  .mosafi-view .mosafi-pager,
+  .view .pager {
+    margin-top: var(--space-5);
+  }
+
+  .mosafi-attachment-before,
+  .attachment-before,
+  .mosafi-attachment-after,
+  .attachment-after {
+    margin-bottom: var(--space-5);
+  }
+}
+
+
+/* ===================================
+   DESKTOP
+   =================================== */
+
+@media (min-width: 1024px) {
+
+  .mosafi-views-exposed-form,
+  .views-exposed-form {
+    gap: var(--space-4);
+  }
+
+  .mosafi-views-grid.cols-4,
+  .views-view-grid.cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

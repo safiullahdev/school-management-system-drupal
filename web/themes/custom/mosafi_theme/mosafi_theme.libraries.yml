@@ -1,0 +1,35 @@
+base:
+  css:
+    component:
+      css/base/variables.css: { weight: -100 }
+      css/base/palette-colors.css: { weight: -99 }
+      css/base/semantics.css: { weight: -98 }
+      css/base/base.css: { weight: -97 }
+      css/base/typography.css: { weight: -96 }
+      css/base/layout.css: { weight: -95 }
+      css/base/utilities.css: { weight: -94 }
+
+components:
+  css:
+    component:
+      css/components/icons.css: { weight: 0 }
+      css/components/buttons.css: { weight: 1 }
+      css/components/cards.css: { weight: 2 }
+      css/components/forms.css: { weight: 3 }
+      css/components/nav.css: { weight: 4 }
+      css/components/menu.css: { weight: 5 }
+      css/components/tables.css: { weight: 6 }
+      css/components/alerts.css: { weight: 7 }
+      css/components/badges.css: { weight: 8 }
+      css/components/media.css: { weight: 9 }
+      css/components/lists.css: { weight: 10 }
+      css/components/accordion.css: { weight: 11 }
+      css/components/modal.css: { weight: 12 }
+      css/components/views.css: { weight: 13 }
+  dependencies:
+    - mosafi_theme/base
+
+global:
+  dependencies:
+    - mosafi_theme/base
+    - mosafi_theme/components

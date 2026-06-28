@@ -1,0 +1,262 @@
+/* css/base/04-base.css */
+/* ======================================================
+   BASE - Element defaults & resets
+   No classes. Only HTML elements.
+   ====================================================== */
+
+/* ======================================================
+   RESET
+   ====================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+ font-size: 100%;
+ -webkit-text-size-adjust: 100%;
+ -moz-tab-size: 4;
+ tab-size: 4;
+ scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: var(--type-size-body);
+  line-height: var(--type-line-height-body);
+  font-weight: var(--type-font-weight-body);
+  color: var(--section-light-text);
+  background: var(--section-light-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ======================================================
+   TYPOGRAPHY ELEMENTS
+   ====================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-weight: var(--type-font-weight-heading);
+  line-height: var(--type-line-height-heading);
+  color: inherit;
+}
+
+p {
+  margin: 0 0 var(--space-2);
+}
+
+ul, ol {
+  margin: 0 0 var(--space-2);
+  padding-left: var(--space-4);
+}
+
+li {
+  margin-bottom: var(--space-1);
+}
+
+strong, b {
+  font-weight: var(--font-weight-bold);
+}
+
+em, i {
+  font-style: italic;
+}
+
+small {
+  font-size: var(--type-size-meta);
+}
+
+code, kbd, pre, samp {
+  font-family: var(--font-family-mono);
+  font-size: 0.9em;
+}
+
+pre {
+  margin: 0 0 var(--space-2);
+  padding: var(--space-2);
+  background: var(--section-light-surface-soft);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+}
+
+blockquote {
+  margin: 0 0 var(--space-2);
+  padding-left: var(--space-3);
+  border-left: 3px solid var(--section-light-line);
+  color: var(--section-light-text-soft);
+}
+
+
+/* ======================================================
+   LINKS
+   ====================================================== */
+
+a {
+  color: var(--section-light-accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--section-light-accent-hover);
+  text-decoration-color: currentColor;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--section-light-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ======================================================
+   LINKED IMAGE HOVER
+   ====================================================== */
+
+a img {
+  transition:
+    transform var(--transition-fast),
+    opacity var(--transition-base),
+    filter var(--transition-base);
+}
+
+a:hover img,
+a:focus-visible img {
+  transform: scale(1.03);
+}
+
+/* Optional softer style */
+a:hover img,
+a:focus-visible img {
+  opacity: 0.96;
+}
+/* ======================================================
+   FORMS
+   ====================================================== */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: inherit;
+  margin: 0;
+  color: inherit;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+button:disabled,
+[type='button']:disabled,
+[type='reset']:disabled,
+[type='submit']:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+input,
+textarea,
+select {
+  background: var(--section-light-surface);
+  border: 1px solid var(--section-light-line);
+  border-radius: var(--radius-md);
+  padding: var(--space-1) var(--space-2);
+  transition: border-color var(--transition-fast);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--section-light-accent);
+  box-shadow: 0 0 0 3px var(--section-light-accent-focus);
+}
+
+label {
+  display: inline-block;
+  font-size: var(--type-size-label);
+  font-weight: var(--type-font-weight-label);
+  margin-bottom: var(--space-1);
+}
+
+
+
+/* ======================================================
+   MEDIA
+   ====================================================== */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  fill: currentColor;
+}
+
+/* ======================================================
+   TABLES
+   ====================================================== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 var(--space-2);
+}
+
+th,
+td {
+  padding: var(--space-1) var(--space-2);
+  text-align: left;
+  border-bottom: 1px solid var(--section-light-line);
+}
+
+th {
+  font-weight: var(--font-weight-semibold);
+  color: var(--section-light-text);
+}
+
+/* ======================================================
+   MISC
+   ====================================================== */
+
+hr {
+  margin: var(--space-4) 0;
+  border: 0;
+  border-top: 1px solid var(--section-light-line);
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+summary {
+  display: list-item;
+  cursor: pointer;
+}

@@ -1,6 +1,9 @@
 # DDEV
 .ddev/
 
+# Archives / generated packages
+*.zip
+
 # Composer
 /vendor/
 

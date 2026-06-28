@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Theme functions for Mosafi Theme.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function mosafi_theme_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (isset($form['#attributes']['class']) && in_array('webform-submission-form', $form['#attributes']['class'], TRUE)) {
+    $form['#attributes']['class'][] = 'mosafi-form';
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function mosafi_theme_page_attachments_alter(array &$page) {
+  if (isset($page['#attached']['html_head'])) {
+    foreach ($page['#attached']['html_head'] as $key => $attachment) {
+      if (isset($attachment[1]) && $attachment[1] === 'system_meta_generator') {
+        unset($page['#attached']['html_head'][$key]);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_page_alter().
+ */
+function mosafi_theme_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    $suggestions[] = 'page__' . $node->bundle();
+  }
+}

@@ -1,0 +1,460 @@
+/* css/components/tables.css */
+/* ======================================================
+   TABLES COMPONENT - Mobile First
+   Framework-safe via mosafi-* namespace
+   ====================================================== */
+
+
+/* ===================================
+   BASE
+   =================================== */
+
+.mosafi-table {
+  width: 100%;
+
+  margin-bottom: var(--space-5);
+
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  font-size: var(--text-base);
+  line-height: 1.6;
+
+  color: var(--site-text);
+}
+
+.mosafi-table caption {
+  padding: var(--space-3) 0;
+
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-sm);
+
+  text-align: left;
+
+  color: var(--site-text-muted);
+
+  caption-side: top;
+}
+
+
+/* ===================================
+   MOBILE STACKED TABLES
+   =================================== */
+
+.mosafi-table th,
+.mosafi-table td {
+  display: block;
+
+  padding: var(--space-3) var(--space-4);
+
+  text-align: left;
+
+  border-bottom: 1px solid var(--site-line);
+}
+
+.mosafi-table th {
+  font-weight: var(--font-weight-semibold);
+
+  color: var(--site-text);
+
+  background: var(--site-surface-sunken);
+
+  font-size: var(--text-sm);
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mosafi-table tr {
+  display: block;
+
+  margin-bottom: var(--space-4);
+
+  border: 2px solid var(--site-line);
+  border-radius: var(--radius-lg);
+
+  overflow: hidden;
+}
+
+.mosafi-table tr:last-child {
+  margin-bottom: 0;
+}
+
+.mosafi-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.mosafi-table tfoot td,
+.mosafi-table tfoot th {
+  border-top: 2px solid var(--site-line-strong);
+
+  font-weight: var(--font-weight-semibold);
+
+  background: var(--site-surface-soft);
+}
+
+
+/* ===================================
+   STACKED LABELS
+   =================================== */
+
+.mosafi-table td::before,
+.mosafi-table th::before {
+  content: attr(data-label);
+
+  display: block;
+
+  margin-bottom: var(--space-1);
+
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-xs);
+
+  color: var(--site-text-muted);
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mosafi-table td[data-label=""]::before,
+.mosafi-table th[data-label=""]::before,
+.mosafi-table td:not([data-label])::before {
+  display: none;
+}
+
+
+/* ===================================
+   TABLE VARIANTS
+   =================================== */
+
+.mosafi-table--striped tbody tr:nth-of-type(odd) {
+  background: var(--site-surface-sunken);
+}
+
+.mosafi-table--hover tbody tr:active {
+  background: var(--site-surface-soft);
+}
+
+.mosafi-table--bordered {
+  border: 0;
+}
+
+.mosafi-table--bordered th,
+.mosafi-table--bordered td {
+  border-bottom: 1px solid var(--site-line);
+}
+
+.mosafi-table--sm th,
+.mosafi-table--sm td {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.mosafi-table--borderless,
+.mosafi-table--borderless th,
+.mosafi-table--borderless td,
+.mosafi-table--borderless tr {
+  border: 0;
+}
+
+
+/* ===================================
+   RESPONSIVE WRAPPER
+   =================================== */
+
+.mosafi-table-responsive {
+  width: 100%;
+
+  overflow-x: auto;
+
+  -webkit-overflow-scrolling: touch;
+
+  margin-bottom: var(--space-5);
+}
+
+.mosafi-table-responsive > .mosafi-table {
+  margin-bottom: 0;
+}
+
+
+/* ===================================
+   TABLE UTILITIES
+   =================================== */
+
+.mosafi-table .mosafi-numeric,
+.mosafi-table .mosafi-text-right {
+  text-align: left;
+}
+
+.mosafi-table .mosafi-text-center {
+  text-align: left;
+}
+
+
+/* ===================================
+   STATUS
+   =================================== */
+
+.mosafi-table .mosafi-status {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 24px;
+
+  padding: var(--space-1) var(--space-2);
+
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+
+  border-radius: var(--radius-sm);
+}
+
+.mosafi-table .mosafi-status--published {
+  color: var(--site-status-success);
+
+  background:
+    color-mix(
+      in srgb,
+      var(--site-status-success) 15%,
+      transparent
+    );
+}
+
+.mosafi-table .mosafi-status--unpublished {
+  color: var(--site-text-muted);
+  background: var(--site-surface-sunken);
+}
+
+
+/* ===================================
+   OPERATIONS
+   =================================== */
+
+.mosafi-table .mosafi-operations,
+.mosafi-table .dropbutton-wrapper {
+  text-align: left;
+  padding-top: var(--space-3);
+}
+
+
+/* ===================================
+   EMPTY TABLES
+   =================================== */
+
+.mosafi-table-empty {
+  padding: var(--space-6);
+
+  text-align: center;
+
+  color: var(--site-text-muted);
+
+  font-size: var(--text-base);
+}
+
+
+/* ===================================
+   DRUPAL SUPPORT
+   =================================== */
+
+.views-table {
+  /* inherits styles when mosafi-table added */
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+
+  z-index: 10;
+
+  background: var(--site-surface);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.tabledrag-toggle-weight {
+  display: flex;
+  align-items: center;
+
+  min-height: 44px;
+
+  margin-bottom: var(--space-3);
+
+  font-size: var(--text-sm);
+}
+
+.draggable {
+  background: var(--site-surface-soft);
+}
+
+.drag-previous {
+  background:
+    color-mix(
+      in srgb,
+      var(--site-status-warning) 15%,
+      transparent
+    );
+}
+
+.tableselect th.select-all,
+.tableselect td {
+  display: table-cell;
+  width: 48px;
+}
+
+
+/* ===================================
+   TABLET+
+   =================================== */
+
+@media (min-width: 768px) {
+
+  .mosafi-table {
+    display: table;
+
+    margin-bottom: var(--space-4);
+
+    font-size: var(--text-sm);
+    line-height: 1.5;
+  }
+
+  .mosafi-table caption {
+    padding: var(--space-2) 0;
+    font-size: var(--text-xs);
+  }
+
+  .mosafi-table thead {
+    display: table-header-group;
+  }
+
+  .mosafi-table tbody {
+    display: table-row-group;
+  }
+
+  .mosafi-table tfoot {
+    display: table-footer-group;
+  }
+
+  .mosafi-table tr {
+    display: table-row;
+
+    margin-bottom: 0;
+
+    border: 0;
+    border-radius: 0;
+  }
+
+  .mosafi-table th,
+  .mosafi-table td {
+    display: table-cell;
+
+    padding: var(--space-2) var(--space-3);
+
+    border-bottom: 1px solid var(--site-line);
+
+    font-size: var(--text-sm);
+  }
+
+  .mosafi-table th {
+    vertical-align: bottom;
+
+    border-bottom-width: 2px;
+    border-bottom-color: var(--site-line-strong);
+
+    background: var(--site-surface-sunken);
+
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .mosafi-table thead th {
+    border-bottom-color: var(--site-line-strong);
+  }
+
+  .mosafi-table tbody tr:last-child td,
+  .mosafi-table tbody tr:last-child th {
+    border-bottom: 0;
+  }
+
+  .mosafi-table td::before,
+  .mosafi-table th::before {
+    display: none;
+  }
+
+  .mosafi-table--hover tbody tr {
+    transition: background-color var(--transition-base);
+  }
+
+  .mosafi-table--hover tbody tr:hover {
+    background: var(--site-surface-soft);
+  }
+
+  .mosafi-table--bordered {
+    border: 1px solid var(--site-line);
+  }
+
+  .mosafi-table--bordered th,
+  .mosafi-table--bordered td {
+    border: 1px solid var(--site-line);
+  }
+
+  .mosafi-table--bordered thead th,
+  .mosafi-table--bordered thead td {
+    border-bottom-width: 2px;
+  }
+
+  .mosafi-table--sm th,
+  .mosafi-table--sm td {
+    padding: var(--space-2);
+    font-size: var(--text-xs);
+  }
+
+  .mosafi-table-responsive {
+    margin-bottom: var(--space-4);
+  }
+
+  .mosafi-table .mosafi-numeric,
+  .mosafi-table .mosafi-text-right {
+    text-align: right;
+  }
+
+  .mosafi-table .mosafi-text-center {
+    text-align: center;
+  }
+
+  .mosafi-table .mosafi-operations,
+  .mosafi-table .dropbutton-wrapper {
+    white-space: nowrap;
+
+    text-align: right;
+
+    padding-top: var(--space-2);
+  }
+
+  .draggable td:first-child {
+    padding-left: var(--space-4);
+  }
+
+  .tableselect th.select-all,
+  .tableselect td {
+    width: 1%;
+    white-space: nowrap;
+  }
+
+  .mosafi-table-empty {
+    padding: var(--space-6);
+    font-size: var(--text-sm);
+  }
+}
+
+
+/* ===================================
+   DESKTOP
+   =================================== */
+
+@media (min-width: 1024px) {
+
+  .mosafi-table--sm th,
+  .mosafi-table--sm td {
+    padding: var(--space-1) var(--space-2);
+  }
+}

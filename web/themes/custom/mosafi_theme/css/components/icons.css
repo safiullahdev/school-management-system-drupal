@@ -1,0 +1,279 @@
+/* css/components/icons.css */
+/* ======================================================
+   ICON COMPONENT - Mobile First
+   SVG wrapper with size/color/shape variants
+   Works with both .icon and legacy .icon-wrapper
+
+   Rules:
+   - Size modifiers are consistent across all devices.
+   - Media queries handle interaction only.
+   - Components may override icon sizes locally if needed.
+   ====================================================== */
+
+
+/* ===================================
+   BASE
+   =================================== */
+
+.icon,
+.icon-wrapper {
+
+  /* Sizes */
+  --icon-size: 44px;
+  --icon-svg-scale: 0.5;
+
+  /* Semantic colors */
+  --icon-bg: var(--section-light-surface-soft);
+  --icon-color: var(--section-light-accent);
+  --icon-border: var(--section-light-line);
+
+  width: var(--icon-size);
+  height: var(--icon-size);
+
+  background: var(--icon-bg);
+  color: var(--icon-color);
+
+  border: 2px solid var(--icon-border);
+  border-radius: var(--radius-md);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-fast);
+}
+
+
+/* ===================================
+   SVG
+   =================================== */
+
+.icon svg,
+.icon-wrapper svg {
+  width: calc(var(--icon-size) * var(--icon-svg-scale));
+  height: calc(var(--icon-size) * var(--icon-svg-scale));
+
+  display: block;
+  fill: currentColor;
+}
+
+
+/* ===================================
+   SIZE MODIFIERS
+   Consistent across all devices
+   =================================== */
+
+.icon--xs,
+.icon-wrapper--xs {
+  --icon-size: 32px;
+  --icon-svg-scale: 0.5;
+}
+
+.icon--sm,
+.icon-wrapper--sm {
+  --icon-size: 36px;
+  --icon-svg-scale: 0.5;
+}
+
+.icon--md,
+.icon-wrapper--md {
+  --icon-size: 44px;
+  --icon-svg-scale: 0.5;
+}
+
+.icon--lg,
+.icon-wrapper--lg {
+  --icon-size: 52px;
+  --icon-svg-scale: 0.5;
+}
+
+.icon--xl,
+.icon-wrapper--xl {
+  --icon-size: 60px;
+  --icon-svg-scale: 0.5;
+}
+
+
+/* ===================================
+   SHAPE MODIFIERS
+   =================================== */
+
+.icon--circle,
+.icon-wrapper--circle {
+  border-radius: var(--radius-full);
+  padding: 6px;
+}
+
+.icon--square,
+.icon-wrapper--square {
+  border-radius: 0;
+}
+
+.icon--rounded-sm,
+.icon-wrapper--rounded-sm {
+  border-radius: var(--radius-sm);
+}
+
+.icon--rounded-lg,
+.icon-wrapper--rounded-lg {
+  border-radius: var(--radius-lg);
+}
+
+/* ===================================
+   STYLE MODIFIERS
+   =================================== */
+
+.icon--no-background,
+.icon-wrapper--no-background {
+  background: transparent;
+}
+
+.icon--no-border,
+.icon-wrapper--no-border {
+  border: none;
+}
+
+.icon--clean,
+.icon-wrapper--clean {
+  background: transparent;
+  border: none;
+}
+
+
+/* ===================================
+   COLOR VARIANTS
+   =================================== */
+
+.icon--primary,
+.icon-wrapper--primary {
+  --icon-bg: var(--section-light-accent);
+  --icon-color: var(--section-light-accent-contrast);
+  --icon-border: var(--section-light-accent);
+}
+
+.icon--primary:active,
+.icon-wrapper--primary:active {
+  --icon-bg: var(--section-light-accent-hover);
+  --icon-border: var(--section-light-accent-hover);
+  transform: scale(0.95);
+}
+
+
+.icon--secondary,
+.icon-wrapper--secondary {
+  --icon-bg: var(--section-light-surface);
+  --icon-color: var(--section-light-text);
+  --icon-border: var(--section-light-line);
+}
+
+
+.icon--outline,
+.icon-wrapper--outline {
+  --icon-bg: transparent;
+  --icon-color: var(--section-light-accent);
+  --icon-border: var(--section-light-accent);
+}
+
+.icon--outline:active,
+.icon-wrapper--outline:active {
+  --icon-bg: var(--section-light-accent-soft);
+}
+
+
+.icon--ghost,
+.icon-wrapper--ghost {
+  --icon-bg: transparent;
+  --icon-color: var(--section-light-text-soft);
+  --icon-border: transparent;
+}
+
+.icon--ghost:active,
+.icon-wrapper--ghost:active {
+  --icon-bg: var(--section-light-surface-soft);
+  --icon-color: var(--section-light-text);
+}
+
+
+/* ===================================
+   STATUS VARIANTS
+   =================================== */
+
+.icon--success,
+.icon-wrapper--success {
+  --icon-bg: var(--section-light-status-success-bg);
+  --icon-color: var(--section-light-status-success);
+  --icon-border: var(--section-light-status-success);
+}
+
+.icon--danger,
+.icon-wrapper--danger {
+  --icon-bg: var(--section-light-status-danger-bg);
+  --icon-color: var(--section-light-status-danger);
+  --icon-border: var(--section-light-status-danger);
+}
+
+.icon--warning,
+.icon-wrapper--warning {
+  --icon-bg: var(--section-light-status-warning-bg);
+  --icon-color: var(--section-light-status-warning);
+  --icon-border: var(--section-light-status-warning);
+}
+
+
+/* ===================================
+   TABLET+ / DESKTOP
+   Interaction only
+   =================================== */
+
+@media (min-width: 768px) {
+
+  .icon,
+  .icon-wrapper {
+    border-width: 1px;
+  }
+
+
+  .icon--primary:hover,
+  .icon-wrapper--primary:hover {
+    --icon-bg: var(--section-light-accent-hover);
+    --icon-border: var(--section-light-accent-hover);
+  }
+
+  .icon--secondary:hover,
+  .icon-wrapper--secondary:hover {
+    --icon-bg: var(--section-light-surface-soft);
+  }
+
+  .icon--outline:hover,
+  .icon-wrapper--outline:hover {
+    --icon-bg: var(--section-light-accent-soft);
+  }
+
+  .icon--ghost:hover,
+  .icon-wrapper--ghost:hover {
+    --icon-bg: var(--section-light-surface-soft);
+    --icon-color: var(--section-light-text);
+  }
+}
+
+/* ===================================
+   BORDER THICKNESS MODIFIERS
+   Must stay after desktop media query
+   =================================== */
+
+.icon--border-md,
+.icon-wrapper--border-md {
+  border-width: 2px;
+}
+
+.icon--border-lg,
+.icon-wrapper--border-lg {
+  border-width: 3px;
+}
