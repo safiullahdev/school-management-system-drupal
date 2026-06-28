@@ -1,0 +1,25 @@
+uuid: b8c510cb-7dd5-46ae-8f58-19c5e8b11ae9
+langcode: en
+status: true
+dependencies:
+  module:
+    - portfolio_home
+    - system
+  theme:
+    - mosafi_theme
+id: mosafi_theme_portfoliohomehero
+theme: mosafi_theme
+region: hero
+weight: 0
+provider: null
+plugin: portfolio_home_hero
+settings:
+  id: portfolio_home_hero
+  label: 'Portfolio Home Hero'
+  label_display: '0'
+  provider: portfolio_home
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
