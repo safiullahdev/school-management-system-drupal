@@ -20,6 +20,39 @@ class PortfolioHeroBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build(): array {
+    $ctas = [];
+
+    if (\Drupal::currentUser()->isAnonymous()) {
+      $ctas['cta_primary'] = [
+        '#type' => 'link',
+        '#title' => $this->t('Create Parent Account'),
+        '#url' => Url::fromUserInput('/user/register'),
+      ];
+
+      $ctas['cta_secondary'] = [
+        '#type' => 'link',
+        '#title' => $this->t('Login'),
+        '#url' => Url::fromUserInput('/user/login'),
+      ];
+    }
+    else {
+      $ctas['cta_primary'] = [
+        '#type' => 'link',
+        '#title' => $this->t('Go to Dashboard'),
+        '#url' => $this->getDashboardUrl(),
+      ];
+    }
+
+    $ctas['cta_tertiary'] = [
+      '#type' => 'link',
+      '#title' => $this->t('View Source Code'),
+      '#url' => Url::fromUri('https://github.com/safiullahdev/school-management-system-drupal'),
+      '#attributes' => [
+        'target' => '_blank',
+        'rel' => 'noopener',
+      ],
+    ];
+
     return [
       '#type' => 'component',
       '#component' => 'hero_block:hero-overlay',
@@ -28,27 +61,40 @@ class PortfolioHeroBlock extends BlockBase {
         'eyebrow' => 'Drupal Portfolio Project',
         'headline' => 'Welcome to School Management System',
         'subheadline' => 'Manage admissions, classes, assignments, grades, attendance, and more in one secure school portal.',
-        'cta_primary' => [
-          '#type' => 'link',
-          '#title' => 'Create Parent Account',
-          '#url' => \Drupal\Core\Url::fromUserInput('/user/register'),
-        ],
-        'cta_secondary' => [
-          '#type' => 'link',
-          '#title' => 'Login',
-          '#url' => \Drupal\Core\Url::fromUserInput('/user/login'),
-        ],
-        'cta_tertiary' => [
-          '#type' => 'link',
-          '#title' => 'View Source Code',
-          '#url' => \Drupal\Core\Url::fromUri('https://github.com/safiullahdev/school-management-system-drupal'),
-          '#attributes' => [
-            'target' => '_blank',
-            'rel' => 'noopener',
-          ],
-        ],
+      ] + $ctas,
+      '#cache' => [
+        'contexts' => ['user.roles'],
       ],
     ];
   }
+
+    /**
+    * Returns the dashboard URL for the current user's role.
+    */
+protected function getDashboardUrl(): Url {
+  $roles = \Drupal::currentUser()->getRoles();
+
+  if (in_array('administrator', $roles, TRUE) || in_array('admin', $roles, TRUE)) {
+    return Url::fromUserInput('/school-admin-dashboard');
+  }
+
+  if (in_array('registrar', $roles, TRUE)) {
+    return Url::fromUserInput('/registrar/applications');
+  }
+
+  if (in_array('teacher', $roles, TRUE)) {
+    return Url::fromUserInput('/teacher-dashboard');
+  }
+
+  if (in_array('student', $roles, TRUE)) {
+    return Url::fromUserInput('/student/applications');
+  }
+
+  if (in_array('parent', $roles, TRUE)) {
+    return Url::fromUserInput('/parent-attendance');
+  }
+
+  return Url::fromRoute('user.page');
+}
 
 }
