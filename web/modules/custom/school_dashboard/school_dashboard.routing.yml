@@ -1,5 +1,5 @@
 school_dashboard.student_dashboard:
-  path: '/student/dashboard'
+  path: '/student-dashboard'
   defaults:
     _controller: '\Drupal\school_dashboard\Controller\StudentDashboardController::dashboard'
     _title: 'Student Dashboard'
