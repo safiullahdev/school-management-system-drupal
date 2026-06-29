@@ -1,0 +1,48 @@
+uuid: 1a7fb873-8c67-4e68-8504-99e4108373df
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.brand_header_row
+    - field.field.block_content.brand_header_row.field_brand_header_layout
+    - field.field.block_content.brand_header_row.field_brand_menu
+    - field.field.block_content.brand_header_row.field_logo
+    - image.style.thumbnail
+  module:
+    - image
+_core:
+  default_config_hash: gG7xedg5Dhk3-ztLLakGhuZ-k9KwwKDvCSkPxeWyoC4
+id: block_content.brand_header_row.default
+targetEntityType: block_content
+bundle: brand_header_row
+mode: default
+content:
+  field_brand_header_layout:
+    type: options_buttons
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_brand_menu:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_logo:
+    type: image_image
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

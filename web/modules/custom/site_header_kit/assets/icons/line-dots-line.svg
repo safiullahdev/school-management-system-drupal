@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 6" preserveAspectRatio="none">
+  <!-- Left line -->
+  <rect x="0" y="0" width="20" height="6" fill="#E11414"/>
+  
+  <!-- Dots -->
+  <rect x="22" y="0" width="2" height="6" fill="#E11414"/>
+  <rect x="26" y="0" width="2" height="6" fill="#E11414"/>
+  <rect x="30" y="0" width="2" height="6" fill="#E11414"/>
+  <rect x="34" y="0" width="2" height="6" fill="#E11414"/>
+  <rect x="38" y="0" width="2" height="6" fill="#E11414"/>
+  <rect x="42" y="0" width="2" height="6" fill="#E11414"/>
+  <rect x="46" y="0" width="2" height="6" fill="#E11414"/>
+  <rect x="50" y="0" width="2" height="6" fill="#E11414"/>
+  <rect x="54" y="0" width="2" height="6" fill="#E11414"/>
+  <rect x="58" y="0" width="2" height="6" fill="#E11414"/>
+  <rect x="62" y="0" width="2" height="6" fill="#E11414"/>
+  <rect x="66" y="0" width="2" height="6" fill="#E11414"/>
+  <rect x="70" y="0" width="2" height="6" fill="#E11414"/>
+  <rect x="74" y="0" width="2" height="6" fill="#E11414"/>
+  <rect x="78" y="0" width="2" height="6" fill="#E11414"/>
+  
+  <!-- Right line -->
+  <rect x="80" y="0" width="20" height="6" fill="#E11414"/>
+</svg>

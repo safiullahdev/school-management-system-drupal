@@ -1,0 +1,91 @@
+<?php
+
+use Drupal\block_content\Entity\BlockContent;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function site_header_kit_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  if ($entity->getEntityTypeId() !== 'block_content') {
+    return;
+  }
+
+  if ($entity->bundle() !== 'brand_header_row') {
+    return;
+  }
+
+  $attached = $build['#attached'] ?? [];
+  $attached['library'][] = 'site_header_kit/responsive_menu';
+
+  $layout = $entity->get('field_brand_header_layout')->value ?: 'default';
+
+  $menu_render = [];
+  $menu_entities = $entity->get('field_brand_menu')->referencedEntities();
+
+  if (!empty($menu_entities)) {
+    $menu = reset($menu_entities);
+    $menu_name = $menu->id();
+
+    $menu_tree = \Drupal::menuTree();
+    $params = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
+    $tree = $menu_tree->load($menu_name, $params);
+
+    $manipulators = [
+      ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+      ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+    ];
+
+    $tree = $menu_tree->transform($tree, $manipulators);
+    $menu_render = $menu_tree->build($tree);
+  }
+
+  $theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
+  $logo_url = theme_get_setting('logo.url', $theme) ?: theme_get_setting('logo.url');
+  $site_name = \Drupal::config('system.site')->get('name');
+
+  $component = match ($layout) {
+    'layout_one' => 'site_header_kit:brand-header-layout-one',
+    'layout_two' => 'site_header_kit:brand-header-layout-two',
+    default => 'site_header_kit:brand-header',
+  };
+
+  $build = [
+    '#type' => 'component',
+    '#component' => $component,
+    '#props' => [
+      'layout' => $layout,
+      'logo' => $build['field_logo'] ?? NULL,
+      'menu' => $menu_render ?: NULL,
+      'site_logo_url' => $logo_url ?: NULL,
+      'site_name' => $site_name ?: NULL,
+    ],
+    '#attributes' => [
+      'class' => ['shk-row', 'shk-row--brand-header'],
+    ],
+    '#attached' => $attached,
+  ];
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function site_header_kit_preprocess_block(array &$variables) {
+  if (
+    empty($variables['elements']['#block_content']) ||
+    !$variables['elements']['#block_content'] instanceof BlockContent
+  ) {
+    return;
+  }
+
+  $block_content = $variables['elements']['#block_content'];
+
+  if ($block_content->bundle() === 'brand_header_row') {
+    $variables['label'] = '';
+
+    if (isset($variables['configuration']['label_display'])) {
+      $variables['configuration']['label_display'] = FALSE;
+    }
+  }
+}

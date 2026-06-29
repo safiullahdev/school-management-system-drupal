@@ -1,0 +1,25 @@
+uuid: 2149e885-0ad4-478b-bc1e-c2b8cd669f4c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:brand_header_row:590be437-0dcc-4c9d-9459-444fac6c41d9'
+  module:
+    - block_content
+  theme:
+    - mosafi_theme
+id: mosafi_theme_siteheader
+theme: mosafi_theme
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:590be437-0dcc-4c9d-9459-444fac6c41d9'
+settings:
+  id: 'block_content:590be437-0dcc-4c9d-9459-444fac6c41d9'
+  label: 'Site Header'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

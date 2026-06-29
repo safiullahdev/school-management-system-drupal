@@ -1,0 +1,36 @@
+<div class="site-header-brand-header shk-brand-header shk-header-layout--default">
+  <div class="mosafi-container">
+
+  <div class="shk-brand-header__logo">
+    <a href="{{ path('<front>') }}" class="shk-brand-header__logo-link">
+
+      {% if logo %}
+        {{ logo }}
+      {% elseif site_logo_url %}
+        <img
+          src="{{ site_logo_url }}"
+          alt="{{ site_name }}"
+          class="img-responsive site-header-kit-logo"
+        />
+      {% endif %}
+
+    </a>
+  </div>
+
+    <nav class="shk-main-nav" aria-label="{{ 'Main navigation'|t }}">
+      <button
+        type="button"
+        class="shk-menu-toggle"
+        aria-expanded="false"
+        aria-controls="shk-main-menu"
+      >
+        <span class="shk-menu-toggle__label">{{ 'Menu'|t }}</span>
+      </button>
+
+      <div id="shk-main-menu" class="shk-main-nav__links">
+        {{ menu }}
+      </div>
+    </nav>
+
+  </div>
+</div>

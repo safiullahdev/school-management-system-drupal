@@ -1,0 +1,280 @@
+/*
+  File: css/responsive-menu.css
+  Role: Responsive header menu behavior only.
+*/
+
+/* BASE */
+
+.shk-main-nav {
+  position: relative;
+}
+
+/* TOGGLE */
+
+.shk-menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--section-light-text);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+}
+
+.shk-menu-toggle__label {
+  display: none;
+  color: inherit;
+}
+
+.shk-menu-toggle::before {
+  display: none;
+}
+
+.shk-menu-toggle::after {
+  content: "";
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background-color: transparent;
+  background-image: linear-gradient(
+    to bottom,
+    var(--section-light-accent) 0,
+    var(--section-light-accent) 3px,
+    transparent 3px,
+    transparent 7px,
+    var(--section-light-accent) 7px,
+    var(--section-light-accent) 10px,
+    transparent 10px,
+    transparent 14px,
+    var(--section-light-accent) 14px,
+    var(--section-light-accent) 17px
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 26px 17px;
+  transition:
+    background-color var(--transition-base),
+    transform var(--transition-fast),
+    background-image var(--transition-base);
+}
+
+.shk-menu-toggle:hover,
+.shk-menu-toggle:focus-visible {
+  color: var(--section-light-accent-hover);
+}
+
+.shk-menu-toggle:hover::after,
+.shk-menu-toggle:focus-visible::after {
+  background-color: var(--section-light-accent-soft);
+  transform: scale(1.05);
+}
+
+/* TABLET LABEL */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .shk-menu-toggle__label {
+    display: block;
+  }
+
+  .shk-menu-toggle::after {
+    background-color: var(--section-light-accent);
+    background-image: linear-gradient(
+      to bottom,
+      var(--section-light-accent-contrast) 0,
+      var(--section-light-accent-contrast) 3px,
+      transparent 3px,
+      transparent 7px,
+      var(--section-light-accent-contrast) 7px,
+      var(--section-light-accent-contrast) 10px,
+      transparent 10px,
+      transparent 14px,
+      var(--section-light-accent-contrast) 14px,
+      var(--section-light-accent-contrast) 17px
+    );
+  }
+}
+
+/* MOBILE / TABLET MENU */
+
+@media (max-width: 1199px) {
+  body:has(.shk-main-nav.is-open) {
+    overflow: hidden;
+  }
+
+  .shk-menu-toggle.is-open {
+    position: fixed;
+    top: var(--space-4);
+    right: var(--space-3);
+    z-index: 2030;
+  }
+
+  .shk-menu-toggle.is-open .shk-menu-toggle__label {
+    display: block;
+    color: var(--section-dark-text);
+  }
+
+  .shk-menu-toggle.is-open::after {
+    background-color: var(--section-light-accent);
+    background-image:
+      linear-gradient(
+        45deg,
+        transparent 44%,
+        var(--section-light-accent-contrast) 44%,
+        var(--section-light-accent-contrast) 56%,
+        transparent 56%
+      ),
+      linear-gradient(
+        -45deg,
+        transparent 44%,
+        var(--section-light-accent-contrast) 44%,
+        var(--section-light-accent-contrast) 56%,
+        transparent 56%
+      );
+    background-size: 24px 24px;
+  }
+
+  .shk-main-nav__links {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2010;
+    width: 100vw;
+    height: 100dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: clamp(100px, 8vw, 140px) var(--space-4) var(--space-6);
+    background: var(--section-dark-surface);
+    color: var(--section-dark-text);
+  }
+
+  .shk-main-nav__links.is-open,
+  .shk-main-nav.is-open .shk-main-nav__links {
+    display: flex;
+  }
+
+  .shk-main-nav__links .menu--main {
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 720px);
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    background: color-mix(
+      in srgb,
+      var(--section-dark-surface) 82%,
+      var(--color-white) 10%
+    );
+    border: 1px solid var(--section-dark-line);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .shk-main-nav__links .menu--main > li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .shk-main-nav__links .menu--main > li + li {
+    border-top: 1px solid var(--section-dark-line);
+  }
+
+  .shk-main-nav__links .menu--main > li > a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 64px;
+    padding: 0 var(--space-4);
+    background: transparent;
+    color: var(--section-dark-text);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      background-color var(--transition-base),
+      color var(--transition-base);
+  }
+
+  .shk-main-nav__links .menu--main > li > .is-active {
+    color: var(--section-light-accent);
+  }
+
+  .shk-main-nav__links .menu--main > li > a:hover,
+  .shk-main-nav__links .menu--main > li > a:focus-visible {
+    background: var(--section-dark-surface-soft);
+    color: var(--section-dark-accent-hover);
+    text-decoration: none;
+  }
+}
+
+/* EXTRA SMALL */
+
+@media (max-width: 380px) {
+  .shk-menu-toggle.is-open .shk-menu-toggle__label {
+    display: none;
+  }
+}
+
+/* DESKTOP */
+
+@media (min-width: 1200px) {
+  .shk-menu-toggle {
+    display: none;
+  }
+
+  .shk-main-nav__links {
+    display: block;
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+  }
+
+  .shk-main-nav__links .menu--main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .shk-main-nav__links .menu--main > li > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 var(--space-2);
+    color: var(--section-light-text);
+    background: transparent;
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+  }
+
+  .shk-main-nav__links .menu--main > li > .is-active {
+    color: var(--section-light-accent);
+  }
+
+  .shk-main-nav__links .menu--main > li > a:hover,
+  .shk-main-nav__links .menu--main > li > a:focus-visible {
+    color: var(--section-light-accent-hover);
+    background: transparent;
+    text-decoration: none;
+  }
+}

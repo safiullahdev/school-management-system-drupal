@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.brand_header_row
+    - field.field.block_content.brand_header_row.field_logo
+    - field.field.block_content.brand_header_row.field_brand_menu
+    - field.field.block_content.brand_header_row.field_brand_header_layout
+    
+id: block_content.brand_header_row.default
+targetEntityType: block_content
+bundle: brand_header_row
+mode: default
+content:
+  field_logo:
+    label: hidden
+    type: image
+    weight: 0
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: { }
+    region: content
+  field_brand_menu:
+    label: hidden
+    type: entity_reference_label
+    weight: 1
+    settings:
+      link: true
+    third_party_settings: { }
+    region: content
+  field_brand_header_layout:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
+    region: content
+hidden: {  }

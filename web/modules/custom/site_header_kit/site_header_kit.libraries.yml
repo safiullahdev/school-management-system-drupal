@@ -1,0 +1,16 @@
+brand_header:
+  css:
+    theme:
+      components/brand-header/brand-header.css: {}
+  js:
+    components/brand-header/brand-header.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+
+responsive_menu:
+  js:
+    js/responsive-menu.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

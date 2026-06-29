@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.brand_header_row
+    - field.storage.block_content.field_brand_header_layout
+  module:
+    - options
+id: block_content.brand_header_row.field_brand_header_layout
+field_name: field_brand_header_layout
+entity_type: block_content
+bundle: brand_header_row
+label: 'Brand Header Layout'
+description: ''
+required: true
+translatable: false
+default_value: 
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,15 @@
+name: Brand header
+libraryOverrides:
+  css:
+    theme: 
+      ../../css/base/shk-variables.css: { weight: 50 }
+      ../../css/responsive-menu.css: { weight: 50 }
+      brand-header.css: { weight: 55 } 
+props:
+  type: object
+  properties:
+    layout: { type: string }
+    logo: {}
+    menu: {}
+    site_logo_url: { type: string }
+    site_name: { type: string }

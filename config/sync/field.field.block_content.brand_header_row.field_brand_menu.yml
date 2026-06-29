@@ -1,0 +1,23 @@
+uuid: 1f4a110a-a1bb-4567-b8f2-9f7897aa4043
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.brand_header_row
+    - field.storage.block_content.field_brand_menu
+_core:
+  default_config_hash: sz-e7VIuH_rW9D-_WHchlNQlMU21V0sjzdcRUukEakk
+id: block_content.brand_header_row.field_brand_menu
+field_name: field_brand_menu
+entity_type: block_content
+bundle: brand_header_row
+label: 'Primary menu'
+description: 'Select the main navigation menu to display in the header.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:menu'
+  handler_settings: {  }
+field_type: entity_reference

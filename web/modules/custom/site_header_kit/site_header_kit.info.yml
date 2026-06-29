@@ -1,0 +1,8 @@
+name: Site Header Kit
+type: module
+description: Provides reusable responsive brand header components.
+package: Reusable Layout Kits
+core_version_requirement: ^10
+
+dependencies:
+  - drupal:block_content

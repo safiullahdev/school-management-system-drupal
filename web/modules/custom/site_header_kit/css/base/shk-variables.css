@@ -1,0 +1,24 @@
+:root {
+
+  /* Header */
+  --shk-header-height: 90px;
+  --shk-header-max-width: 1200px;
+  --shk-header-container-padding-x: var(--space-3);
+
+  /* Logo */
+  --shk-logo-width-mobile: 260px;
+  --shk-logo-width-tablet: 300px;
+  --shk-logo-width-desktop: 260px;
+
+  --shk-logo-max-height-mobile: 80px;
+  --shk-logo-max-height-desktop: 65px;
+
+  /* Mobile navigation */
+  --shk-mobile-panel-width: 320px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --shk-header-height: auto;
+  }
+}

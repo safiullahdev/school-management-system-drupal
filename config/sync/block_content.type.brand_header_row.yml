@@ -1,0 +1,10 @@
+uuid: 573eaf24-16aa-45ab-b9cb-32a34651a2a3
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: lGr70M53YOcyDRkY93axR-eqvSd3EzkeFYaCUM6Lgps
+id: brand_header_row
+label: 'Brand header row'
+revision: 0
+description: 'Header row with logo and primary menu.'

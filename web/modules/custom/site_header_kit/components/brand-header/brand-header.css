@@ -1,0 +1,157 @@
+/*
+  File: components/brand-header/brand-header.css
+  Role: Brand header structure only.
+  Menu dropdown/link behavior belongs in responsive-menu.css.
+*/
+
+/* OUTER HEADER */
+
+.shk-row--brand-header {
+  background: var(--section-light-surface-soft);
+  color: var(--section-light-text);
+  border-bottom: 1px solid var(--section-light-line);
+}
+
+.shk-brand-header {
+  width: 100%;
+  background: var(--section-light-surface-soft);
+  color: var(--section-light-text);
+}
+
+
+/* BASE / MOBILE FIRST */
+
+.shk-brand-header > :is(.container, .mosafi-container) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+
+  width: 100%;
+  max-width: var(--shk-header-max-width);
+  margin-inline: auto;
+
+  padding-inline: var(--shk-header-container-padding-x);
+  padding-block: 0;
+}
+
+.shk-brand-header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding-block: var(--space-3);
+}
+
+.shk-brand-header__logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+
+  margin: 0;
+  padding: 0;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.shk-brand-header__logo img {
+  display: block;
+  width: var(--shk-logo-width-mobile);
+  max-width: 100%;
+  height: auto;
+  max-height: var(--shk-logo-max-height-mobile);
+  object-fit: contain;
+}
+
+.shk-brand-header__site-name {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  color: var(--section-light-text);
+}
+
+.shk-main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-width: 0;
+
+  position: relative;
+  padding-block-start: var(--space-2);
+  border-top: 1px solid var(--section-light-line);
+}
+
+
+/* 500px+ */
+
+@media (min-width: 500px) {
+  .shk-brand-header > :is(.container, .mosafi-container) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    row-gap: var(--space-2);
+    height: auto;
+    padding-block: var(--space-2);
+  }
+
+  .shk-brand-header__logo {
+    width: auto;
+    flex: 0 1 auto;
+    justify-content: flex-start;
+    padding-block: 0;
+  }
+
+  .shk-main-nav {
+    width: auto;
+    flex: 0 0 auto;
+    margin-left: auto;
+    justify-content: flex-end;
+    padding-block-start: 0;
+    border-top: 0;
+  }
+}
+
+
+/* 768px+ */
+
+@media (min-width: 768px) {
+  .shk-brand-header > :is(.container, .mosafi-container) {
+    flex-wrap: nowrap;
+    gap: var(--space-3);
+    min-height: var(--shk-header-height);
+    padding-block: 0;
+  }
+
+  .shk-brand-header__logo {
+    flex: 0 0 auto;
+  }
+
+  .shk-brand-header__logo img {
+    width: var(--shk-logo-width-tablet);
+    max-height: var(--shk-logo-max-height-desktop);
+  }
+
+  .shk-main-nav {
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    margin-left: 0;
+  }
+}
+
+
+/* 1200px+ */
+
+@media (min-width: 1200px) {
+  .shk-brand-header__logo img {
+    width: var(--shk-logo-width-desktop);
+    max-height: var(--shk-logo-max-height-desktop);
+  }
+}

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: brand_header_row
+label: 'Brand header row'
+revision: 0
+description: 'Header row with logo and primary menu.'

@@ -1,0 +1,32 @@
+uuid: 87bbc5e2-6b71-44b5-95c6-5fdb52d27bcd
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - file
+    - image
+_core:
+  default_config_hash: MoRaQgUafi76ToWBpmD8Al-Lq3LGLuqZvTTP570UY5c
+id: block_content.field_logo
+field_name: field_logo
+entity_type: block_content
+type: image
+settings:
+  target_type: file
+  display_field: false
+  display_default: true
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
