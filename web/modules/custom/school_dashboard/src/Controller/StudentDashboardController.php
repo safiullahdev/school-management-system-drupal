@@ -9,7 +9,6 @@ class StudentDashboardController extends ControllerBase {
 
   public function dashboard() {
     $student = $this->getCurrentStudent();
-\Drupal::messenger()->addStatus('UID: ' . $this->currentUser()->id() . ' Student: ' . ($student ? $student->id() : 'none'));
     $assignment_count = $student ? $this->getAssignmentCount($student) : 0;
     $grade_count = $student ? $this->getGradeCount($student) : 0;
     $attendance_count = $student ? $this->getAttendanceCount($student) : 0;
