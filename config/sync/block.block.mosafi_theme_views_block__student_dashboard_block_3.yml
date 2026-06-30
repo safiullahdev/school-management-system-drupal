@@ -1,0 +1,39 @@
+uuid: cb37a621-d5d5-49a5-a902-c7245de850b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.student_dashboard
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - mosafi_theme
+id: mosafi_theme_views_block__student_dashboard_block_3
+theme: mosafi_theme
+region: content
+weight: 5
+provider: null
+plugin: 'views_block:student_dashboard-block_3'
+settings:
+  id: 'views_block:student_dashboard-block_3'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /student-dashboard
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      student: student
