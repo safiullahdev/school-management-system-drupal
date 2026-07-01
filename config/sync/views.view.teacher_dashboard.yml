@@ -8,7 +8,6 @@ dependencies:
     - field.storage.node.field_class_section
     - field.storage.node.field_class_status
     - node.type.class
-    - system.menu.main
     - user.role.administrator
     - user.role.teacher
   module:
@@ -704,7 +703,7 @@ display:
       display_extenders: {  }
       path: teacher-dashboard
       menu:
-        type: normal
+        type: none
         title: 'Teachers Dashboard'
         description: ''
         weight: 0
