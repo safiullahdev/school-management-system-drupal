@@ -1,23 +1,23 @@
-uuid: c76163a4-1ce9-42c1-82f8-906426e7ea80
+uuid: 7e5f312a-99fd-495d-b154-b4257ca1b246
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.assigned_students
+    - views.view.teacher_classes
   module:
     - system
     - user
     - views
   theme:
     - mosafi_theme
-id: mosafi_theme_views_block__assigned_students_block_2
+id: mosafi_theme_views_block__teacher_classes_block_1
 theme: mosafi_theme
 region: content
-weight: -3
+weight: -1
 provider: null
-plugin: 'views_block:assigned_students-block_2'
+plugin: 'views_block:teacher_classes-block_1'
 settings:
-  id: 'views_block:assigned_students-block_2'
+  id: 'views_block:teacher_classes-block_1'
   label: ''
   label_display: visible
   provider: views
