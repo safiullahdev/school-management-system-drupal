@@ -7,6 +7,6 @@ school_dashboard.student_dashboard:
 school_dashboard.teacher_dashboard:
   title: 'Teacher Dashboard'
   description: 'Teacher dashboard'
-  route_name: view.teacher_dashboard.page_1
+  route_name: school_dashboard.teacher_dashboard
   menu_name: main
   weight: 30

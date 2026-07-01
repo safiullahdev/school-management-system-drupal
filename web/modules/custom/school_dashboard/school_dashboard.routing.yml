@@ -5,3 +5,11 @@ school_dashboard.student_dashboard:
     _title: 'Student Dashboard'
   requirements:
     _role: 'student'
+
+school_dashboard.teacher_dashboard:
+  path: '/teacher-dashboard'
+  defaults:
+    _controller: '\Drupal\school_dashboard\Controller\TeacherDashboardController::dashboard'
+    _title: 'Teacher Dashboard'
+  requirements:
+    _role: 'teacher'

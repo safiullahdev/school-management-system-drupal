@@ -570,7 +570,7 @@ display:
         - 'config:field.storage.node.field_class_status'
   block_1:
     id: block_1
-    display_title: 'My Classes '
+    display_title: 'Recent Classes Block'
     display_plugin: block
     position: 2
     display_options:
@@ -1046,11 +1046,11 @@ display:
         - 'config:field.storage.node.field_class_subject'
   page_1:
     id: page_1
-    display_title: Page
+    display_title: Classes
     display_plugin: page
     position: 1
     display_options:
-      title: 'Teacher Dashboard'
+      title: 'Teacher Classes'
       empty: {  }
       filters:
         status:
@@ -1128,8 +1128,9 @@ display:
         title: false
         filters: false
         filter_groups: false
+      display_description: ''
       display_extenders: {  }
-      path: teacher-dashboard
+      path: teacher/classes
       menu:
         type: none
         title: 'Teachers Dashboard'
