@@ -16,7 +16,13 @@ function school_dashboard_form_user_login_form_alter(array &$form, FormStateInte
 function school_dashboard_user_login_redirect_submit(array &$form, FormStateInterface $form_state): void {
   $account = \Drupal::currentUser();
 
-  if (in_array('student', $account->getRoles(), TRUE)) {
+  if (in_array('student', $roles, TRUE)) {
     $form_state->setRedirectUrl(Url::fromUserInput('/student-dashboard'));
+    return;
+  }
+
+  if (in_array('teacher', $roles, TRUE)) {
+    $form_state->setRedirectUrl(Url::fromUserInput('/teacher-dashboard'));
+    return;
   }
 }
