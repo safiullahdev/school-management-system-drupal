@@ -1,0 +1,6 @@
+school_dashboard.student_dashboard:
+  title: 'Student Dashbolard'
+  description: 'Student dashboard'
+  route_name: school_dashboard.student_dashboard
+  menu_name: main
+  weight: 20
