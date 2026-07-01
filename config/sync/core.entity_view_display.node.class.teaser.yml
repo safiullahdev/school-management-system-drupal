@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.class.field_class_section
     - field.field.node.class.field_class_status
     - field.field.node.class.field_class_students
+    - field.field.node.class.field_class_subject
     - field.field.node.class.field_class_teacher
     - node.type.class
   module:
@@ -37,4 +38,5 @@ hidden:
   field_class_section: true
   field_class_status: true
   field_class_students: true
+  field_class_subject: true
   field_class_teacher: true

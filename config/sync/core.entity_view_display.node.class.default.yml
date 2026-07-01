@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.class.field_class_section
     - field.field.node.class.field_class_status
     - field.field.node.class.field_class_students
+    - field.field.node.class.field_class_subject
     - field.field.node.class.field_class_teacher
     - node.type.class
   module:
@@ -90,6 +91,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 110
+    region: content
+  field_class_subject:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 112
     region: content
   field_class_teacher:
     type: entity_reference_label
