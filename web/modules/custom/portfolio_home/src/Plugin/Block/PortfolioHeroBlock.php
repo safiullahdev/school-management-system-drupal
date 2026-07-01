@@ -87,7 +87,7 @@ protected function getDashboardUrl(): Url {
   }
 
   if (in_array('student', $roles, TRUE)) {
-    return Url::fromUserInput('/student/applications');
+    return Url::fromUserInput('/student-dashboard');
   }
 
   if (in_array('parent', $roles, TRUE)) {
