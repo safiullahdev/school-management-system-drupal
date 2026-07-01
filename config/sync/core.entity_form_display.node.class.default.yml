@@ -26,20 +26,20 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   field_class_capacity:
     type: number
-    weight: 123
+    weight: 8
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_class_code:
     type: string_textfield
-    weight: 125
+    weight: 10
     region: content
     settings:
       size: 60
@@ -47,7 +47,7 @@ content:
     third_party_settings: {  }
   field_class_description:
     type: text_textarea
-    weight: 131
+    weight: 16
     region: content
     settings:
       rows: 5
@@ -55,13 +55,13 @@ content:
     third_party_settings: {  }
   field_class_grade_level:
     type: options_select
-    weight: 126
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   field_class_room:
     type: string_textfield
-    weight: 122
+    weight: 7
     region: content
     settings:
       size: 60
@@ -69,25 +69,25 @@ content:
     third_party_settings: {  }
   field_class_school_year:
     type: options_select
-    weight: 128
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   field_class_section:
     type: options_select
-    weight: 127
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   field_class_status:
     type: options_select
-    weight: 124
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   field_class_students:
     type: entity_reference_autocomplete
-    weight: 130
+    weight: 15
     region: content
     settings:
       match_operator: CONTAINS
@@ -97,7 +97,7 @@ content:
     third_party_settings: {  }
   field_class_subject:
     type: entity_reference_autocomplete
-    weight: 132
+    weight: 17
     region: content
     settings:
       match_operator: CONTAINS
@@ -107,7 +107,7 @@ content:
     third_party_settings: {  }
   field_class_teacher:
     type: entity_reference_autocomplete
-    weight: 129
+    weight: 14
     region: content
     settings:
       match_operator: CONTAINS
@@ -117,48 +117,40 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 15
+    weight: 2
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 16
+    weight: 3
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
-  title:
-    type: string_textfield
-    weight: -5
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 0
     region: content
     settings:
       match_operator: CONTAINS
@@ -166,4 +158,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  title: true

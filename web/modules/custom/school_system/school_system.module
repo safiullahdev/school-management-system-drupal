@@ -52,6 +52,29 @@ function school_system_entity_presave(\Drupal\Core\Entity\EntityInterface $entit
       $entity->setTitle($student_name);
     }
   }
+
+    // Auto-generate Class title.
+  if ($entity->bundle() === 'class') {
+    $subject = '';
+
+    if ($entity->hasField('field_class_subject') && !$entity->get('field_class_subject')->isEmpty()) {
+      $subject_term = $entity->get('field_class_subject')->entity;
+      $subject = $subject_term ? $subject_term->label() : '';
+    }
+
+    $grade = $entity->get('field_class_grade_level')->value ?? '';
+    $section = $entity->get('field_class_section')->value ?? '';
+
+    $title_parts = array_filter([
+      $subject,
+      $grade,
+      $section ? 'Section ' . $section : '',
+    ]);
+
+    if (!empty($title_parts)) {
+      $entity->setTitle(implode(' - ', $title_parts));
+    }
+  }
 }
 
 /**

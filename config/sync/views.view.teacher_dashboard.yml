@@ -622,15 +622,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_class_section:
-          id: field_class_section
-          table: node__field_class_section
-          field: field_class_section
+        field_class_subject:
+          id: field_class_subject
+          table: node__field_class_subject
+          field: field_class_subject
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'Class Section'
+          label: Subject
           exclude: false
           alter:
             alter_text: false
@@ -671,10 +671,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -746,15 +747,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_class_school_year:
-          id: field_class_school_year
-          table: node__field_class_school_year
-          field: field_class_school_year
+        field_class_section:
+          id: field_class_section
+          table: node__field_class_section
+          field: field_class_section
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: 'School Year'
+          label: 'Class Section'
           exclude: false
           alter:
             alter_text: false
@@ -808,15 +809,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_class_status:
-          id: field_class_status
-          table: node__field_class_status
-          field: field_class_status
+        field_class_school_year:
+          id: field_class_school_year
+          table: node__field_class_school_year
+          field: field_class_school_year
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: Status
+          label: 'School Year'
           exclude: false
           alter:
             alter_text: false
@@ -936,15 +937,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_class_subject:
-          id: field_class_subject
-          table: node__field_class_subject
-          field: field_class_subject
+        field_class_status:
+          id: field_class_status
+          table: node__field_class_status
+          field: field_class_status
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: Subject
+          label: Status
           exclude: false
           alter:
             alter_text: false
@@ -985,11 +986,10 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
