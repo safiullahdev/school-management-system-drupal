@@ -75,6 +75,38 @@ function school_system_entity_presave(\Drupal\Core\Entity\EntityInterface $entit
       $entity->setTitle(implode(' - ', $title_parts));
     }
   }
+
+    // Auto-generate Grade title.
+  if ($entity->bundle() === 'grades') {
+    $student = '';
+    $assignment = '';
+    $term = '';
+
+    if ($entity->hasField('field_student') && !$entity->get('field_student')->isEmpty()) {
+      $student_node = $entity->get('field_student')->entity;
+      $student = $student_node ? $student_node->label() : '';
+    }
+
+    if ($entity->hasField('field_grade_assignment') && !$entity->get('field_grade_assignment')->isEmpty()) {
+      $assignment_node = $entity->get('field_grade_assignment')->entity;
+      $assignment = $assignment_node ? $assignment_node->label() : '';
+    }
+
+    if ($entity->hasField('field_grade_term') && !$entity->get('field_grade_term')->isEmpty()) {
+      $term_node = $entity->get('field_grade_term')->entity;
+      $term = $term_node ? $term_node->label() : '';
+    }
+
+    $title_parts = array_filter([
+      $student,
+      $assignment,
+      $term,
+    ]);
+
+    if (!empty($title_parts)) {
+      $entity->setTitle(implode(' - ', $title_parts));
+    }
+  }
 }
 
 /**
