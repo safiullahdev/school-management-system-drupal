@@ -96,6 +96,38 @@ function school_system_entity_presave(\Drupal\Core\Entity\EntityInterface $entit
     }
   }
 
+    // Auto-generate Attendance title.
+  if ($entity->bundle() === 'attendance') {
+    $student = '';
+    $class = '';
+    $date = '';
+
+    if ($entity->hasField('field_attendance_student') && !$entity->get('field_attendance_student')->isEmpty()) {
+      $student_node = $entity->get('field_attendance_student')->entity;
+      $student = $student_node ? $student_node->label() : '';
+    }
+
+    if ($entity->hasField('field_attendance_class') && !$entity->get('field_attendance_class')->isEmpty()) {
+      $class_node = $entity->get('field_attendance_class')->entity;
+      $class = $class_node ? $class_node->label() : '';
+    }
+
+    if ($entity->hasField('field_attendance_date') && !$entity->get('field_attendance_date')->isEmpty()) {
+      $raw_date = $entity->get('field_attendance_date')->value;
+      $date = $raw_date ? date('Y-m-d', strtotime($raw_date)) : '';
+    }
+
+    $title_parts = array_filter([
+      $student,
+      $class,
+      $date,
+    ]);
+
+    if (!empty($title_parts)) {
+      $entity->setTitle(implode(' - ', $title_parts));
+    }
+  }
+
     // Auto-generate Grade title.
   if ($entity->bundle() === 'grades') {
     $student = '';
