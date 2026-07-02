@@ -735,6 +735,7 @@ display:
     display_plugin: block
     position: 2
     display_options:
+      title: 'Recent Attendance'
       pager:
         type: some
         options:
@@ -766,6 +767,7 @@ display:
         groups:
           1: AND
       defaults:
+        title: false
         pager: false
         use_more: false
         use_more_always: false
@@ -1317,7 +1319,22 @@ display:
         fields: false
         filters: false
         filter_groups: false
+        header: false
       display_description: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "<h2>Teacher Attendance</h2>\r\n<p>View attendance records for students in your assigned classes.</p>"
+            format: basic_html
+          tokenize: false
       display_extenders: {  }
       path: teacher-attendance
     cache_metadata:
