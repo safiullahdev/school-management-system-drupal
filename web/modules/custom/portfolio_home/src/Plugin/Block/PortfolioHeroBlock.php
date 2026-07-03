@@ -79,7 +79,7 @@ protected function getDashboardUrl(): Url {
   }
 
   if (in_array('registrar', $roles, TRUE)) {
-    return Url::fromUserInput('/registrar/applications');
+    return Url::fromUserInput('/registrar-dashboard');
   }
 
   if (in_array('teacher', $roles, TRUE)) {
