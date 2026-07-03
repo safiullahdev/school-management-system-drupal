@@ -13,3 +13,11 @@ school_dashboard.teacher_dashboard:
     _title: 'Teacher Dashboard'
   requirements:
     _role: 'teacher'
+
+school_dashboard.registrar_dashboard:
+  path: '/registrar-dashboard'
+  defaults:
+    _controller: '\Drupal\school_dashboard\Controller\RegistrarDashboardController::dashboard'
+    _title: 'Registrar Dashboard'
+  requirements:
+    _role: 'registrar'

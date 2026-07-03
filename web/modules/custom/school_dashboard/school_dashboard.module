@@ -30,4 +30,9 @@ function school_dashboard_user_login_redirect_submit(array &$form, FormStateInte
     $form_state->setRedirectUrl(Url::fromUserInput('/teacher-dashboard'));
     return;
   }
+
+  if (in_array('registrar', $roles, TRUE)) {
+    $form_state->setRedirectUrl(Url::fromUserInput('/registrar-dashboard'));
+    return;
+  }
 }

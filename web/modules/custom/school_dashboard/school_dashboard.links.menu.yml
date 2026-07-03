@@ -10,3 +10,10 @@ school_dashboard.teacher_dashboard:
   route_name: school_dashboard.teacher_dashboard
   menu_name: main
   weight: 30
+  
+school_dashboard.registrar_dashboard:
+  title: 'Registrar Dashboard'
+  description: 'Registrar dashboard'
+  route_name: school_dashboard.registrar_dashboard
+  menu_name: main
+  weight: 40
