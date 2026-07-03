@@ -13,7 +13,7 @@ dependencies:
 id: mosafi_theme_views_block__assigned_students_block_2
 theme: mosafi_theme
 region: content
-weight: -3
+weight: -6
 provider: null
 plugin: 'views_block:assigned_students-block_2'
 settings:

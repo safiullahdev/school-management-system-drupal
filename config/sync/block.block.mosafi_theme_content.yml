@@ -11,7 +11,7 @@ _core:
 id: mosafi_theme_content
 theme: mosafi_theme
 region: content
-weight: -17
+weight: -20
 provider: null
 plugin: system_main_block
 settings:

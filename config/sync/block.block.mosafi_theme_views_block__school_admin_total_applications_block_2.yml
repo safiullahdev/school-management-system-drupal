@@ -13,7 +13,7 @@ dependencies:
 id: mosafi_theme_views_block__school_admin_total_applications_block_2
 theme: mosafi_theme
 region: content
-weight: -15
+weight: -18
 provider: null
 plugin: 'views_block:school_admin_total_applications-block_2'
 settings:

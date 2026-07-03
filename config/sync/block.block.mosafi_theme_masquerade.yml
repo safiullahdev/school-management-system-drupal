@@ -10,7 +10,7 @@ dependencies:
 id: mosafi_theme_masquerade
 theme: mosafi_theme
 region: content
-weight: -18
+weight: -21
 provider: null
 plugin: masquerade
 settings:
