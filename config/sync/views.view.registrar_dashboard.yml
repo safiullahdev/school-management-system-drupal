@@ -7,6 +7,7 @@ dependencies:
     - field.storage.node.field_app_student_first_name
     - field.storage.node.field_app_student_last_name
     - node.type.application
+    - user.role.administrator
     - user.role.registrar
     - workflows.workflow.application_workflow
   module:
@@ -489,6 +490,7 @@ display:
         type: role
         options:
           role:
+            administrator: administrator
             registrar: registrar
       cache:
         type: tag
@@ -601,7 +603,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: registrar-dashboard
+      path: registrar/applications
     cache_metadata:
       max-age: -1
       contexts:

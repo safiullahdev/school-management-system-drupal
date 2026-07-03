@@ -1,0 +1,38 @@
+uuid: 4b5288bc-7cc5-4007-bb14-d7ac299f0c2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.registrar_dashboard_matrix
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - mosafi_theme
+id: mosafi_theme_views_block__registrar_dashboard_matrix_block_4
+theme: mosafi_theme
+region: content
+weight: 3
+provider: null
+plugin: 'views_block:registrar_dashboard_matrix-block_4'
+settings:
+  id: 'views_block:registrar_dashboard_matrix-block_4'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /registrar-dashboard
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      registrar: registrar
