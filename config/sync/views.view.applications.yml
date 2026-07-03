@@ -8,6 +8,7 @@ dependencies:
     - field.storage.node.field_app_student_last_name
     - field.storage.node.field_app_type
     - node.type.application
+    - system.menu.main
     - user.role.admin
     - user.role.administrator
     - user.role.parent
@@ -2848,6 +2849,15 @@ display:
           tokenize: false
       display_extenders: {  }
       path: registrar/applications
+      menu:
+        type: normal
+        title: Applications
+        description: ''
+        weight: -50
+        expanded: false
+        menu_name: main
+        parent: school_dashboard.registrar_dashboard
+        context: '0'
     cache_metadata:
       max-age: -1
       contexts:

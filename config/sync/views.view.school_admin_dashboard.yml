@@ -252,7 +252,7 @@ display:
         type: normal
         title: 'School Admin Dashboard'
         description: ''
-        weight: 0
+        weight: -48
         expanded: false
         menu_name: main
         parent: ''
