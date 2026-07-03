@@ -13,7 +13,7 @@ dependencies:
 id: mosafi_theme_views_block__registrar_dashboard_matrix_block_4
 theme: mosafi_theme
 region: content
-weight: 3
+weight: 2
 provider: null
 plugin: 'views_block:registrar_dashboard_matrix-block_4'
 settings:
