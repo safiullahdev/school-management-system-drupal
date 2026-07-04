@@ -26,6 +26,11 @@ return [
     <div class="parent-dashboard">
       <h2>Parent Dashboard</h2>
       <p>Welcome back. Use this dashboard to view your students, applications, attendance, assignments, and grades.</p>
+      
+      <div class="parent-dashboard__actions">
+        <a class="button button--primary" href="/node/add/application">Create Application</a>
+      </div>
+
       <div class="dashboard-metrics">
         <div class="dashboard-metric">
           <div class="dashboard-metric__label">My Students</div>
