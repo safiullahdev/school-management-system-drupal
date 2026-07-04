@@ -10,6 +10,7 @@ dependencies:
     - field.storage.node.field_attendance_student
     - field.storage.node.field_attendance_term
     - node.type.attendance
+    - system.menu.main
     - taxonomy.vocabulary.academic_terms
     - taxonomy.vocabulary.school_years
     - user.role.administrator
@@ -1360,6 +1361,15 @@ display:
           tokenize: false
       display_extenders: {  }
       path: teacher-attendance
+      menu:
+        type: normal
+        title: 'View Attendance'
+        description: ''
+        weight: -49
+        expanded: false
+        menu_name: main
+        parent: school_dashboard.teacher_dashboard
+        context: '0'
     cache_metadata:
       max-age: -1
       contexts:
