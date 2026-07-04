@@ -776,7 +776,12 @@ display:
           admin_label: 'field_student_parent_user: User'
           plugin_id: standard
           required: false
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          plugin_id: text
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -1344,7 +1349,22 @@ display:
         title: false
         pager: false
         fields: false
+        header: false
       display_description: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "<h2>Parent Attendance</h2>\r\n<p>Review attendance records for your students, including dates, classes, terms, and attendance status.</p>"
+            format: basic_html
+          tokenize: false
       display_extenders: {  }
       path: parent-attendance
     cache_metadata:
