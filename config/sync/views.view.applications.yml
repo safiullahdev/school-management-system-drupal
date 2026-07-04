@@ -3462,7 +3462,7 @@ display:
       path: registrar/applications
       menu:
         type: normal
-        title: Applications
+        title: 'View Applications'
         description: ''
         weight: -50
         expanded: false
@@ -4112,6 +4112,15 @@ display:
           tokenize: false
       display_extenders: {  }
       path: parent/applications
+      menu:
+        type: normal
+        title: 'View Applications'
+        description: ''
+        weight: -50
+        expanded: false
+        menu_name: main
+        parent: school_dashboard.parent_dashboard
+        context: '0'
     cache_metadata:
       max-age: -1
       contexts:
