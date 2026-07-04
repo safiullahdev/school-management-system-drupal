@@ -91,7 +91,7 @@ protected function getDashboardUrl(): Url {
   }
 
   if (in_array('parent', $roles, TRUE)) {
-    return Url::fromUserInput('/parent-attendance');
+    return Url::fromUserInput('/parent-dashboard');
   }
 
   return Url::fromRoute('user.page');
