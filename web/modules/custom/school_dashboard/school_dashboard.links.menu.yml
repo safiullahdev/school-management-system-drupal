@@ -24,3 +24,10 @@ school_dashboard.parent_dashboard:
   route_name: school_dashboard.parent_dashboard
   menu_name: main
   weight: 50
+
+school_dashboard.school_admin_dashboard:
+  title: 'School Admin Dashboard'
+  description: 'School admin dashboard'
+  route_name: school_dashboard.school_admin_dashboard
+  menu_name: main
+  weight: 35

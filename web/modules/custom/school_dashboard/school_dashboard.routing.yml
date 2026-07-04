@@ -29,3 +29,11 @@ school_dashboard.parent_dashboard:
     _title: 'Parent Dashboard'
   requirements:
     _role: 'parent'
+
+school_dashboard.school_admin_dashboard:
+  path: '/school-admin-dashboard'
+  defaults:
+    _controller: '\Drupal\school_dashboard\Controller\SchoolAdminDashboardController::dashboard'
+    _title: 'School Admin Dashboard'
+  requirements:
+    _role: 'admin'
