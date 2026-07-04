@@ -1,33 +1,34 @@
-uuid: a6b89122-6626-47c7-a754-5099532fd6db
+uuid: f484e598-8ed7-4fda-b516-441133464ffb
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.applications
+    - views.view.parents_grade_view
   module:
     - system
     - user
     - views
   theme:
     - mosafi_theme
-id: mosafi_theme_views_block__applications_block_2
+id: mosafi_theme_views_block__parents_grade_view_block_1
 theme: mosafi_theme
 region: content
-weight: 7
+weight: -18
 provider: null
-plugin: 'views_block:applications-block_2'
+plugin: 'views_block:parents_grade_view-block_1'
 settings:
-  id: 'views_block:applications-block_2'
+  id: 'views_block:parents_grade_view-block_1'
   label: ''
   label_display: visible
   provider: views
+  context_mapping: {  }
   views_label: ''
   items_per_page: none
 visibility:
   request_path:
     id: request_path
     negate: false
-    pages: /registrar-dashboard
+    pages: /parent-dashboard
   user_role:
     id: user_role
     negate: false
@@ -35,4 +36,4 @@ visibility:
       user: '@user.current_user_context:current_user'
     roles:
       administrator: administrator
-      registrar: registrar
+      parent: parent
