@@ -13,7 +13,7 @@ dependencies:
 id: mosafi_theme_views_block__teachers_grades_view_block_1
 theme: mosafi_theme
 region: content
-weight: -3
+weight: -1
 provider: null
 plugin: 'views_block:teachers_grades_view-block_1'
 settings:

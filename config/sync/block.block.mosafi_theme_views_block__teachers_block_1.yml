@@ -13,7 +13,7 @@ dependencies:
 id: mosafi_theme_views_block__teachers_block_1
 theme: mosafi_theme
 region: content
-weight: -14
+weight: -12
 provider: null
 plugin: 'views_block:teachers-block_1'
 settings:
