@@ -1,23 +1,23 @@
-uuid: 5ca7ff7f-cede-47ef-8923-d2d06d0b50a8
+uuid: 43e1a3f2-f3e2-47d5-bbf3-b4fb0caa34d7
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.parent_students
+    - views.view.applications
   module:
     - system
     - user
     - views
   theme:
     - mosafi_theme
-id: mosafi_theme_views_block__parent_students_block_1
+id: mosafi_theme_views_block__applications_block_3
 theme: mosafi_theme
 region: content
-weight: -21
+weight: -19
 provider: null
-plugin: 'views_block:parent_students-block_1'
+plugin: 'views_block:applications-block_3'
 settings:
-  id: 'views_block:parent_students-block_1'
+  id: 'views_block:applications-block_3'
   label: ''
   label_display: visible
   provider: views
