@@ -8,6 +8,7 @@ dependencies:
     - field.storage.node.field_assignment_name
     - field.storage.node.field_assignment_type
     - node.type.assignment
+    - system.menu.main
     - user.role.administrator
     - user.role.teacher
   module:
@@ -1201,6 +1202,15 @@ display:
           tokenize: false
       display_extenders: {  }
       path: teacher-assignments
+      menu:
+        type: normal
+        title: 'View Assignments'
+        description: ''
+        weight: -48
+        expanded: false
+        menu_name: main
+        parent: school_dashboard.teacher_dashboard
+        context: '0'
     cache_metadata:
       max-age: -1
       contexts:
