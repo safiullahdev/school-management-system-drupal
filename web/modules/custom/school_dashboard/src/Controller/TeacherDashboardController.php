@@ -17,6 +17,7 @@ class TeacherDashboardController extends ControllerBase {
           <div class="teacher-dashboard__actions">
             <a class="button button--primary" href="/node/add/grades">Create Grade</a>
             <a class="button button--primary" href="/node/add/assignment">Create Assignment</a>
+            <a class="button button--primary" href="/node/add/attendance">Create Attendance</a>
           </div>
         </div>
       ',
