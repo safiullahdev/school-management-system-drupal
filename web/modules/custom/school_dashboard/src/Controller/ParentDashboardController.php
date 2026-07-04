@@ -15,8 +15,6 @@ class ParentDashboardController extends ControllerBase {
    * Parent dashboard page.
    */
   public function dashboard() {
-      $uid = $this->currentUser()->id();
-
     $student_count = $this->getParentStudentCount();
     $application_count = $this->getParentApplicationCount();
     $attendance_count = $this->getParentAttendanceCount();
@@ -28,7 +26,6 @@ return [
     <div class="parent-dashboard">
       <h2>Parent Dashboard</h2>
       <p>Welcome back. Use this dashboard to view your students, applications, attendance, assignments, and grades.</p>
-<div>Debug UID: ' . $uid . '</div>
       <div class="dashboard-metrics">
         <div class="dashboard-metric">
           <div class="dashboard-metric__label">My Students</div>
