@@ -10,6 +10,7 @@ dependencies:
     - field.storage.node.field_grade_term
     - field.storage.node.field_student
     - node.type.grades
+    - system.menu.main
     - user.role.administrator
     - user.role.teacher
   module:
@@ -1745,6 +1746,15 @@ display:
           tokenize: false
       display_extenders: {  }
       path: teacher/grades
+      menu:
+        type: normal
+        title: 'View Grades'
+        description: ''
+        weight: -50
+        expanded: false
+        menu_name: main
+        parent: school_dashboard.teacher_dashboard
+        context: '0'
     cache_metadata:
       max-age: -1
       contexts:
