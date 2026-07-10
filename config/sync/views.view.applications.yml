@@ -1546,6 +1546,12 @@ display:
           text: Review
           output_url_as_text: false
           absolute: false
+      access:
+        type: role
+        options:
+          role:
+            administrator: administrator
+            registrar: registrar
       filters:
         type:
           id: type
@@ -1604,6 +1610,7 @@ display:
         groups:
           1: AND
       defaults:
+        access: false
         title: false
         use_more: false
         use_more_always: false
@@ -1626,7 +1633,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags:
         - 'config:field.storage.node.field_app_grade_applying_for'
         - 'config:field.storage.node.field_app_student_first_name'
