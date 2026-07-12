@@ -437,12 +437,14 @@ display:
     display_plugin: block
     position: 2
     display_options:
+      title: 'Recent Students'
       pager:
         type: some
         options:
           offset: 0
           items_per_page: 5
       defaults:
+        title: false
         pager: false
         use_more: false
         use_more_always: false
