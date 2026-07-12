@@ -40,4 +40,9 @@ function school_dashboard_user_login_redirect_submit(array &$form, FormStateInte
     $form_state->setRedirectUrl(Url::fromUserInput('/school-admin-dashboard'));
     return;
   }
+  
+  if (in_array('parent', $roles, TRUE)) {
+    $form_state->setRedirectUrl(Url::fromUserInput('/parent-dashboard'));
+    return;
+  }
 }
