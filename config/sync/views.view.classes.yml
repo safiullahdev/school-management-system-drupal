@@ -15,7 +15,7 @@ dependencies:
     - options
     - user
 id: classes
-label: Classes
+label: 'School Admin Classes'
 module: views
 description: ''
 tag: ''
