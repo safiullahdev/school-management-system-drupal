@@ -628,7 +628,7 @@ display:
           entity_type: node
           plugin_id: entity_link_edit
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -660,7 +660,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -680,11 +680,11 @@ display:
           admin_label: ''
           entity_type: node
           plugin_id: entity_link
-          label: View
+          label: Actions
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: ' {{ view_node }} {{ edit_node }} '
             make_link: false
             path: ''
             absolute: false
