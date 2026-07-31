@@ -1,0 +1,20 @@
+.mosafi-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mosafi-user-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mosafi-user-menu a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.mosafi-user-menu a:hover {
+  text-decoration: underline;
+}

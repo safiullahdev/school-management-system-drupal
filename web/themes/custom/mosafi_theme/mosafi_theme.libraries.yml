@@ -26,6 +26,8 @@ components:
       css/components/accordion.css: { weight: 11 }
       css/components/modal.css: { weight: 12 }
       css/components/views.css: { weight: 13 }
+      css/components/header.css: { weight: 14 }
+
   dependencies:
     - mosafi_theme/base
 

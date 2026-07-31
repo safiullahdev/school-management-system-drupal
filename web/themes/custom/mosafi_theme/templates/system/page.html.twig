@@ -7,13 +7,47 @@
 
 <div class="mosafi-page">
 
-  {% if page.header %}
+  {# {% if page.header %}
     <header class="mosafi-site-header" role="banner">
       <div class="mosafi-container">
         {{ page.header }}
       </div>
     </header>
-  {% endif %}
+  {% endif %} #}
+  {% if page.header or mosafi_user_menu.show %}
+  <header class="mosafi-site-header" role="banner">
+    <div class="mosafi-container mosafi-header-inner">
+
+      {% if page.header %}
+        <div class="mosafi-header-branding">
+          {{ page.header }}
+        </div>
+      {% endif %}
+
+      {% if mosafi_user_menu.show %}
+        <nav
+          class="mosafi-user-menu"
+          aria-label="{{ 'User account'|t }}"
+        >
+          <a
+            class="mosafi-user-menu__account"
+            href="{{ mosafi_user_menu.account_url }}"
+          >
+            {{ mosafi_user_menu.display_name }}
+          </a>
+
+          <a
+            class="mosafi-user-menu__logout"
+            href="{{ mosafi_user_menu.logout_url }}"
+          >
+            {{ 'Log out'|t }}
+          </a>
+        </nav>
+      {% endif %}
+
+    </div>
+  </header>
+{% endif %}
 
   {% if page.primary_menu %}
     <nav class="mosafi-site-nav" role="navigation" aria-label="{{ 'Main navigation'|t }}">

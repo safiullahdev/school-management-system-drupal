@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Url;
+
 /**
  * @file
  * Theme functions for Mosafi Theme.
@@ -36,4 +38,24 @@ function mosafi_theme_theme_suggestions_page_alter(array &$suggestions, array $v
   if ($node instanceof \Drupal\node\NodeInterface) {
     $suggestions[] = 'page__' . $node->bundle();
   }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function mosafi_theme_preprocess_page(array &$variables): void {
+  $current_user = \Drupal::currentUser();
+
+  $show_custom_user_menu =
+    $current_user->isAuthenticated()
+    && !$current_user->hasPermission('access toolbar');
+
+  $variables['mosafi_user_menu'] = [
+    'show' => $show_custom_user_menu,
+    'display_name' => $current_user->getDisplayName(),
+    'account_url' => Url::fromRoute('user.page')->toString(),
+    'logout_url' => Url::fromRoute('user.logout')->toString(),
+  ];
+
+  $variables['#cache']['contexts'][] = 'user';
 }

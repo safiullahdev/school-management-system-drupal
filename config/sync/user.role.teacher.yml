@@ -10,14 +10,12 @@ dependencies:
   module:
     - content_moderation
     - node
-    - toolbar
     - webform
 id: teacher
 label: Teacher
 weight: 6
 is_admin: null
 permissions:
-  - 'access toolbar'
   - 'access user profiles'
   - 'create assignment content'
   - 'create attendance content'
